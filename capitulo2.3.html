@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>capitulo2.3</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+ <p>
+    Un número de teléfono. Abre la aplicación del móvil que permite realizar llamadas telefónicas. • Una función JavaScript. Ejecuta código JavaScript. Veamos con detenimiento cada uno de estos escenarios. 2.4.4.1 Enlaces a páginas de otros servidores web Como se acaba de comentar, el uso más habitual de los hipervínculos es el acceso a otras páginas web, las cuales pueden estar ubicadas en el mismo servidor o en otro diferente. En este último caso (objeto de estudio de esta sección), el valor del atributo href de la etiqueta <a> sería su URL. Así, el siguiente documento HTML de ejemplo incluye un hipervínculo (palabra “aquí”) dentro del texto de un párrafo. Si lo pulsara, la ventana del navegador mostraría la página de búsqueda
+ </p>
+ <br>
+ <img src="./imagenes/Imagen1.png" alt="">
+ <br>
+ <img src="./imagenes/Imagen2.png" alt="">
+<br>
+<p>Si observa, el texto del enlace aparece en color azul y subrayado. Es la forma que tiene el navegador de indicar que se trata de un hipervínculo. Mientras se mantenga pulsado tomará el color rojo. A partir de ese momento adquirirá un color morado.
+</p>
+<br>
+<section>
+    Mas adelante aprendera a modificar el aspecto de los hipervínculos en cada uno de los estados 
+</section>
+<br>
+<p>Si pulsara el enlace “aquí”, se mostraría la página del buscador Google en esa misma pestaña. Si quisiera abrirlo en otra diferente, deberá utilizar el atributo target y asignarle el valor “_blank”. Para demostrarlo, sustituya el código del párrafo anterior por este otro
+</p>
+<img src="./imagenes/Imagen3.png" alt="">
+<br>
+<p>Ahora, al pulsar sobre el hipervínculo se abrirá una nueva pestaña con la página de Google, tal como puede comprobar en la siguiente imagen</p>
+<br>
+<img src="./imagenes/Imagen4.png" alt="">
+<br>
+<p>En esta ocasión, el hipervínculo tiene una etiqueta img que muestra una imagen del Coliseo con una resolución de 200 píxeles (en vez de un texto). Si pulsara sobre ella, accedería a la página oﬁcial del Coliseo de Roma cuyo URL completa es</p>
+<br>
+<img src="./imagenes/Imagen5.png" alt="">
+<br>
+<p>Una vez modiﬁcado el documento, cargue la página en Chrome, cuyo aspecto sería el siguiente:
+</p>
+<br>
+<img src="./imagenes/Imagen6.png" alt="">
+<br>
+<p>Pulse sobre la imagen y compruebe que aparece la página oﬁcial del Coliseo. 2.4.4.2 Enlaces a páginas locales Como se ha comentado al principio de esta sección, puede suceder que la página a la que se quiera llegar no esté en Internet, sino dentro del mismo sitio web. En ese caso, el valor del atributo href contendrá la ruta de acceso al archivo donde se encuentra. El siguiente ejercicio muestra la forma de acceder a una página local mediante una ruta (no un URL). Para ello, se crearán dos páginas. La primera representa la página raíz (home) de un sitio web y su código estará almacenado en el archivo “index.html” ubicado en la carpeta “Capitulo2”. El código de la segunda página (archivo “pagina- local.html”) estará localizado en la subcarpeta “CarpetaLocal”, creada previamente dentro de “Capitulo2”. Por lo tanto, la estructura de directorios utilizada es 
+</html>
+En la cabecera se utiliza la etiqueta title para asignar el título “Página home” a la pestaña del navegador en la que se muestre (además de establecer que el juego de caracteres sea UTF-8). El cuerpo se compone únicamente de un párrafo, dentro del que hay un hipervínculo cuyo atributo href contiene la ruta relativa del archivo donde se almacena la página local:
+“.Carpetalocal/paginalocal.html
+aspecto de esta página es el mostrado a continuación.
+</p>
+<br>
+<img src="./imagenes/Imagen7.png" alt="">
+<br>
+<img src="./imagenes/Imagen8.png" alt="">
+<br>
+<p>Todavía no pulse sobre la palabra “aquí”, ya que antes tendrá que crear la página a la que se accede desde el hipervínculo que tiene asociado Su código es el siguiente:
+La etiqueta title de la cabecera establece que el título de esta nueva página sea “Página local”. De nuevo, en el cuerpo solo hay un párrafo con un vínculo que, en este caso, permite acceder al archivo “index.html” ubicado en el directorio padre (el anterior en la estructura de directorios 
+“../index.html 
+Una vez guardado este segundo archivo con el nombre “pagina- local.html” en la carpeta “CarpetaLocal”, cárguela en Chrome.
+</p>
+<br>
+<img src="./imagenes/Imagen9.png" alt="">
+<br>
+<img src="./imagenes/Imagen10.png" alt="">
+<br>
+<p>Ahora, al pulsar sobre el enlace “aquí” de esta nueva página volvería de nuevo a la página home. Si los archivos de la página anterior residieran en un servidor web en vez de en su propio ordenador, también sería posible acceder a ellos a través de su URL, en concreto:
+http://nombre de dominio/index.html 
+http://nombre de dominio/carpetalocal/pagina-locall.html
+</p>
+<br>
+<section>En el primer URL se podría obviar el nombre de la pagina home (“index.html”) ya que por defecto seria la que se cargaría </section>
+<br>
+<section>Cuando aprenda a utilizar un servicio de hosting web  un capítulo posterior, realizara un ejercicio que lo demuestra </section>
+<br>
+<h2>2.4.4.3 Enlaces a secciones de una misma página </h2>
+<p>Además de poder acceder a otras páginas web, los hipervínculos también permiten mostrar secciones pertenecientes a la misma página. Son útiles cuando esta tiene mucho contenido y requieren desplazarse continuamente por ella hasta encontrar el que se busca. Para evitarlo, se suele crear un índice cuyas entradas son enlaces que llevan a los diferentes capítulos o apartados de la página. Para que un hipervínculo le dirija a la sección de una misma página (en vez de a otra diferente), el valor del atributo href deberá ser el identiﬁcador asignado a la sección correspondiente, precedido del carácter almohadilla (‘#’). Su sintaxis es: Pero ¿cómo se asocia un identiﬁcador a la sección de una página? Mediante el atributo id en la etiqueta de inicio, tal como puede ver a continuación: Para comprobarlo, imagine que tiene una página formada por tres capítulos de cierto tamaño, al principio de la cual hay un índice desde el que se puede acceder directamente a cualquiera de ellos. Asimismo, al ﬁnal de cada capítulo hay un enlace que le lleva de regreso al índice (el inicio de la página). El código de </p>
+<br>
+<img src="./imagenes/Imagen12.png" alt="">
+<br>
+<img src="./imagenes/Imagen13.png" alt="">
+<br>
+<img src="./imagenes/Imagen14.png" alt="">
+<br>
+<section>Los puntos suspensivos no forman parte del código HTML. Indican que el resto de líneas son iguales a la de arriba </section>
+<br>
+<p>En dicho código aparecen cuatro etiquetas h1 que establecen las secciones en las que se va a dividir el documento: “Índice”, “Capítulo</p>
+<br>
+<img src="./imagenes/Imagen15.png" alt="">
+<br>
+<p>Todos los capítulos tienen un identiﬁcador, que será el utilizado en el correspondiente hipervínculo del índice. Este último también tiene un identiﬁcador (el valor de su atributo id es “índice”), ya que todos los capítulos tienen un enlace al ﬁnal desde el que se podrá volver al indice 
+Los hipervínculos, a diferencia de los párrafos, se muestran uno al lado del otro. Para que aparezcan debajo, se ha añadido la etiqueta <br> después de cada uno 
+</p>
+<br>
+<img src="./imagenes/Imagen16.png" alt="">
+<br>
+<p>Cada capítulo está formado por un número indeﬁnido de párrafos con el contenido de la sección (etiquetas p) y un hipervínculo que permite acceder al índice (la misma etiqueta <a> en todos los capítulos 
+derecha se muestra lo que vería al pulsar sobre el enlace “Capítulo 2” del índice 
+</p>
+<br>
+<img src="./imagenes/Imagen17.png" alt="">
+<br>
+<section>Observe que en la pestaña donde se muestra la pagina,además del nombre del archivo HTML (o titulo,si se hubiera indicado en la cabecera)aparece el identificador de la sección a la que ha accedido,precedido del carácter almohadilla</section>
+<br>
+<h2>2.4.4.4 Enlaces a servicios y aplicaciones </h2>
+<p>Muchas de las páginas que ofrecen productos o servicios tienen algún tipo de mecanismo de comunicación que nos permite ponernos en contacto con ellos para solicitar información, resolver dudas, etc. En
+unas ocasiones se emplean formularios con una serie de campos que hay que rellenar, pero en otras se da la posibilidad de enviar un correo electrónico o realizar una llamada telefónica (si el acceso se realiza desde un móvil) con solo pulsar un enlace. En estos dos últimos casos, atributo href deberá tomar uno de estos valores:
+</p>
+<img src="./imagenes/Imagen18.png" alt="">
+<br>
+<p>En la siguiente imagen puede ver la página HTML y la aplicación de correo Outlook (es la que tengo conﬁgurada por defecto en mi ordenador) que se ha abierto tras pulsar sobre el enlace “aquí”. Como puede apreciar, el campo “Para...” aparece rellenado con mi dirección de correo electrónico </p>
+<br>
+<img src="./imagenes/Imagen19.png" alt="">
+<br>
+<section>Si esta interesado en saber como rellenar automáticamente el resto de campos de un correo electrónico,como ek del asunto con copia a,con copia oculta incluso el propio cuerpo del mensaje, consulte la pagina </section>
+<br>
+<img src="./imagenes/Imagen20.png" alt="">
+<br>
+<p>La siguiente facilidad que proporcionan los hipervínculos tiene que ver con la descarga de cualquier tipo de archivos a su ordenador personal, algo que estoy seguro que realiza con cierta frecuencia para bajarse imágenes, música, programas, formularios, etc. En este caso, además de asignar al atributo href la ruta del archivo que se pretende descargar, deberá añadir el atributo download a la etiqueta a. Así, el siguiente código de ejemplo permitiría la descarga de una imagen almacenada en el archivo “imagen-descargable.jpg”, situado en la misma carpeta que la página HTML:</p>
+<br>
+<img src="./imagenes/Imagen21.png" alt="">
+<br>
+<h2>2.4.5 Listas </h2>
+<p> Desde un punto de vista conceptual, las listas sirven para crear enumeraciones con un cierto propósito. Se utilizan con frecuencia, ya que son un método eﬁcaz de clasiﬁcación. También se emplean para crear índices cuyas entradas sean los hipervínculos que lleven al capítulo o sección correspondiente dentro de la misma página. Incluso, sus elementos pueden constituir la barra de navegación de la página o el sitio web, ya que, como aprenderá en un capítulo posterior, son totalmente conﬁgurables. Hay dos tipos de listas, aquellas que no tienen un orden especíﬁco y las que cada elemento viene precedido por un número que determina su posición. En el primer caso se utiliza la etiqueta ul y en el segundo ol. En realidad, estas etiquetas representan un contenedor dentro del que se incluyen sus elementos mediante la etiqueta Li</p>
+<br>
+<section>El nombre de la etiqueta “ul” es el acrónimo de unordered list (lista sin orden o desordenada), el de “ol” es ordered list “lista ordenada) y el “li” list item (elemento de lista)</section>
+<br>
+<p>El siguiente código de ejemplo muestra cómo se utilizan estas etiquetas:</p>
+<img src="./imagenes/Imagen22.png" alt="">
+<br>
+<p>A continuación se muestra el aspecto de la lista una vez cargado en Chrome </p>
+<br>
+<img src="./imagenes/Imagen23.png" alt="">
+<br>
+<p>Ahora, cambie la etiqueta ul por ol. El resultado será este otro:</p>
+<br>
+<img src="./imagenes/Imagen24.png" alt="">
+<br>
+<p>El uso de uno u otro tipo de lista dependerá de sus necesidades concretas. Más adelante, cuando aprenda a crear sus propios estilos, conocerá las propiedades que permiten modiﬁcar tanto el aspecto de la lista de los elementos. </p>
+<br>
+<section>Además de las listas anteriores HTML proporciona las listas de descripciones cuyos elementos deben ser específicamente términos y sus descripciones. Asi con la etiqueta dl creara la lista </section>
+<br> 
+<h2>2.4.6 Contenedores </h2>
+<p>El código HTML no es un código plano en el que se van añadiendo elementos secuencialmente, sino que se organiza de forma jerárquica. El nivel superior de esta jerarquía se establece con la etiqueta <html>, dentro de la que los elementos que aportan la
+       metainformación se agrupan en la etiqueta head y los visibles en la etiqueta body. Por lo tanto, html es un contenedor que agrupa el contenido de la página web en otros dos contenedores: <head> y <body>. En informática, una estructura jerárquica se representa en forma de árbol, donde los elementos que están en la parte superior contienen los que hay por debajo. A los primeros se les conoce como nodos padre y a los segundos nodos hijo. En consecuencia, cualquier página web tendrá la siguiente la estructura jerárquica 
+</p>
+<img src="./imagenes/Imagen25.png" alt="">
+<br>
+<p>Cuando se realiza el diseño gráﬁco de una página, lo que se hace es añadir elementos HTML debajo de las ramas <head> y <body>, creando nuevos niveles en la jerarquía donde, además de relaciones de pertenencia padre-hijo, existen otras de herencia que tendrá que conocer para obtener el resultado deseado. En las siguientes secciones estudiará los contenedores semánticos que proporciona HTML para organizar la información de una página web de forma estándar, así como otros de carácter general que le permitirán hacerlo de acuerdo a sus propios criterios. 2.4.6.1 Contenedores semánticos Cuando se diseña una página web, los elementos visibles se agrupan de acuerdo a la temática de su contenido (aquello de lo que tratan) y luego se les da forma con reglas de estilo. Aunque hay tantos diseños
+como se pueda llegar a imaginar, la siguiente imagen muestra uno de carácter general comúnmente aceptado, motivo por el que HTML ofrece etiquetas para cada una de las áreas que lo componen:
+</p>
+<img src="./imagenes/Imagen26.png" alt="">
+<br>
+<p>cabecera se representa con la etiqueta head (no la confunda con header, que también tiene el mismo nombre), la barra de navegación con <nav>, el contenido principal con <main>, el contenido relacionado con <aside> y el pie con <footer>. Todas estas etiquetas son contenedores semánticos porque solo incluyen información de un tipo especíﬁco. Aunque se usan fundamentalmente para el diseño de la página, al delatar la naturaleza de su contenido son empleadas por los buscadores para indexarla de forma adecuada. En cualquier caso, ninguna de ellas determina el aspecto con el que se muestra en pantalla. Por ese motivo, aunque en la imagen anterior el área del contenido principal sea más grande que el resto o la del contenido relacionado esté a la derecha del anterior, </p>
+</body>
+<footer>
+    <a href="./capitulo2.4.html"><button>Siguiente página</button></a>
+    <a href="./capitulo2.2.html">Anterior página</a>
+    <a href="index.html"><button>Regresar al inicio</button></a>
+</footer>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitulo4.1</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+     <p>píxeles más pequeña. Si no le gustara el efecto que produce, quite 2 píxeles de ancho a ambas imágenes, en vez de 4 a una de ellas. Para ﬁnalizar esta sección, se va a analizar el código de un documento HTML en el que se expone un caso frecuente donde los elementos de una lista se distribuyen horizontalmente (por defecto, lo hacen en vertical) para convertirlos en la barra de navegación de una página web. A continuación, se muestra el resultado que se pretende obtener:</p>
+    <img src="./img/14.png">
+    <p>El código HTML con el que se ha conseguido este efecto es el siguiente:</p>
+    <img src="./imgE/12.png">
+    <p>Hace las veces de título de la página y una lista cuyos elementos contienen los hipervínculos que llevan a los principales buscadores de Internet (el valor del atributo href de cada uno ellos son los URL de Google, Yahoo! y Bing). Como pudo apreciar en la imagen anterior, tanto la barra de navegación (lista de hipervínculos) como el encabezado están centrados. Para conseguirlo, la primera regla de estilo emplea el selector universal (“*”), en cuyo bloque de declaraciones se asigna el valor center a la propiedad text-align. </p>
+    <p>Sin embargo, como la lista tiene por defecto un margen interno, esta no queda completamente centrada, motivo por el que la regla a la que está vinculada se encarga de eliminarlo (asigna el valor 0px a la propiedad padding). </p>
+    <p>Respecto de las opciones del menú, todas tienen el mismo estilo: un color de fondo amarillo (propiedad background-color), un margen interno de 10 píxeles de grosor que rellena cada opción de dicho color (propiedad padding) y un margen externo que las separa entre sí 20 píxeles (propiedad margin). </p>
+    <p>Pero, lo más importante desde el punto de vista de este ejercicio, es que los elementos de la lista se muestran horizontalmente al haber asignado el valor inline a la propiedad display.</p>
+    
+    <h2>4.1.2 Modo de caja flexible </h2>
+    <p>Los modos de distribución de elementos que se han visto hasta ahora sitúan los elementos debajo o al lado de los que hay en la página, en función de su comportamiento natural o porque así se había indicado al asignar los valores block o inline a la propiedad display. Sin embargo, las páginas actuales exigen diseños más complejos y elementos. </p>
+    <p>A tal ﬁn, HTML ofrece el modo de caja ﬂexible, que se establece al asignar el valor flex a la propiedad display del contenedor que hace de caja, en el que se van a colocar los elementos. Una vez hecho esto, tendrá la posibilidad de utilizar las siguientes propiedades:</p>
+    <p> • flex-direction. Fija la dirección (horizontal o vertical) en la que se quieren distribuir los elementos. <br> 
+        • flex-wrap. Si el ancho de un contenedor es inferior al de la suma de los elementos que incluye, permite que estos se sitúen en ﬁlas por debajo. <br>
+        • flex-flow. Equivale a las dos anteriores. <br>
+        • justify-content. Establece la forma de colocar horizontalmente los elementos cuando hay más espacio del que pueden ocupar. <br>
+        • align-items Establece la forma de colocar verticalmente los elementos a lo alto de cada ﬁla, cuando hay más espacio del que pueden ocupar. <br>
+        • align-content. También ordena los elementos verticalmente, pero a diferencia del anterior, no lo hace por ﬁlas, sino teniendo en cuenta el alto del contenedor. De esta forma, se consigue que todos los elementos se ordenen como si fueran un solo bloque. <br>
+    </p>
+    <section>
+        <p>Insistir en el hecho de que estas propiedades solo tienen efecto en elementos ﬂexibles, es decir, aquellos que están dentro de un contenedor cuya propiedad display tiene el valor flex. </p>
+    </section>
+    <p>A continuación, se describirá en detalle cada una de estas propiedades, empezando por la primera (flex-direction), que puede tomar los valores: </p>
+    <p> • row. Los elementos se distribuyen horizontalmente. Es el valor por defecto. <br>
+        • row-reverse. Igual que el anterior, pero en orden inverso.  <br>
+        • column. Los elementos se distribuyen verticalmente. <br>
+        • column-reverse. Igual que el anterior, pero en orden inverso. El siguiente código representa un ejemplo de uso de esta propiedad: <br>
+    </p>
+    <img src="./imgE/13.png">
+    <p>Tal como puede apreciar, el cuerpo del documento HTML está formado por un contenedor div> dentro del que hay otros cuatro, en cada uno de los cuales hay un número que los identiﬁca. Para crear las reglas de estilo, se han creado dos clases (“contenedor” y “contenido”). </p>
+    <p>La primera se vincula al contenedor superior y la otra a todos los que incluye. En el bloque de declaraciones de la regla asociada a la clase “contenedor”, es decir, la que afecta al contenedor superior, lo primero que se hace es asignar el valor flex a la propiedad display para convertir los contenedores interiores en elementos ﬂexibles. Además, como se quiere que estos se distribuyan de forma horizontal, también se asigna el valor row a la propiedad flex-direction. </p>
+    <p>Las dos últimas propiedades (width y background-color) se utilizan para ajustar su ancho al de los elementos contenidos (no el de la pantalla) y pintar de azul el espacio ocupado por este. El estilo de la clase “contenido” afecta a los contenedores incluidos en el superior. </p>
+    <p>Tendrán un color de fondo blanco y un ancho de 50 píxeles (background-color y width). El alto vendrá dado por el de la línea en la que se escribe el número (line-height), que es de 50 píxeles. El tamaño de la fuente del texto será la mitad, es decir, de 25 píxeles (font-size) y estará centrado horizontalmente (el valor de text- align es center). </p>
+    <p>Por último, los contenedores interiores se separan entre sí y del superior mediante un margen de 10 píxeles (margin).</p>
+    <section>
+        <p>Al ser mayor el alto de la línea que el de la fuente, el texto queda centrado verticalmente.</p>
+    </section>
+    <p>A continuación se muestra el resultado que se obtendría, tanto para este código (los contenedores se distribuyen horizontalmente), como para otro en el que se hubiera asignado el valor column a la propiedad flex-direction (lo hacen verticalmente):</p>
+    <img src="./img/15.png">
+    <img src="./img/16.png">
+    <p>Esta otra imagen corresponde al mismo código, solo que en esta ocasión se asigna los valores row-reverse y column-reverse a la propiedad flex-direction. Observe que ahora los números de los contenedores aparecen en sentido contrario. </p>
+    <img src="./img/17.png">
+    
+    <h2>4.1.2.1 Distribución de elementos en ﬁlas </h2>
+    <p>El código inicial del ejercicio anterior establecía una distribución horizontal de los contenedores interiores (la propiedad flex- direction tomaba el valor row). </p>
+    <p>Se trataba de una situación ideal en la que todos ellos cabían dentro del principal, ya que se había especiﬁcado que su ancho coincidiera con el de los interiores. Sin embargo, puede haber dispositivos en los que este sea muy limitado (por ejemplo, el de un teléfono móvil en posición vertical). </p>
+    <p>En ese caso, ¿qué sucedería? Para descubrirlo, asigne al contenedor principal un ancho de, por ejemplo, 200 píxeles. </p>
+    <p>Por lo tanto, modiﬁque la declaración de la regla de estilo asociada a la clase “contenedor” en la que participa la propiedad width de la siguiente forma: </p>
+    <img src="./img/32.png">
+    <p>En la imagen mostrada a continuación se puede ver el resultado obtenido tras realizar este cambio:</p>
+    <img src="./img/18.png">
+    <p>Se aprecia claramente que los contenedores interiores son más estrechos. Eso es debido a que la regla de estilo que les afecta solo establece un margen exterior (propiedad margin), no interior. </p>
+    <p>Por ese motivo, al reducir el tamaño del contenedor principal, el navegador ha disminuido el margen interior para encajarlos en el ancho disponible, respetando el margen exterior (recuerde que era de 10 píxeles). </p>
+    <p>Entonces, ¿qué sucedería si se redujera aún más el ancho del contenedor principal? Para averiguarlo, limítelo a tan solo 100 píxeles. Esta otra imagen muestra lo que sucede:</p>
+    <img src="./img/19.png">
+    <p>En tales circunstancias, el margen interno se reduce al mínimo (el ancho de los contenedores interiores es el del propio número). A pesar de esta medida tan drástica, siguen sin caber dentro del principal (el margen externo se respeta ya que se ha establecido explícitamente) por lo que se produce un desbordamiento por la derecha. </p>
+    <p>Si no quiere que se produzca este efecto indeseado, tendrá que añadir otra declaración a la regla de estilo del contenedor principal en la que se asigne el valor wrap a la propiedad flex-wrap. </p>
+    <p>De esta forma, cuando los contenedores interiores no quepan a lo ancho, se irán situando en ﬁlas por debajo.</p>
+    <section>
+        <p>Siempre que realice un diseño, asegúrese de que los elementos permanezcan dentro de los contenedores destinados a cada uno de ellos. De lo contrario, el aspecto de la página podría no coincidir con el esperado. </p>
+    </section>
+    <p>Para comprobarlo, añada esta propiedad a la regla de estilo de la clase “contenedor”, la cual quedaría así:</p>
+    <img src="./imgE/14.png">  
+    <p>A continuación se muestra el efecto producido por esta última propiedad, tanto para un ancho del contenedor principal de 100 píxeles (corresponde al código anterior), como de 200 píxeles:</p>
+    <img src="./img/20.png">
+    <img src="./img/21.png">
+    <p>píxeles caben dos por ﬁla. Puesto que habitualmente las propiedades flex-direction y flex-wrap se utilizan de forma conjunta, estas se pueden sustituir por una sola, flex-flow, cuyo valor toma los valores de ambas (separadas por un espacio):</p>
+    <img src="./imgE/33.png">
+    <p>Así, por ejemplo, estas dos declaraciones del código anterior:</p>
+    <img src="./imgE/34.png">  
+    <p>se podrían sustituir por una sola:</p>
+    <img src="./imgE/35.png">
+    
+    <h2>4.1.2.2 Distribución horizontal de elementos</h2>
+    <p>Una vez distribuidos los elementos en ﬁlas, bien porque el ancho del contenedor era suﬁciente para darles cabida, o después de haber actuado la propiedad flex-wrap, será necesario determinar la estrategia de distribución en cada una de ellas. A tal ﬁn se utiliza la propiedad justify-content, que puede tomar los siguientes valores: </p>
+    <p>
+        • center. Los elementos se centran horizontalmente.  <br>
+        • flex-start. Los elementos se sitúan de izquierda a derecha. <br>
+        • flex-end. Los elementos se sitúan de derecha a izquierda. <br>
+        • pace-between. El espacio disponible horizontalmente se distribuye de forma uniforme entre los elementos. <br> 
+        • space-around. El espacio disponible horizontalmente no solo se distribuye entre los elementos, sino también entre estos y los límites del contenedor. <br>
+        • space-evenly. Igual que el anterior, pero el espacio de separación en los extremos es el mismo que entre los elementos (no la mitad). Modiﬁque la regla de estilo asociada a la clase “contenedor” de documento HTML utilizado de ejemplo para que ahora sea: <br>
+    </p>
+    <img src="./imgE/15.png"> 
+    <p>Como puede observar por el valor de la propiedad justify- content, ahora los contenedores interiores quedarán centrados. En este caso concreto lo harán en la pantalla, porque al haber eliminado la propiedad width del bloque de declaraciones de esta regla, el contenedor principal ocupa todo el ancho de la ventana del navegador. </p>
+    <p>El resultado lo puede ver a continuación:</p>
+    <img src="./img/22.png">
+    <p>Estas otras dos imágenes muestran el efecto de cambiar el valor de la propiedad justify-content por flex-start y flex-end (en vez de center).</p>
+    <img src="./img/23.png">
+    <img src="./img/24.png">
+    <p>En cambio, en estas últimas imágenes se aprecia el resultado de asignar el valor space-between, space-around y space-evenly a la propiedad justify-content de la regla de estilo anterior. </p>
+    <p>En la superior, el espacio horizontal sobrante se reparte solo entre los contenedores interiores, mientras que en la del centro también se tienen en cuenta los extremos (aunque la mitad). Finalmente, en la imagen inferior el espacio se reparte de forma completamente homogénea.</p>
+    <img src="./img/25.png">
+    <img src="img/26.png">
+    <h2>4.1.2.3 Distribución vertical de elementos</h2>
+    <p>Si con la propiedad justify-content se establecía la estrategia de distribución horizontal de los elementos, con align-items y align-content lo podrá hacer en sentido vertical a lo alto de cada ﬁla o del contenedor, respectivamente. Empecemos analizando los efectos de la primera propiedad, align- items, la cual puede tomar los siguientes valores: </p>
+    <p>
+        • stretch. Los elementos se estiran para ocupar todo el alto de cada ﬁla. Es el valor por defecto. <br>
+        • center. Los elementos se centran a lo alto de cada ﬁla.  <br>
+        • flex-start. Los elementos se sitúan de arriba hacia abajo a lo alto de cada ﬁla. <br> 
+        • flex-end. <br>
+    </p>
+    <p>Los elementos se sitúan de abajo hacia arriba a lo alto de cada ﬁla. Modiﬁque de nuevo la regla de estilo asociada a la clase “contenedor” de forma que ahora sea:</p>
+    <img src="./imgE/16.png">
+    <p>Como puede observar, además de la propiedad flex-direction, cuyo valor distribuye los elementos del contenedor de forma horizontal (se podía haber hecho de forma vertical), también se utiliza la propiedad align-items para centrarlos verticalmente (su valor es center). A continuación, se presenta el resultado obtenido:</p>
+    <img src="./img/27.png">
+    <p>Se aprecia claramente que la ﬁla de elementos queda centrada verticalmente en la ventana del navegador (incluso aunque modiﬁque su altura). En estas otras imágenes se puede advertir el cambio de aspecto de la página tras modiﬁcar el valor de esta última propiedad por flex- start y flex-end.</p>
+    <img src="./img/28.png">
+    <img src="./img/29.png">
+    <p>El código utilizado de ejemplo solo muestra una ﬁla, pero, si hubiera varias, la alineación al centro, arriba o abajo se haría tomando como referencia el alto de cada ﬁla. Por ejemplo, en caso de haber dos ﬁlas, los elementos de la primera se distribuirían al centro, arriba o debajo de la mitad superior del contenedor, mientras que los de la segunda lo harían en la mitad inferior. </p>
+    <p>Para comprobarlo, modiﬁque una vez más la regla de estilo de contenedor principal con objeto de que los contenedores interiores se repartan en dos ﬁlas:</p>
+    <img src="./imgE/17.png">
+    <p>Lo que se ha hecho es añadir la propiedad flex-wrap para que los elementos que no quepan en una ﬁla se desplacen a otras inferiores. Eso es precisamente lo que ha pasado al limitar el ancho del contenedor principal a 200 píxeles (propiedad width), que ha provocado que ahora los cuatro contenedores interiores se repartan en dos ﬁlas. </p>
+    <p>La propiedad heigth solo se incluye para hacer más patente el efecto de centrado por ﬁlas. El resultado obtenido tras efectuar estos cambios es el siguiente:</p>
+    <img src="./img/30.png">
+    <p>Queda patente que los contenedores interiores se centran verticalmente por ﬁla. Si en vez del valor center, la propiedad align-items tomara los valores flex-start y flex-end, el efecto sería el mostrado en esta otra imagen, donde la alineación de los contenedores (tanto en la parte superior como en la inferior) también se realiza por ﬁlas:</p>
+    <img src="./img/31.png">
+    <img src="./img/32.png">
+    <p>Si lo que quiere es alinear verticalmente todos los elementos en bloque a lo alto del contenedor, independientemente del número de ﬁlas que haya, deberá usar la propiedad align-content. Esta toma los siguientes valores: </p>
+    <p>
+        • stretch. Los elementos se estiran para ocupar todo el alto del contenedor. Es el valor por defecto. • center. Los elementos se centran verticalmente a lo alto del contenedor. <br>
+        • flex-start. Los elementos se sitúan desde la parte superior del contenedor hacia abajo.  <br>
+        • flex-end. Los elementos se sitúan desde la parte inferior del contenedor hacia arriba. <br>
+        • space-between. El espacio disponible verticalmente se distribuye de forma uniforme entre los elementos. <br> 
+        • space-around. El espacio disponible verticalmente no solo se distribuye entre los elementos, sino también entre estos y los límites del contenedor. <br> 
+        • space-evenly. Igual que el anterior, pero el espacio de separación en los extremos superior e inferior es el mismo que entre los elementos (no la mitad). <br>
+    </p>
+    <section>
+        <p>Tanto en esta propiedad, como las anteriores relacionadas con los elementos ﬂexibles, también pueden tomar el valor inherit o initial.</p>
+    </section>
+    <p>Para demostrar la forma en la que se comporta esta propiedad, sustituya la propiedad align-items por align-content en la regla de estilo anterior (aquella que afectaba al contenedor principal). El valor de ambas propiedades es el mismo, por lo que quedará así:</p>
+    <img src="./imgE/18.png">    
+    <p>En la imagen inferior se compara el resultado anterior (izquierda) con el nuevo (derecha) después de sustituir la propiedad align-items por align-content. Se aprecia claramente que, en este último caso, los contenedores internos se centran en bloque respecto del contenedor principal (no por ﬁlas).</p>
+    <img src="./img/33.png">
+    <img src="./img/34.png">
+    <p>En esta otra imagen se contrastan los efectos obtenidos al asignar el valor flex-start a la propiedad align-items (izquierda) con los de la propiedad align-content (derecha).</p>
+    <img src="./img/34.png">
+    <img src="./img/35.png">
+    <p>En la parte izquierda (propiedad align-items) se puede observar que los contenedores interiores 1 y 2 se alinean en la parte superior de la primera ﬁla, mientras que el 3 y el 4 lo hacen en la parte superior de la segunda ﬁla. En cambio, a la derecha (propiedad align-content) los cuatro elementos se agrupan en la parte superior del contenedor principal. </p>
+    <p>Por último, esta nueva imagen confronta el resultado obtenido cuando se asignó el valor flex-start a la propiedad align-items (izquierda) con el de la propiedad align-content (derecha).</p>
+    <img src="img/36.png">
+    <img src="img/37.png">
+    <p>Ahora, en la parte izquierda (propiedad align-items) se muestra como los contenedores interiores se alinean en la parte inferior de la ﬁla donde se encuentran, mientras a la derecha (propiedad align- content) lo hacen en bloque en la parte inferior del contenedor principal. </p>
+    <p>Antes de ﬁnalizar esta sección se analizará el siguiente código, que se puede utilizar como plantilla para centrar cualquier elemento (en este caso, un contenedor de 100 píxeles de lado) dentro otro superior o en la propia página:</p>
+    <img src="./imgE/19.png">
+    <p>Como puede observar, el cuerpo del documento está formado únicamente por un contenedor div>, cuyo aspecto es el de un cuadrado azul de 100 píxeles de lado, tal como se deﬁne en la regla de estilo de esta etiqueta.</p>
+    <p>El cuerpo del documento (la etiqueta body>) representa el contenedor superior donde se encuentra, por lo que la regla de estilo de esta etiqueta será la responsable de centrarlo horizontal y verticalmente en la página. En ella, lo primero que se hace es establecer un modo de caja ﬂexible (se asigna el valor flex a la propiedad display). </p>
+    <p>Hecho esto, las propiedades justify- content y align-items lo centra en ambas direcciones (se asigna a las dos el valor center). Sin embargo, para que la alineación vertical tenga realmente efecto, es imprescindible asignar un valor del 100% a la propiedad height de las etiquetas html> y body>. Por ese motivo, en la regla de estilo anterior había una última declaración que especiﬁcaba que el alto del contenedor body> fuera del 100%. </p>
+    <p>Esa misma declaración aparece también en la regla que afecta al contenedor superior de la página (etiqueta <html>), que es la última que faltaba por describir. Una vez cargada esta página en Chrome, la siguiente imagen demuestra que el cuadrado azul permanece en el centro de la pantalla, aunque se redimensione la ventana del navegador.</p>
+    <img src="./img/38.png">
+
+    <h2>4.2 ELEMENTOS FLOTANTES</h2>
+    <p>Si en la sección anterior aprendió cambiar el modo de presentación que tiene por defecto cada elemento y a distribuirlos en modo de caja ﬂexible, en esta conocerá la forma de hacer que ﬂoten hacia el extremo derecho o izquierdo del contenedor en el que se encuentren (o el de la ventana del navegador, si no estuvieran dentro de ninguno). </p>
+    <p>Para ello, deberá hacer uso de la propiedad float, que convierte cualquier elemento en ﬂotante, cuyo valor determinará el lado del contenedor al que deberá dirigirse. </p>
+    <p>Cuando hay elementos ﬂotantes, los siguientes se sitúan al lado (siempre que exista espacio suﬁciente), incluso aunque su modo de presentación sea en bloque. Si quisiera ubicarlos debajo, deberá hacer uso de la propiedad clear, objeto de estudio de una sección posterior.</p>
+    
+    <h2> 4.2.1 Ordenación de elementos al mismo nivel</h2>
+    <p> Tal como se acaba de indicar, para que un elemento ﬂote a los lados del contenedor en el que se encuentra, deberá hacer uso de la propiedad float, cuyos principales valores son: </p>
+    <p>
+        • none. El elemento no ﬂota. Es el valor por defecto. <br>
+        • right. El elemento se coloca en la parte derecha del contenedor donde se encuentra (o de la página, si no estuviera dentro de ninguno). Si se añadieran nuevos elementos, se irían situando a su izquierda. <br>
+        • left. El elemento se ubica a la izquierda. Si se añadieran nuevos elementos, se irían situando a su derecha. Como viene siendo habitual en muchas otras propiedades, esta también puede tomar los valores initial e inherit. <br>
+    </p>
+    <p>Para demostrar cómo afecta esta propiedad al ﬂujo de distribución de elementos de una página, el siguiente código de ejemplo muestra cuatro columnas de texto situadas por parejas a ambos lados de la ventana del navegador:</p>
+    <img src="./imgE/20.png">
+    <p>El cuerpo del documento está formado por cuatro párrafos vinculados a dos clases: “derecha” e “izquierda”. En las reglas de estilo asociadas se asigna el valor right o left a la propiedad float para hacerlos ﬂotar uno al lado del otro. Sin dichas reglas, el texto de los párrafos se mostraría en bloque (uno debajo del otro). </p>
+    <p>La otra regla de estilo afecta a todos los párrafos y se encarga de limitar el ancho a 150 píxeles (propiedad width) con el ﬁn de que tomen la apariencia de columnas. Además, crea un margen de separación entre ellos de 20 píxeles (propiedad margin). </p>
+    <p>En la imagen mostrada a continuación se puede ver el resultado obtenido:</p>
+    <img src="./img/39.png">
+    <p>Como puede observar, los elementos se sitúan a la derecha o a la izquierda según la clase a la que pertenezcan. El orden en el que aparecen en el documento HTML es importante, ya que los que están después respetan el espacio ocupado por los anteriores en el mismo lado. Pruebe a cambiar dicho orden para ver el efecto producido.</p>
+    <p>Si no hubiera espacio suﬁciente para mostrar todos los elementos al mismo nivel, estos se irían desplazando hacia abajo. Si quiere comprobar el orden en el que van bajando y la posición que van ocupando, reduzca progresivamente el tamaño de la ventana del navegador. </p>
+    <p>Como puede apreciar en la siguiente imagen, el primer elemento que se mueve hacia abajo es el último añadido al documento HTML.</p>
+    <img src="./img/40.png">
+    <p>Si siguiera reduciendo el tamaño de la ventana, el siguiente elemento en bajar sería el anterior en el documento HTML, que ocuparía la posición más a la izquierda del nivel inferior, desplazando el elemento que había allí. El motivo es porque en este segundo nivel se mantiene el ﬂujo de distribución del nivel superior.</p>
+    <img src="./img/41.png">
+    <p>Si redujera aún más el ancho de la página, bajarían los párrafos de la parte derecha siguiendo las mismas reglas. </p>
+    <p>Los elementos ﬂotantes tienen muchas utilidades. Por ejemplo, se usan con frecuencia para situar el contenido de la etiqueta <aside> a uno de los lados de la página. También se emplean para añadir notas al margen, como se muestra a continuación:</p>
+    <img src="./img/42.png">
+    <p>El código de la página anterior es el siguiente:</p>
+    <img src="./imgE/21.png">
+    <br>
+    <section>
+        <p>El texto de los párrafos se ha cortado intencionadamente.</p>
+    </section>
+    <p>Como puede apreciar, el cuerpo del documento tiene un encabezado h1> con el título de la obra y otro h2> para el primer capítulo. Luego hay cuatro párrafos, el primero de los cuales es la nota al margen y el resto son el inicio de los tres primeros párrafos del Quijote.</p>
+    <p>Como la nota al margen se muestra de forma diferente, tiene asociado un identiﬁcador (atributo id), que es el utilizado como selector en la regla de estilo encargada de darle el formato deseado. </p>
+    <p>En concreto, dicha regla reduce el ancho de la nota al 30% del de la página (propiedad width) y crea unos márgenes internos y externos de separación de 10 píxeles (propiedades margin y padding). Además, le asigna un color de fondo gris claro (propiedad background-color) y un tipo de fuente itálica (propiedad font- style) para destacarla del resto del texto de la página. </p>
+    <p>Por último, el valor de la propiedad float la sitúa en el lado derecho, por lo que los tres párrafos siguientes ocuparán el espacio que haya dejado libre a su izquierda. Los elementos ﬂotantes pueden ser de cualquier tipo (no solo texto). Es más, lo habitual es que se combinen con imágenes en composiciones como la mostrada a continuación:</p>
+    <img src="./img/43.png">
+    <p>Para situar la imagen a la derecha del texto, se ha utilizado el siguiente código:</p>
+    <img src="./imgE/22.png">
+    <p>El cuerpo del documento se compone de una imagen, un encabezado h1> que hace de título y un párrafo con una breve descripción de la Fontana de Trevi. La imagen, que ocupa la mitad del ancho del navegador (el valor del atributo width es del 50%) se sitúa al lado derecho de la página, ya que tiene asociada un estilo en línea en el que la propiedad float toma el valor right. </p>
+    <p>Todo lo que se añada a continuación (en este caso, el encabezado y el párrafo) ocupará el espacio que haya dejado libre a su izquierda. Aunque el uso habitual de los elementos ﬂotantes es el que acaba de ver, también permiten crear efectos interesantes como el mostrado a continuación, que puede encontrar en muchas obras literarias:</p>
+    <img src="./img/44.png">
+    <p>Para conseguirlo, se ha utilizado el siguiente código HTML:</p>
+    <img src="./imgE/23.png">
+    <p>Como puede apreciar, el cuerpo del documento está formado únicamente por un párrafo, cuyo texto corresponde al primer capítulo del Quijote. Para que la primera letra del párrafo se muestre de forma diferente al resto, se ha utilizado la etiqueta span>, cuya apariencia se especiﬁca en la única regla de estilo. </p>
+    <p>En su bloque de declaraciones, lo primero que se hace es convertirla en un elemento ﬂotante que se mueva hacia la izquierda de la página (la propiedad float toma el valor left). De esta forma, el resto del texto se acoplará en el espacio que haya dejado libre a su derecha. </p>
+    <p>La fuente de dicha letra es del tipo Times New Roman (propiedad font-family) y tiene un tamaño cinco veces superior a la deﬁnida por defecto (propiedad font-size). Para que su borde superior coincida con el del resto del texto, del que se separa 3 píxeles (propiedad margin), se ha establecido una altura de línea de un 80% (propiedad line-height). </p>
+    <p>Al modiﬁcar el valor de esta característica se consigue el efecto de subirla o bajarla dentro del párrafo.</p>
+
+    <h2>4.2.2 Ordenación de elementos en varios niveles</h2>
+    <p>Una vez dispuestos los elementos a izquierda o derecha mediante la propiedad float, podría llegar a pensar que, cualquier otro elemento cuyo modo de presentación fuera en bloque, se ubicaría debajo de los anteriores. Sin embargo, eso no es así, ya que trataría de ocupar el espacio libre que hay al lado de los elementos ﬂotantes (a no ser que no entrara en dicho espacio). Si quiere evitar esta situación, deberá usar la propiedad clear. Por lo tanto, la propiedad clear se emplea para situar un elemento debajo de otros que ﬂoten. Pero, con frecuencia, dichos elementos suelen tener alturas diferentes. En ese caso, ¿debajo de quién se colocaría? El valor asignado a esta propiedad es el que lo determinaría, en concreto:   </p>
+    <p>
+        • none. El elemento ocupa el espacio libre que hay al mismo nivel de los ﬂotantes (a no ser que no quepa, en cuyo caso, se mostraría debajo). Es el valor por defecto. <br>
+        • left. El elemento se sitúa debajo del que llega más abajo entre los que ﬂotan a la izquierda.  <br>
+        • right. El elemento se sitúa debajo del que llega más abajo entre los que ﬂotan a la derecha.  <br>
+        • both. El elemento se sitúa debajo del que llega más abajo (independientemente de si ﬂota a la derecha o a la izquierda). <br>
+    </p>
+    <section>
+        <p>Esta propiedad también puede tomar el valor inherit (no así initial).</p>
+    </section>
+    <p>Para entender estas opciones, se va a desarrollar un código de ejemplo similar al utilizado en la sección anterior, en el que se mostraban cuatro columnas de texto ﬂotando por parejas a izquierda y derecha de la página. En aquella ocasión, todas estaban al mismo nivel. Ahora se distribuirán en dos niveles, tal como se muestra a continuación.</p>
+    <img src="./img/45.png">
+    <p>El código utilizado para obtener este resultado ha sido el siguiente:</p>
+    <img src="./imgE/24.png">  
+    <p>Los párrafos cuyo estilo se deﬁne con el atributo style (no mediante reglas de estilo). Todos los párrafos hacen uso de la propiedad width a ﬁn de mostrar el texto en columnas de 200 píxeles de ancho. El primer párrafo se coloca a la derecha y el segundo a la izquierda (la propiedad float toma el valor right y left, respectivamente). </p>
+    <p>Para que el tercer párrafo se sitúe a la derecha, pero debajo del primero, además de la propiedad float se utiliza también clear. Al asignarle el valor both quedará por debajo del párrafo superior con más texto. </p>
+    <p>Pero, lo que le habrá llamado la atención es que el situado en la parte inferior izquierda no hace uso de dicha propiedad. El motivo es porque el anterior ya rompió el ﬂujo de distribución de elementos del primer nivel, creando el segundo. Si volviera a utilizar la propiedad clear, crearía un tercer nivel. </p>
+    <p>Con el ﬁn de aﬁanzar el conocimiento sobre los efectos de la propiedad clear, se realizarán una serie de modiﬁcaciones a este nuevo código de ejemplo, en el que inicialmente se emplea la propiedad float para combinar texto e imágenes en un mismo nivel:</p>
+    <img src="./imgE/25.png">
+    <p>En esta ocasión, se muestran dos imágenes: la Fontana de Trevi a la derecha y el Coliseo a la izquierda (el valor de la propiedad float de dichas imágenes es right y left, respectivamente). Además, observe que la Fontana de Trevi se muestra con un ancho de 250 píxeles, mientras que el Coliseo lo hace con tan solo 200 píxeles (propiedad width). Más adelante entenderá por qué se ha hecho así. </p>
+    <p>Además de las imágenes, en la página se muestran dos párrafos de 150 píxeles de ancho (propiedad width), los cuales quedan separados de las imágenes por un espacio de 20 píxeles (propiedad margin). Para que cada uno quede “pegado” a la imagen que le corresponde, ambos párrafos también hacen uso de la propiedad float. </p>
+    <p>El aspecto de esta página es el siguiente:</p>
+    <img src="./img/46.png">
+    <p>Ahora, añada este párrafo a continuación de los otros dos:</p>
+    <section>
+       <p> p>Seguranmente crea que este texto se situa por debajo de las imagenes /p></p> 
+    </section>
+    <p>Es probable que el texto reﬂeje lo que piense que va a suceder, ya que, al tratarse de un párrafo, debería mostrarse debajo de las imágenes. Pero, como puede comprobar a continuación, lo que hace es ocupar el espacio que han dejado libre los elementos ﬂotantes en el centro.</p>
+    <p>Si el texto fuera lo suﬁcientemente extenso, se iría desbordando por debajo de los párrafos, luego debajo del Coliseo y, ﬁnalmente, de la Fontana de Trevi, ocupando progresivamente el área amarilla de la imagen anterior. </p>
+    <p>Le animo a que haga este ejercicio y compruebe la forma tan aparentemente extraña en la que se muestra el texto del párrafo a medida que se va rellenando dicho espacio según añade más frases.</p>
+    <section>
+        <p>Si el párrafo estuviera antes que los elementos ﬂotantes en el documento HTML, este se mostraría en bloque de la forma habitual.</p>
+    </section>
+    <p>Para situar este último párrafo por debajo de los elementos ﬂotante deberá hacer uso de la propiedad clear, como en este caso, en el que se le ha asignado el valor left:</p>
+    <img src="./imgE/26.png">
+    <p>La siguiente imagen muestra que ahora el texto aparece justo debajo del Coliseo.</p>
+    <img src="./img/47.png">
+    <p>Si quiere que dicho texto se escriba más abajo para que su altura sea la del borde inferior de la Fontana de Trevi, deberá asignar a la propiedad clear el valor right. También serviría el valor both, ya que esta imagen es la que llega más abajo con respecto a todos los elementos ﬂotantes (no solo se incluyen las dos imágenes, sino los dos párrafos).</p>
+    <img src="./imgE/27.png">
+    <p>Esta otra imagen, resultado de refrescar la pantalla del navegador, lo demuestra:</p>
+    <img src="./img/48.png">
+    <p>Aunque en los ejemplos anteriores se ha optado por utilizar el modo de presentación por defecto del párrafo (en bloque), podría ser cualquier otro diferente. A continuación, se aprecia la existencia de dos niveles de elementos ﬂotantes en los que se intercambia la posición de los textos y las imágenes:</p>
+    <img src="./img/49.png">
+    <section>
+        <p>Debido a la elevada resolución de las imágenes utilizadas, quizás deba reducir el ancho de la ventana del navegador para ver la composición tal como se muestra.</p>
+    </section>
+    <p>El código que ha permitido obtener este resultado es el siguiente:</p>
+    <img src="./imgE/28.png">
+    <p>En el cuerpo del documento, la primera etiqueta img> muestra la Fontana de Trevi. El estilo en línea de esta etiqueta (atributo style) la sitúa en la parte izquierda de la pantalla (el valor de la propiedad float es left). Además, establece que su tamaño sea un 50% del ancho de la pantalla (propiedad width) y tenga un margen de separación de 20 píxeles con el texto (propiedad margin-left). </p>
+    <p>Este lo forma un encabezado h1> y un párrafo p> con una breve descripción, que aparecen al lado de la imagen en el espacio que deja libre a su izquierda. La imagen del Coliseo y su texto descriptivo se han agrupado dentro un contenedor div> del que hace uso la propiedad clear, por lo que se ubicarán por debajo de la imagen y el texto anterior. </p>
+    <p>Dentro de este contenedor, la distribución de la imagen y el texto es similar a los de arriba, solo que ahora la imagen se sitúa a la izquierda (el valor de la propiedad float es left) y el margen de separación se establece a la derecha, ya que es donde se encuentra el texto en este segundo nivel (propiedad margin-rigth). Solo queda abrir el documento HTML en Chrome y comprobar que el resultado coincide con el esperado. Antes de ﬁnalizar esta sección, debe saber que los contenedores no adaptan su tamaño al de los elementos ﬂotantes (a diferencia de cualquier otro tipo de elemento). </p>
+    <p>Por ese motivo, si no incluyera otro elemento con una altura superior, lo desbordaría. En el ejemplo que acaba de ver no tiene ninguna consecuencia porque no hay más elementos debajo, pero, si los hubiera, se podrían producir efectos inesperados. Para hacer evidente este problema, añada el siguiente párrafo al ﬁnal del documento utilizado de ejemplo:</p>
+    <img src="./imgE/29.png">
+    <p>Seguramente habría esperado que este párrafo apareciera al ﬁnal de la página, debajo del Coliseo, pero, tal como se puede ver a continuación, lo ha hecho debajo de la descripción de este monumento.</p>
+    <img src="./img/50.png">
+    <p>Esto solo puede signiﬁcar una cosa: el alto del contenedor <div> solo abarca el tamaño del texto, mientras la imagen lo desborda por abajo. Por ese motivo, queda un “hueco” en la parte inferior derecha que es aprovechado por el párrafo que se acaba de añadir. </p>
+    <p>La mejor forma de veriﬁcar esta teoría es incorporar un borde al contenedor que permita saber el área que ocupa realmente:</p>
+    <img src="./imgE/30.png">
+    <p>Hecho este cambio, el resultado que se obtiene es el mostrado a continuación, donde se observa claramente que la imagen se desborda por abajo.</p>
+    <img src="./img/51.png">
+    <p>Aunque la imagen es el elemento más grande del contenedor, al ser ﬂotante no determina su altura, que en este caso viene ﬁjada por el encabezado y el párrafo (son los únicos elementos que no ﬂotan dentro del contenedor).</p>
+    <section>
+        Este fenómeno se da mucho en barras de navegación cuyas opciones se reparten a los lados de la pantalla. Como todas son elementos ﬂotantes, el contenedor donde se encuentran no tiene ninguna altura, lo que provoca que el resto de elementos de la página se organicen de forma inesperada e incomprensible.
+    </section>
+    <br>
+    <img src="./imgE/31.png">
+    <p>La siguiente imagen demuestra que ahora la altura del contenedor sí tiene en cuenta la imagen. En consecuencia, el texto del último párrafo aparece en el lugar donde se quería que lo hiciera inicialmente.</p>
+    <img src="./img/52.png">
+    <section>
+        <p>Dibujar el borde de un contenedor es un truco muy utilizado cuando los elementos no se colocan en las posiciones esperadas. Una vez resuelto el problema, no se olvide quitarlo.</p>
+    </section>
+    <br>
+    <section>
+        <p>En este caso concreto, se podría haber obtenido el mismo resultado asignando el valor left o both a la propiedad clear en la etiqueta p>. </p>
+    </section>
+    <p>El uso de elementos ﬂotantes es un recurso de diseño muy valioso que utilizará con frecuencia. Sin embargo, y a pesar de su aparente facilidad de manejo, cuando lo haga deberá tener en cuenta los efectos laterales que provoca su empleo: </p>
+    <p>
+        • Los elementos ﬂotantes no inﬂuyen en el alto del contenedor donde se encuentran. <br>
+        • Los elementos cuyo modo de presentación es en bloque tratarán de ocupar el espacio libre que han dejado los ﬂotantes a su lado. <br>
+    </p>
+    <p>Es importante que siempre los tenga presentes porque a menudo provocan que el resto de elementos de la página se sitúen en posiciones inesperadas sin un motivo aparente. </p>
+    
+    <h2>4.3 TIPOS DE POSICIONAMIENTO </h2>
+    <p>Hasta ahora, las únicas formas de situar los elementos en una página web han sido con los modos de presentación que tiene asignado por defecto cada elemento, distribuyéndolos mediante un modo de caja ﬂexible o haciéndolos ﬂotar a derecha e izquierda. Sin embargo, hay ocasiones en las que es necesario colocar un elemento en posiciones que no permiten ninguno de los modos anteriores. </p>
+    <p>En esos casos, deberá hacer uso de la propiedad position, que trabaja de forma coordinada con top, bottom, left y rigth.</p>
+    <p>La propiedad position establece el tipo de posicionamiento utilizado para un determinado elemento. Los valores que puede llegar a tomar son:</p>
+    <p>
+        • static. El navegador establece la ubicación del elemento. Es el valor por defecto. • relative. El elemento se desplaza hacia un lado a partir de dicha posición. <br> 
+        • fixed. El elemento ocupa una posición ﬁja e invariable en la ventana del navegador (incluso aunque haga scroll).  <br>
+        • absolute. Igual que en el caso anterior, pero en el área del contenedor donde se encuentra. Por ese motivo, ahora al hacer scroll el elemento se desplazaría con el resto del contenido de la ventana del navegador. <br>
+    </p>
+    <section>
+        <p>Además de initial e inherit, esta propiedad también puede tomar el valor sticky, cuyo comportamiento es una mezcla de los dos últimos modos de posicionamiento. No se va a describir porque no es compatible con todos los navegadores.</p>
+    </section>
+    <p>De todos los tipos de posicionamiento, el que se utiliza por defecto es el estático. En consecuencia, cuando no se usa esta propiedad, es como si le hubiera asignado el valor static. Eso podría hacerle pensar que no tiene ninguna utilidad. Sin embargo, lo precisará cuando, por ejemplo, dentro de un contenedor en el que se haya especiﬁcado otro tipo de posicionamiento, quiera ubicar uno o más elementos según este modo (no el establecido en el contenedor). </p>
+    <p>Cuando un elemento se ubica en la página de forma estática, no se tiene en cuenta el valor asignado a las propiedades top, bottom, left y rigth. Sin embargo, para el resto tienen la siguiente inﬂuencia en su emplazamiento:</p>
+    <p>
+        • Posición relativa. Desplaza el elemento hacia un lado a partir del lugar ocupado por defecto (por ejemplo, la propiedad top lo movería hacia abajo a partir de dicho punto, la propiedad bottom hacia arriba, etc.).  <br>
+        • Posición ﬁja o absoluta. Establecen la separación entre el lado de un elemento y el del contenedor donde se encuentre (por ejemplo, la propiedad top determina la distancia entre el lado superior del contenedor y el del contenido, la propiedad bottom lo haría en el lado inferior, etc.). <br>
+    </p>
+    <p>Veamos en detalle cada una de estas formas de situar un elemento HTML en pantalla. </p>
+    <h2>4.3.1 Posicionamiento relativo </h2>
+    <p>El modo de posicionamiento relativo desplaza el elemento de la posición que tendría por defecto (posicionamiento estático) el valor asignado a las propiedades top, bottom, left y rigth. Con el ﬁn de practicar con estas propiedades, realizará un ejercicio que permita situar en diagonal un cuadrado de color amarillo y otro azul de 100 píxeles de lado, tal como se muestra a continuación:</p>
+
+</body>
+<footer>
+    <a href="./capitulo4.2.html"><button>Siguiente página</button></a>
+    <a href="./capitulo4.html"><button> Anterior página</button></a>
+    <a href="index.html"><button>Regresar al inicio</button></a>
+</footer>
+</html>

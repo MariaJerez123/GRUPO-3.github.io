@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitulo2.4 </title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+        <p>Solo es una forma de represetarlo, ya que será algo que tendrá que establecer mediante las adecuadas reglas de estilo. </p>
+        <p>Veamos en detalle el tipo de información que abarca cada una estas etiquetas. En la parte superior de la página se sitúa la cabecera, en la que habitualmente se ofrecen datos básicos de la empresa, la marca o el propio sitio web, por lo que suele estar formada por un logo y su nombre. Esta información se incluye en la etiqueta (header) que, por su naturaleza, suele ser la misma en todas las páginas del sito. </p>
+        <p>En la etiqueta (nav) se encuentra la barra de navegación desde la que se accede a las principales partes del sitio web. Está formada por una serie de enlaces o menús donde no suele faltar una opción que lleve a una página en la que se ofrezca una breve descripción de la empresa, la marca o el sitio, un catálogo de productos o servicios y los datos de contacto. Aunque en la imagen anterior se sitúe debajo de la cabecera, cada vez con más frecuencia forma parte de esta. </p>
+        <p>El contenido principal debe ir dentro de la etiqueta (main) y constituye la información por la que un usuario accede a la página. Se suele organizar por secciones o artículos que tratan de temas especíﬁcos e independientes de los demás. Para crear una sección se utiliza la etiqueta (section), mientras que los artículos se construyen con (article). </p>
+        <p>El contenido de la etiqueta (aside) abarca todo el que está relacionado con el principal, por lo que varía mucho en función de la naturaleza de la página. Se trata de información secundaria que suele estar compuesta de enlaces a artículos relacionados, a otros sitios web, los últimos post publicados (agrupados por categorías o etiquetas), anuncios, etc. </p>
+        <p>Por último, la etiqueta (footer) suele incluir de nuevo el logo de la empresa (igual que en la cabecera), así como los datos de contacto y enlaces a la política de privacidad o legal, a los términos de uso del producto o servicio ofrecido, a las redes sociales, etc. </p>
+        <p>En resumen, la estructura jerárquica de una página web que sigue este diseño es la siguiente:</p>
+        <img src="./img/4.png">
+        <section>
+            <p>La jerarquía solo muestra la relación de pertenencia entre elementos, no la posición que ocupan en pantalla ni entre ellos.</p>
+        </section>
+        <p>Debajo de cada etiqueta irían los elementos HTML que contienen, que pueden ser elementos primitivos u otros contenedores. En este último caso, la jerarquía iría creciendo hacia abajo. </p>
+        <p>Por ejemplo, en la cabecera es habitual que haya una imagen o un logo al lado del texto que identiﬁque el sitio web, en la barra de navegación una lista de enlaces que permita navegar por las principales páginas de dicho sitio, etc. </p>
+        <p>En la jerarquía anterior (estructura en árbol), esto se traduce en ramiﬁcaciones hacia abajo, como la presentada en esta otra imagen, donde se ha desarrollado la parte correspondiente a la cabecera:</p>
+        <img src="./img/5.png">
+        <p>Ahora la jerarquía consta de tres niveles: el de la página HTML, el del contenido visible y el de la cabecera. Con el resto de secciones se haría lo mismo y, seguramente, eso traería consigo nuevos niveles. </p>
+        <p>Es importante conocer la posición de cada elemento en la jerarquía, ya que estos heredarán muchas de las características visuales de sus ancestros, las cuales pasarán, a su vez, a la descendencia.</p>
+        <section>
+            <p>Es importante conocer la posición de cada elemento en la jerarquía, ya que estos heredarán muchas de las características visuales de sus ancestros, las cuales pasarán, a su vez, a la descendencia.</p>
+        </section>
+        <p>A modo de ejemplo, se muestra una de las páginas del sitio web de Mozilla (utilizado como referencia en este libro) que sigue el diseño descrito.</p>
+        <img src="./img/6.png">
+        <p>Observe como se funde la barra de navegación y la cabecera en la parte superior. Haciendo scroll hacia abajo, verá la información del pie de página.</p>
+        <img src="./img/7.png">
+        <p>Para ﬁnalizar esta sección, desarrollará un documento HTML que sigue el diseño estándar. Se trata de una página cuyo objetivo es dar a conocer los principales lugares de interés de Roma.</p>
+        <img src="./img/8.png">
+        <p>El código HTML de dicha página es el siguiente:</p>
+        <img src="./imgE/3.png"> 
+        <p>El cuerpo del documento HTML está formado por las etiquetas semánticas descritas en esta sección: (header), (nav), (section), (aside) y (footer). Analicemos por separado el código de cada una de ellas.</p>
+        <section>
+            <p>Como el contenido principal de la página solo se compone de una sección, por simplicidad se ha omitido la etiqueta (main).</p>
+        </section>
+        <p>La cabecera del documento está formada por una imagen cuyo ancho se ha limitado a 100 píxeles y un encabezado (h1):</p>
+        <img src="./imgE/4.png">      
+        <p>La barra de navegación está formada por tres hipervínculos que informarían de los horarios, tarifas y actividades de cada lugar de interés:</p>
+        <img src="./imgE/5.png">
+        <p>El contenido principal se compone de un encabezado (h1), una serie de párrafos que describen el Coliseo, una lista con sus partes estructurales y una imagen representativa de 200 píxeles de ancho:</p>
+        <img src="./imgE/6.png">
+        <br>
+        <section>
+            <p>Los puntos suspensivos representan el texto que se ha omitido para no hacer innecesariamente largo el código.</p>
+        </section>
+        <p>El contenido relacionado vuelve a tener un encabezado (h1) y una lista de hipervínculos a otros lugares de interés:</p>
+        <img src="./imgE/7.png"> 
+        <P>Por último, el pie de página solo muestra el nombre del autor:</P>
+        <img src="./imgE/8.png">  
+        <P>Aunque el código HTML esté completo y se hayan usado las etiquetas semánticas adecuadas, la página no tendrá el mismo aspecto que la imagen anterior, sino el siguiente:</P>
+        <img src="./img/9.png">
+        <P>Salta a la vista que el contenido de cada etiqueta se sitúa debajo de la anterior (excepto los hipervínculos, que se muestran en línea). El motivo es porque las etiquetas semánticas solo se encargan de agruparlo por secciones según su temática, pero no intervienen en la forma de mostrarlo, responsabilidad de las hojas de estilo. En un capítulo posterior, una vez adquiridos los conocimientos necesarios, desarrollará la que permita darle la apariencia deseada. 2.4.6.2 Contenedores genéricos Las etiquetas estudiadas anteriormente eran contenedores semánticos porque su información solo podía ser de un tipo especíﬁco. Sin embargo, hay otros motivos para agrupar un conjunto de elementos HTML:</P>
+        <P>• Organizarlos físicamente en la pantalla, asignándoles un determinado espacio y posición. <br>
+            • Crear un estilo visual homogéneo mediante una paleta de colores, una familia de fuentes, etc. <br>
+            • La temática de su contenido no se ajusta a ninguno de los contenedores semánticos estudiados anteriormente. <br>
+        </P>
+        <P>La etiqueta que permite utilizar este tipo de contenedor genérico es (div). Aunque sus usos son muy variados, se empleará generalmente para aglutinar aquellos elementos que compartan las reglas de estilo que establezcan su apariencia o posición en la página según un determinado diseño gráﬁco. </P>
+        <P>Con el ﬁn de entender la función de este tipo de contenedores, va a realizar una serie de ejercicios en los que se recurre a ellos para cambiar de forma conjunta el aspecto de un grupo de párrafos. Aunque sea objeto de estudio del siguiente capítulo, para entender estos ejercicios debe saber que una de las formas de cambiar la apariencia de cualquier elemento HTML es asignar ciertos valores a una serie de características visuales (propiedades) mediante el atributo style de la siguiente forma:</P>
+        <section id="eje">
+            <P>Style=”propiedad: valor; propiedad: valor; …”</P>
+        </section> 
+        <P>Así, por ejemplo, las propiedades que se van a manejar en los ejemplos de esta sección son: </P>
+        <P>
+            • font-family. Establece el tipo de fuente del texto. En los códigos de ejemplo se utilizará cursive (no la confunda con el estilo de letra cursiva o itálica estudiada en una sección anterior, cuyo nombre procede de esta fuente), arial y fantasy. <br>
+            • color y background-color. Determina el color de tinta y el de fondo.  <br>
+        </P>
+        <P>Ahora, escriba el siguiente código en el que no hay ningún contenedor:</P>
+        <img src="./imgE/9.png"> 
+        <P>Dicho código muestra el texto del primer y último párrafo con la fuente por defecto (no se ha especiﬁcado ningún estilo), mientras los tres centrales aparecen en cursive, tal como puede ver a continuación:</P>
+        <img src="./img/10.png">
+        <P>Este ejemplo es muy sencillo y está formado solo por cinco párrafos, pero una página web real puede tener muchos. Imagine que quiere que todo el texto se muestre en cursiva. Tendría que repetir dicho estilo en todos y cada uno de los párrafos. La labor se complica aún más si el estilo está compuesto de múltiples propiedades (por ejemplo, además de la fuente, el color y el tamaño de los caracteres, etc.) o si dichos párrafos se reparten en secciones con sus propios estilos. A todo esto, hay que sumar el hecho de que, si en un futuro quisiera cambiar el aspecto de la página, tendría que rehacer el estilo en todas las etiquetas. Eso supondría un enorme trabajo que diﬁcultaría el mantenimiento del sitio web. </P>
+        <P>Para simpliﬁcar esta tarea, lo que se hace es agrupar los elementos en contenedores. De esa forma, solo sería necesario deﬁnir el estilo una sola vez en el contenedor (div), ya que los elementos contenidos los heredarían.</P>
+        <P>El siguiente código agrupa los dos párrafos centrales del ejercicio anterior en un contenedor donde se deﬁne su estilo (en vez de en los propios párrafos):</P>
+        <img src="./imgE/10.png">
+        <P>Aparte del tipo de fuente (propiedad font-family), al contenedor (div) se le ha añadido la propiedad background-color para delimitar el espacio que ocupa. Así, se puede identiﬁcar claramente los párrafos que incluye.</P>
+        <img src="./img/11.png">
+        <P>El código anterior puede verse de forma esquemática en la siguiente imagen.</P>
+        <img src="./img/12.png">
+        <P>A la derecha se muestran los cinco párrafos tal como aparecen en la pantalla del navegador (simbolizada por la etiqueta (body)), donde se aprecia que los tres párrafos centrales están dentro de un contenedor (div).</P>
+        <P>A la izquierda, estos mismos elementos se representan de forma jerárquica. En la parte superior se encuentra el cuerpo del documento, debajo del que están los dos párrafos y el contenedor. A su vez, este último está formado por otros tres párrafos situados en un segundo nivel de la jerarquía. </P>
+        <P>Según dicha jerarquía, si en la etiqueta (body) se hubiera especiﬁcado un estilo, este sería heredado por los elementos hijos, es decir, los situados en el nivel inferior (en ese caso, los dos párrafos y el contenedor). Asimismo, los dos párrafos del contenedor (div) (situados en un segundo nivel) heredarían el estilo de dicho contenedor, que podría ser el heredado de la etiqueta (body) o el establecido en la propia etiqueta (div).</P>
+        <P>Puesto que todos los elementos HTML pueden ﬁjar su propio estilo y heredar el de los ancestros, ¿qué sucedería si estos entraran en contradicción? Por ejemplo, si en el cuerpo del documento se indicara que la fuente debe ser cursive, y en el contenedor o en el párrafo fuera arial. En ese caso, la regla es que siempre prevalece el estilo deﬁnido en el elemento más especíﬁco, es decir, el que está situado más abajo en la jerarquía.</P>
+        <P>El siguiente código de ejemplo muestra cómo se aplica un estilo a un conjunto de párrafos cuando este se establece en el cuerpo del documento, en un contenedor o en la propia etiqueta del párrafo:</P>
+        <img src="./imgE/11.png">
+        <P> Al haber establecido un estilo de fuente cursive en el cuerpo del documento (etiqueta body>), por defecto todos los párrafos de la página se escribirían con dicha fuente. Sin embargo, eso solo sucede con el primero y el último, ya que los tres intermedios están dentro de un contenedor div> en el que se ha especiﬁcado su propia fuente (arial). No obstante, solo se escriben con esta el primer y el tercer párrafo, ya que en la etiqueta del segundo se ﬁja una tercera fuente (fantasy). </P>
+        <P> La siguiente imagen muestra el resultado obtenido:</P>
+        <img src="./img/13.png">
+        <section>
+            <p>El mecanismo de herencia es aplicable a cualquier tipo de contenedor (incluso los semánticos). En cualquier caso, debe saber que no todas las propiedades se heredan.</p>
+        </section>
+    </main>
+</body>
+<footer>
+    <a href="./capitulo2.3.html">Anterior página</a>
+    <a href="index.html"><button>Regresar al inicio</button></a>
+</footer>
+</html>

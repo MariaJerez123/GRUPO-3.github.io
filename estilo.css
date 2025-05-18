@@ -1,0 +1,40 @@
+
+
+	div{
+		background-color: #AEB6BF;
+		width:99% ;
+		height:(100vh - 200px) ;
+		border: black 8px outset;
+		display:flex ;
+	
+	}
+	nav{
+		background-color:black;
+		width:30% ;
+		height:(570%);
+		border:black 8px outset;
+	}
+
+	footer{
+		background-color:#FDFEFE ;
+		width:99% ;
+		height:208px;
+		border:black 8px outset;
+	}
+	main{
+		background-color:white ;
+		width:89%;
+		height:570%;
+		border:black 8px outset;
+	}
+    .titulo{
+		color:white;
+		text-align: center;
+	}
+    img{
+        width: 50%;
+        height: 50%;
+    }
+    h3{
+        color: purple;
+    }

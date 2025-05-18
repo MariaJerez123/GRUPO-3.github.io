@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitulo3.1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <p>
+        En el modelo de caja, el contenido del elemento HTML se encuentra rodeado por un margen interno, un borde y un margen externo. En esta sección estudiará los márgenes, cuyo tamaño se determina con las propiedades margin y padding. Ambas pueden tomar los siguientes valores:
+        <br>
+     •	Un número seguido de la unidad de medida utilizada. El valor por defecto es 0.
+     <br>
+     •	Un porcentaje del ancho del contenedor en el que se encuentra el elemento.
+     <br>
+     Si bien los valores anteriores son comunes a ambas propiedades, margin dispone de uno adicional: 
+     <br>
+     <br>
+     •	auto. El navegador es el que calcula el margen. 
+     <br>
+     <br>
+     Como verá más adelante, este valor distribuye de forma uniforme el espacio del contenedor en ambos lados del elemento HTML, lo que permite centrarlo horizontalmente.
+    </p>
+    <br>
+    <section>
+        Al igual que ocurre con otras muchas propiedades de estilo, las correspondientes a los márgenes también pueden tomar los valores initial e inherit.
+    </section>
+    <br>
+    <p>
+        Estas propiedades pueden tomar uno, dos, tres o cuatro valores. En el caso más sencillo, su sintaxis es:
+        <br>
+        <img src="./Imagenes/code1.png">
+        <br>
+        En este supuesto, el valor del espacio interior o exterior que rodea el contenido del elemento (por ejemplo, un texto o una imagen) es el mismo arriba, abajo, a derecha y a izquierda. 
+        <br>
+        <br>
+        El extremo opuesto es cuando se requiere que el margen sea diferente en cada uno de los lados, lo que requeriría cuatro valores:
+        <br>
+        <img src="./Imagenes/code2.png">
+        <br>
+        A veces, el margen izquierdo y derecho suele ser el mismo, motivo por el que estas propiedades también pueden tener tres valores:
+        <br>
+        <img src="./Imagenes/code3.png">
+        <br>
+        Si además de a izquierda y a derecha, el margen de arriba y el de abajo también coincidieran, solo serían necesarios dos valores:
+        <br>
+        <img src="./Imagenes/code4.png">
+        <br>
+        Si no quiere especiﬁca todos los márgenes sino el de algún lado en concreto, siempre tiene la posibilidad de hacerlo con las propiedades margin-top, margin-bottom, margin-left y margin-right para los márgenes externos, o bien padding-top, padding- bottom, padding-left y padding-right para los internos. 
+        <br>
+        <br>
+        Con el ﬁn de entender mejor estos conceptos, realizará una primera práctica en la que se muestran dos párrafos con márgenes internos diferentes. Su código es el siguiente:
+        <br>
+        <img src="./Imagenes/result1.png">
+        <br>
+        El primer párrafo tiene un margen interno de 20 píxeles, mientras que el segundo se eleva a 40 píxeles (propiedad padding). Para hacerlos visibles, ambos se pintan de color amarillo (propiedad background- color). La imagen mostrada a continuación pone en evidencia el diferente espesor de la capa amarilla que rodea el texto de los dos párrafos (excepto en el lado derecho, ya que, por defecto, un párrafo ocupa todo el ancho de la ventana del navegador).
+        <br>
+        <img src="./Imagenes/result2.png">
+        <br>
+        Modiﬁque el texto del primer párrafo y añada al estilo un margen externo de 30 píxeles (propiedad margin):
+        <br>
+        <img src="./Imagenes/code5.png">
+        <br>
+        Ahora, además del espacio interno de 20 píxeles, alrededor del primer párrafo se crea otro externo de 30 píxeles de grosor. Dicho espacio no adopta el color de fondo del elemento (es exterior a este), de modo que su existencia queda en evidencia por la separación con el resto de elementos de la página (en este caso, con el segundo párrafo) y de los bordes de la ventana del navegador.
+        <br>
+        <img src="./Imagenes/result3.png">
+    </p>
+    <br>
+    <section>
+        Algunas etiquetas ya se muestran con márgenes por defecto. Ese es el motivo de la separación entre los fondos amarillos de ambos párrafos en la imagen anterior a esta. Además, el navegador añade un margen adicional de separación en la parte superior, derecha e izquierda de la ventana, tal como también se puede comprobar en esa misma imagen.
+    </section>
+    <br>
+    <p>
+        Ahora, sustituya el código anterior por este otro en el que solo hay un párrafo:
+        <br>
+        <img src="./Imagenes/code6.png">
+        <br>
+        En este caso se utiliza una regla de estilo porque el número de propiedades empieza a ser elevado. De ellas, las relevantes desde el punto de vista de este ejercicio son las dos primeras, con las que se ajusta el ancho del párrafo al del texto (la propiedad width toma el valor fit-content) y se centra horizontalmente (se asigna el valor auto a la propiedad margin).
+        <img src="./Imagenes/result4.png">
+        <br>
+        Como puede apreciar en la imagen anterior, el texto permanece siempre centrado horizontalmente, aunque se cambie el tamaño de la ventana del navegador.
+    </p>
+    <h2>
+        3.3.3 Bordes 
+    </h2>
+    <p>
+        Siguiendo el modelo de cajas, cualquier elemento de un documento HTML puede tener un borde. Las propiedades que ofrece CSS para establecer sus principales características visuales son: 
+        <br>
+     •	border-style. Determina el tipo de línea del borde (sólida, de puntos, discontinua, etc.).
+     <br>
+     •	border-color. Le da color. 
+     <br>
+     •	border-width. Fija el ancho de la línea. 
+     <br>
+     •	border-radius. Redondea sus esquinas.	
+    </p>
+    <br>
+    <section>
+        Si quiere conocer el resto de propiedades relacionadas con los bordes, visite la página https://developer.mozilla.org/en- US/docs/Web/CSS/border.
+    </section>
+    <br>
+    <p>
+        Veamos en detalle los valores que pueden llegar a tomar cada una de ellas. En cualquier caso, y al igual que sucede en otras muchas propiedades, además de los que se describan en las siguientes líneas, estas también podrán llegar a tomar los valores inherit (hereda el del contenedor donde estén incluidos) e initial (la propiedad vuelve a tomar el valor por defecto). 
+        <br>
+        <br>
+      El tipo de línea viene determinado por el valor que tome la propiedad border-style, entre los que destacan:
+      <br>
+     •	none. No se dibuja ningún borde (es el valor por defecto). 
+     <br>
+     •	solid. Línea continua. 
+     <br>
+     •	double. Línea continua doble. 
+     <br>
+     •	dotted. Línea de puntos.
+     <br>
+     •	dashed. Línea discontinua. 
+     <br>
+     <br>
+     El siguiente ejemplo muestra el aspecto de cada tipo de borde, aplicado a una etiqueta h1:
+     <br>
+     <img src="./Imagenes/code7.png">
+     <br>
+     Como puede observar, en el cuerpo del mensaje hay cuatro encabezados h1, cada uno de los cuales tiene un atributo id, cuyo valor coincide con el del estilo que se le quiere dar (este valor podría haber sido cualquier otro). 
+     <br>
+     <br>
+     En la cabecera del documento se establece una regla de estilo que centra y escribe de color azul todos los encabezados h1 (su selector es el nombre de dicha etiqueta). Las siguientes reglas asignan un valor diferente a la propiedad border-style.
+     <br>
+     <br>
+     El resultado se puede ver a continuación:
+     <img src="./Imagenes/result5.png">
+     <br>
+     También es posible establecer bordes 3D con los valores groove, ridge, inset y outset. Le animo a que experimente con ellos, si bien el efecto producido será diferente según el ancho o el color del borde.
+     <br>
+     <br>
+     Aunque en el ejemplo anterior se ha asignado un único valor a la propiedad border-style, al igual que sucedía con margin, esta propiedad también puede tener dos, tres o cuatro valores:
+     <img src="./Imagenes/code8.png">
+     <br>
+     Si es observador, se habrá dado cuenta de que en la imagen anterior el color del borde coincidía con el del elemento (en este caso, un texto). Si quiere que sea cualquier otro, deberá asignárselo empleando la propiedad border-color. Dicho color podrá ser el mismo o diferente en cada lado del elemento según el número de valores proporcionados:
+     <br>
+     <img src="./Imagenes/code9.png">
+     <br>
+     <br>
+     Otra de las características del borde que se puede modiﬁcar es el grosor de la línea, cuyo valor puede especiﬁcarse mediante la propiedad border-width como:
+     <br>
+     •	Una longitud expresada en cualquiera de las unidades de medida estudiadas. 
+     <br>
+     •	Las palabras clave que representan anchos estándar: thick (grueso) medium (medio, valor por defecto), thin (delgado).
+     <br>
+     <br>
+     Al igual que las propiedades anteriores, border-width también puede tomar de uno a cuatro valores con el ﬁn de que el borde tenga el mismo o diferentes anchos a cada lado:
+     <img src="./Imagenes/code10.png">
+     <br>
+     Con el ﬁn de practicar con estas nuevas propiedades, escriba el siguiente documento HTML:
+     <br>
+     <img src="./Imagenes/code11.png">
+     <br>
+     A diferencia del código anterior, el cuerpo de este documento HTML solo contiene tres encabezados h1, cada uno con su correspondiente identiﬁcador (atributo id). 
+     <br>
+     <br>
+     En la cabecera, la regla de estilo que afecta a las etiquetas h1 se utiliza para mostrar los encabezados en color azul (propiedad color), centrarlos horizontalmente (propiedad text-align) y dibujar un borde con un tipo de línea continua (propiedad border-style). El resto de reglas tienen como selector uno de los identiﬁcadores de dichos encabezados. La primera (selector “rojo”) usa la propiedad border-color para pintar el borde de color rojo (en vez de azul, como el texto). La segunda y la tercera regla establecen el ancho de la línea, el mismo para todos los lados en el primer caso (selector “ancho1”); y el mismo arriba y abajo, pero diferente del existente a izquierda y derecha en el segundo (selector “ancho2”).
+     <br>
+     <br>
+      El resultado obtenido se puede ver a continuación:
+      <br>
+      <img src="./Imagenes/result6.png">
+      <br>
+      Cuando se especiﬁcan las características visuales de un borde, generalmente se indica su tipo, grosor y/o color. Por ese motivo, en vez de las propiedades border-style, border-width y border- color se emplea únicamente border con el siguiente formato:
+      <br>
+      <img src="./Imagenes/code12.png">
+    </p>
+    <br>
+    <section>
+        A este tipo de propiedades que combinan y sustituyen otras diferentes, se les conoce como atajos (shorthand en inglés).
+    </section>
+    <br>
+    <p>
+        Así, el siguiente código muestra dos imágenes con un borde sólido de color rojo y 5 píxeles de grosor:
+        <br>
+        <img src="./Imagenes/code13.png">
+        <br>
+        <br>
+        El cuerpo del documento está formado por dos imágenes (etiquetas img) cuyos atributos src delatan que se trata de la Fontana de Trevi y el Coliseo. En el bloque de declaraciones de la regla de estilo asociada a esta etiqueta se encuentra la propiedad border con la que se establece el tipo, el grosor y el color del borde que las rodea. De forma adicional, se ha establecido que las imágenes tengan 200 píxeles el ancho (propiedad width) y unos márgenes internos y externos de 20 píxeles de grosor (propiedades padding y margin).
+        <br>
+        <br>
+        El resultado lo puede ver a continuación:
+        <br>
+        <img src="./Imagenes/result7.png">
+        <br>
+        Dicho código nos sirve también para calcular la separación entre ambas imágenes. Para ello, tiene que saber que el tamaño de un elemento HTML viene determinado por:
+        <br>
+        <img src="./Imagenes/code14.png">
+        <br>
+        A continuación, se muestra gráﬁcamente el tamaño real de cada imagen mediante una línea de puntos.
+        <br>
+        <img src="./Imagenes/result8.png">
+        <br>
+        Según el gráﬁco anterior, se deduce que las fotos de ambas imágenes están separadas una distancia de:
+        <br>
+        <img src="./Imagenes/num1.png">
+        <br>
+        Si las imágenes se hubieran situado una debajo de la otra (en el siguiente capítulo sabrá cómo hacerlo), el margen exterior inferior de la primera no se habría sumado al superior de la segunda, sino que se tomaría el mayor de los dos:
+        <br>
+        <img src="./Imagenes/result9.png">
+        <br>
+        En ese caso, la distancia de separación sería:
+        <br>
+        <img src="./Imagenes/result10.png">
+        <br>
+        <br>
+        Este mismo tipo de cálculos será el que tenga que realizar para establecer la distancia de separación de cualquier otro tipo de elementos HTML, ya sean imágenes, textos, listas, hipervínculos o contenedores.
+    </p>
+    <br>
+    <section>
+        Como puede apreciar en la imagen anterior, el navegador añade por defecto un margen en el lado superior y otro en el izquierdo.
+    </section>
+    <br>
+    <p>
+        Si los bordes de todos los elementos de una página son iguales, podría pensar en añadir la propiedad border a una regla de estilo cuyo selector sea el nombre de la etiqueta body, en vez de repetirlo en las reglas asociadas a los elementos que contenga. No lo haga, ya que, en ese caso, sería la propia página el que tendría el borde, no los elementos contenidos (el borde no es heredable). 
+        <br>
+        <br>
+        Para demostrarlo, sustituya las reglas de estilo del código anterior por estas otras:
+        <br>
+        <img src="./Imagenes/code15.png">
+        <br>
+        Ahora, las propiedades que deﬁnen el borde y los márgenes interiores y exteriores se llevan a la regla asociada a la etiqueta body. En la regla de estilo de la imagen solo queda la declaración que determina su ancho.
+        <br>
+        <br>
+        Observe el resultado que se obtiene al refrescar la página.
+        <br>
+        <img src="./Imagenes/result11.png">
+        <br>
+        Como se había avanzado, el borde rodea a la página, no a cada elemento por separado. Además, los márgenes internos ahora hacen referencia a la separación del contenedor que representa el cuerpo del documento (etiqueta body) con las imágenes en la parte interior del borde (propiedad padding) y con los lados de la ventana del navegador en la parte exterior (propiedad margin). La siguiente imagen lo muestra gráﬁcamente.
+        <br>
+        <img src="./Imagenes/result12.png">
+        <br>
+        A diferencia del ejercicio anterior, en esta ocasión el navegador no añade ningún espacio en la parte superior, derecha ni izquierda de la ventana, ya que estos se han ﬁjado explícitamente en la propia etiqueta body con la propiedad margin. Por ese motivo, si asignara un valor de 0 píxeles a dicha propiedad, comprobaría que las esquinas superior izquierda y derecha del borde coinciden con las de la ventana del navegador, tal como se puede conﬁrmar a continuación:
+        <br>
+        <img src="./Imagenes/result13.png">
+        <br>
+        Por supuesto, este mismo razonamiento es válido para los elementos que haya dentro de cualquier contenedor, ya sea semántico o genérico. 
+        <br>
+        <br>
+        La última propiedad que se va a estudiar es border-radius, cuyo valor es el radio del arco de la circunferencia con el que se redondean las esquinas del borde. Este podrá expresarse como una longitud (en cualquiera de las unidades estudiadas) o un porcentaje. Además, y de forma similar al resto de propiedades, el arco también podrá ser el mismo o diferente en cada esquina según el número de valores que se le asigne:
+        <br>
+        <img src="./Imagenes/code16.png">
+        <br>
+        El siguiente código muestra un encabezado con un borde que tiene las esquinas redondeadas:
+        <br>
+        <img src="./Imagenes/code17.png">
+        <br>
+        Como puede comprobar, en el cuerpo del documento solo hay un encabezado h1 cuyo aspecto se deﬁne en la cabecera del documento con una regla de estilo. En ella, se establece un color de fondo negro que destaque el texto escrito en color blanco (propiedades background-color y color). Como los encabezados ocupan por defecto todo el ancho de la pantalla, se asigna el valor fit-content a la propiedad width para que se ajuste al texto. Además, se especiﬁca un margen interior de 10 píxeles (propiedad padding) que adopta el color del fondo. La última propiedad (border-radius) redondea las esquinas con un radio de 20 píxeles.
+        <br>
+        <br>
+        A continuación se puede ver el resultado obtenido:
+        <br>
+        <img src="./Imagenes/result14.png">
+        <br>
+        Cuando se utilizan bordes redondeados, se pueden crear efectos muy originales. Por ejemplo, sustituya en la regla de estilo del código anterior el valor de la propiedad border-radius por este otro:
+        <br>
+        <img src="./Imagenes/code18.png">
+        <br>
+        <br>
+        Ahora, el resultado es completamente diferente.
+        <br>
+        <img src="./Imagenes/result15.png">
+        <br>
+        Finalmente, realice un último cambio en el valor de esta misma propiedad:
+       <br>
+        <img src="./Imagenes/code19.png">
+        <br>
+        <br>
+        Como se puede apreciar en esta otra imagen, el aspecto del encabezado cambia radicalmente.
+        <br>
+        <img src="./Imagenes/result16.png">
+        <br>
+        Los bordes rectos también pueden jugar un papel importante, por ejemplo, a la hora de destacar un capítulo del resto de secciones del libro, tal como se puede ver a continuación:
+        <br>
+        <img src="./Imagenes/result17.png">
+        <br>
+        El código utilizado para obtener este resultado es el siguiente:
+        <br>
+        <img src="./Imagenes/code20.png">
+        <br>
+        <br>
+        En el cuerpo del documento hay un encabezado h1 que representa el capítulo y otro h2 la sección. El aspecto con el que se quiere mostrar el texto del capítulo se deﬁne en una regla de estilo donde la propiedad border-left especiﬁca un borde sólido en el lado izquierdo de color negro y 10 píxeles de grosor, en tanto que la propiedad padding añade un margen interno de 10 píxeles para que la línea con la que se dibuje sea más alta y quede más separada del texto (el tamaño del encabezado crece internamente a lo alto y a lo ancho). La siguiente imagen representa gráﬁcamente este efecto:
+        <br>
+        <img src="./Imagenes/result17.png">
+        <br>
+        Le animo a que experimente con estas propiedades y descubra por sí mismo las innumerables formas en las que se puede llegar a mostrar un mismo elemento. Es el mejor modo de crear un estilo particular que dote a sus páginas de carácter propio.
+    </p>
+    <br>
+    <h2>
+        3.3.4 Box sizing
+    </h2>
+    <p>
+     Hasta ahora, el tamaño de los elementos se establecía con las propiedades width y height. Sin embargo, tal como se apuntó al describir el modelo de caja, el valor asignado a dichas propiedades hace referencia solo al contenido, ya que no se tiene en cuenta el espacio de los márgenes internos o el grosor de los bordes. Esto es un grave inconveniente cuando se quieren alinear elementos o a la hora de realizar un diseño, en el que es necesario trabajar con su tamaño real (no solo el de su contenido).
+     <br>
+     <br>
+     Para resolver este problema, HTML proporciona la propiedad box- sizing, que indica al navegador cómo calcular el tamaño del elemento. Puede tomar los siguientes valores:
+     <br>
+     •	content-box. Solo se tiene en cuenta el ancho y el alto del contenido del elemento (son los especiﬁcados mediante las propiedades width y height). Es el valor por defecto. 
+     <br>
+     •	border-box. El tamaño del elemento incluye los márgenes internos y los bordes.
+    </p>
+    <br>
+    <section>
+        Al igual que otras muchas propiedades, esta también puede tomar el valor inherit o initial.
+    </section>
+    <br>
+    <p>
+        Para entender la importancia de esta propiedad se utilizará el siguiente código de ejemplo, en el que se muestran dos párrafos aparentemente iguales:
+        <br>
+        <img src="./Imagenes/code21.png">
+        <br>
+        <br>
+        Aunque parezca que ambos párrafos ocupan el mismo espacio (500 × 100 píxeles, especiﬁcado mediante las propiedades width y height), no es así porque el primero tiene un margen interno de 10 píxeles y el segundo de 40 píxeles (propiedad padding). Para demostrarlo, se ha dibujado un borde (propiedad border) que delimita el área de cada párrafo, tal como puede ver a continuación:
+        <br>
+        <img src="./Imagenes/result19.png">
+        <br>
+        Si quiere que el área que ocupen sea realmente la misma, deberá añadir la siguiente declaración al estilo de ambos párrafos:
+        <br>
+        <img src="./Imagenes/code22.png">
+        <br>
+        <br>
+        Ahora, el valor asignado a las propiedades width y height no solo incluye el tamaño del contenido, sino también el ancho del margen interno y el del borde. Como resultado, esta vez los dos párrafos tendrán el mismo tamaño (500 × 100 píxeles).
+        <br>
+        <img src="./Imagenes/result20.png">
+    </p>
+    <br>
+    <section>
+        Para que la propiedad box-sizing surta efecto, asegúrese de que el valor asignado a la propiedad width sea mayor que la suma del ancho del contenido, los márgenes internos a derecha e izquierda y el grosor del borde en ambos lados (lo mismo sucedería con la propiedad heigth pero en sentido vertical). Téngalo en cuenta, porque es un error que suele dar muchos quebraderos de cabeza.
+    </section>
+    <br>
+    <h2>
+        3.4 TEXTOS
+    </h2>
+    <p>
+        Aunque las páginas web tienden a ser cada vez más visuales, todas ellas necesitan hacer uso de textos en los títulos de las secciones, en su contenido, en las opciones de la barra de navegación, etc. Por defecto, el navegador muestra el texto de cada etiqueta de forma predeﬁnida, lo que permite distinguir la función que realizan (organizar el contenido, llevar a otras partes del documento o del sitio web, dar información complementaria, etc.). Sin embargo, dicho estilo siempre es el mismo y, por lo general, resulta demasiado austero. 
+        <br>
+        Para salvar esta limitación, CSS proporciona una serie de propiedades que se van a clasiﬁcar según el aspecto visual al que afectan:
+        <br>
+        <br>
+     •	Color. Propiedades color y background-color.
+     <br> 
+     •	Fuente. Propiedad font-family.
+     <br>
+     •	Tamaño. Propiedad font-size. 
+     <br>
+     •	Alineación. Propiedad text-align.
+     <br> 
+     •	Espaciado. Propiedades text-indent, letter-spacing, word-spacing y line-height. 
+     <br>
+     •	Formato. Propiedades text-decoration, vertical- align, font-style y font-weight.
+    </p>
+    <br>
+    <section>
+        A los valores que se describan en las siguientes secciones para cada una de esas propiedades, deberá añadir los de inherit (hereda el del contenedor donde esté incluido el texto) e initial (la propiedad vuelve a tomar el valor por defecto).
+    </section>
+    <br>
+    <section>
+        Los valores de todas estas propiedades se heredan, por lo que, si se asociaran a un contenedor, se aplicarían a los textos que contuviera.
+    </section>
+    <br>
+    <p>
+        Las propiedades asociadas al color (color y background-color) ya las conoce porque se han empleado en numerosos ejercicios, motivo por el que no se darán explicaciones adicionales. El resto se expondrán en detalle en las siguientes secciones. 
+    </p>
+    <br>
+    <h2>
+        3.4.1 Fuente 
+    </h2>
+    <p>
+        Una fuente es un tipo de letra, es decir, un conjunto de caracteres alfanuméricos que se distingue del resto por un diseño característico que les da un aspecto coherente. Dicho diseño permite clasiﬁcar cada fuente o tipo de letra por familias, que serán la que deba asignar la propiedad font-family. En HTML existen las siguientes grandes familias: 
+        <br>
+     •	Serif. Se caracteriza por las pequeñas líneas o trazos que se extienden desde los extremos de los caracteres, dando un aire reﬁnado a la escritura. 
+     <br>
+     •	Sans-serif. Las fuentes de esta familia, a diferencia del anterior, eliminan los trazos superﬂuos, con lo que se consigue un aspecto más simple y actual. Por ese motivo resultan más fáciles de leer que las Serif. 
+     <br>
+     •	Monoespace. El rasgo que la hace singular es que el ancho de todas las letras es el mismo. 
+     <br>
+     •	Cursive. Imita la escritura humana. 
+     <br>
+     •	Fantasy. Su nombre lo dice todo. Aquí cabe cualquier tipo de fuente de carácter decorativo.
+     <br>
+     <br>
+     Las fuentes que suelen admitir la mayoría de los navegadores son las pertenecientes a las dos primeras familias. Si quiere asegurarse de que una página se vea en cualquiera de ellos, se recomienda usar Arial, Verdana, Helvética y Tahoma de la familia Serif; o Times New Roman y Garamond de la familia Sans-serif. También podría emplear la fuente Courier New de la familia Monoespace.
+     <br>
+    </p>
+    <section>
+        En https://www.w3.org/Style/Examples/007/fonts.en.html puede ver las fuentes pertenecientes a cada familia y una muestra de su aspecto.
+    </section>
+    <p>
+        Sin embargo, no se puede asegurar con certeza que dichas fuentes estén instaladas en todos los navegadores. Por ese motivo, es conveniente especiﬁcar siempre fuentes alternativas. De esa forma, si la primera no funcionara el navegador lo intentaría con la siguiente, y así sucesivamente. Finalice siempre la lista con el nombre de la familia (además del obligado punto y coma), tal como puede ver en el siguiente código de ejemplo:
+        <br>
+        <img src="./Imagenes/code23.png">
+    </p>
+    <br>
+    <section>
+        Si desea emplear sus propias fuentes o, simplemente, aquellas de las que no disponga por defecto un navegador, deberá usar la regla @ font-face (no se va a tratar en esta obra).
+    </section>
+    <br>
+    <p>
+        El siguiente código de ejemplo muestra el texto de etiquetas h1 con una fuente de cada familia:
+        <br>
+        <img src="./Imagenes/code24.png">
+        <br>
+        <br>
+        En el primer encabezado, el texto se escribe en Arial (de la familia Serif). Si el navegador no tuviera dicha fuente, lo intentaría con Verdana. Observe que, tanto las fuentes como la familia se separan por comas.
+        <br>
+        <br>
+        La fuente del texto del segundo encabezado es Times New Roman (de la familia Sans-serif). Como el nombre de esta fuente está formada de varias palabras separadas por espacios, se deben utilizar las comillas simples (va dentro de las dobles, correspondientes al valor de la propiedad style).
+        <br>
+        <br>
+        El tercer y cuarto encabezado utilizan la fuente que tenga deﬁnida por defecto el navegador para las familias cursive y fantasy.
+        <br>
+        <br>
+        A continuación, puede ver el resultado obtenido en Chrome.
+        <br>
+        <img src="./Imagenes/result21.png">
+    </p>
+    <br>
+    <h2>
+        3.4.2 Tamaño 
+    </h2>
+    <p>
+        En un texto, además del color y la fuente, también se puede especiﬁcar su tamaño con la propiedad font-size. Admite los siguientes valores:
+        <br>
+     •	Un número seguido de cualquiera de las unidades de medida que conoce.
+     <br>
+     •	Un porcentaje del tamaño de la fuente utilizada. 
+     <br>
+     <br>
+     Una de las unidades de medida especíﬁcas para textos es em, cuyo tamaño es la del ancho de la letra M de la fuente actual. Pero, si no quisiera depender de dicha fuente (puede variar según el estilo deﬁnido en cada contenedor), se recomienda la unidad rem, cuya referencia es el tamaño de letra del elemento raíz (etiqueta html). En la mayoría de los navegadores suele ser de 16 píxeles.
+    </p>
+    <br>
+    <section>
+        Otra unidad de medida menos empleada es ex, que toma como referencia el alto de la letra x de la fuente actual.
+    </section>
+    <br>
+    <p>
+        Si el tamaño de la fuente fuera un porcentaje, se usaría como referencia el tamaño de la fuente actual (por defecto, la del navegador). Por ejemplo, un valor del 200% aumentaría al doble el tamaño de la fuente y un 50% lo reduciría a la mitad. 
+        <br>
+        <br>
+        En el siguiente documento HTML se utilizan tres unidades de medida diferentes:
+        <br>
+        <img src="./Imagenes/code25.png">
+        <br>
+        <br>
+        Como resultado, las cuatro primeras líneas aparecen con el mismo tamaño, el de la fuente por defecto del navegador (16 píxeles). Las tres últimas líneas lo hacen con un tamaño 2, 3 y 4 veces superior, tal como puede ver a continuación:
+        <br>
+        <img src="./Imagenes/result22.png">
+        <br>
+        <br>
+        Una forma alternativa de especiﬁcar el tamaño de una fuente es mediante una serie de medidas predeﬁnidas, representadas por los valores:
+        <br>
+     •	medium. Tamaño con el que se muestra un texto por defecto.
+     <br> 
+     •	small, x-small y xx-small. Tamaños prestablecidos más pequeños que el anterior. 
+     <br>
+     •	large, x-large, xx-large. Tamaños prestablecidos mayores. 
+     <br>
+     <br>
+        Los valores anteriores son absolutos (siempre son el mismo). En cambio, los siguientes son relativos, ya que tienen en cuenta el tamaño de la fuente actual (en muchas ocasiones, heredada del contenedor en el que se encuentran): 
+        <br>
+     •	smaller. Reduce el tamaño de la fuente actual en una proporción prestablecida.
+     <br>
+     •	larger. Aumenta el tamaño de la fuente actual en una proporción prestablecida.
+     <br>
+     <br> 
+     En la imagen mostrada a continuación puede ver de forma comparativa el aspecto de un texto con algunos de estos valores.
+     <br>
+     <img src="./Imagenes/result23.png">
+    </p>
+    <br>
+    <h2>
+        3.4.3 Alineación 
+    </h2>
+    <p>
+        Aunque CSS proporciona diversas propiedades relacionadas con la alineación de textos, la más utilizada es text-align, cuyo valor determina la forma de hacerlo: 
+        <br>
+     •	right. A la derecha.
+     <br>
+     •	left. A la izquierda. 
+     <br>
+     •	center. Al centro.
+     <br>
+     •  justify. El espacio de una línea se distribuye entre las palabras para que sus bordes se alineen con ambos márgenes (igual que los párrafos de este libro).
+     <br>
+     <br>
+      Con objeto de familiarizarse con el efecto producido por cada uno de los valores de esta propiedad, el siguiente código de ejemplo muestra tres etiquetas h1, la primera alineada a la derecha, la segunda centrada y la tercera alineada a la izquierda:
+      <br>
+      <img src="./Imagenes/code26.png">
+      <br>
+      <br>
+      A continuación, se muestra el aspecto de este documento HTML:
+      <br>
+      <img src="./Imagenes/result24.png">
+      <br>
+      <br>
+      Aunque en esta ocasión el texto se alinea respecto de la página, con carácter general se hace tomando como referencia el ancho del contenedor en el que se encuentre. Para demostrarlo, incluya los encabezados h1 del código anterior dentro de un contenedor div, cuyo ancho sea la mitad de la ventana del navegador:
+      <br>
+      <img src="./Imagenes/code27.png">
+      <br>
+      <br>
+      Al asignar el valor 50% a la propiedad width del contenedor div, este ocupa la mitad del ancho de la ventana del navegador. Como los encabezados h1 están dentro de dicho contenedor, estos se alinean a la izquierda, al centro y a la derecha de este, no al de la pantalla.
+      <br>
+      <img src="./Imagenes/result25.png">
+    </p>
+    <h2>
+        3.4.4 Espaciado
+    </h2>
+    <p>
+        El espaciado establece la separación entre las líneas, las letras o las palabras de un texto. Para llevarlo a cabo, CSS dispone de las siguientes propiedades:
+        <br>
+     •	text-indent. Determina la sangría de la primera línea de un párrafo. 
+     <br>
+     •	letter-spacing y word-spacing. Fija el espacio entre letras o entre palabras, respectivamente. 
+     <br>
+     •	line-heigh. Especiﬁca el alto de la línea y, por lo tanto, la separación entre líneas.
+     <br>
+     <br>
+     El uso de la sangría en textos no está reglado, por lo que algunos autores prescinden de ella, mientras que otros la emplean en todos los párrafos o a partir del segundo. La forma de añadir una sangría a un párrafo es mediante la propiedad text-indent, cuyo valor podrá expresarse mediante cualquiera de las unidades de medida admitidas por HTML o como un porcentaje del ancho del contenedor donde se encuentra. 
+     <br>
+     <br>
+     El siguiente código de ejemplo muestra un párrafo con una sangría de 30 píxeles:
+     <br>
+     <img src="./Imagenes/code28.png">
+     <br>
+     <br>
+     El resultado se puede ver a continuación, donde, efectivamente, la primera línea se indenta 30 píxeles:
+    <br>
+     <img src="./Imagenes/result26.png">
+     <br>
+     <br>
+     Tal como se indicó al principio de esta sección, las propiedades letter-spacing y word-spacing ﬁjan el espacio entre letras y palabras, respectivamente. En ambos casos, podrá especiﬁcar su valor con las unidades de medida admitidas por HTML, pero no como un porcentaje. Si después de modiﬁcarlo quisiera recuperar el espaciado utilizado por defecto en el navegador, deberá asignarle el valor normal. 
+     <br>
+     <br>
+     Con objeto de apreciar los efectos de estas propiedades, sustituya el código del cuerpo del documento HTML anterior, por este otro:
+     <br>
+     <img src="./Imagenes/code29.png">
+     <br>
+     <br>
+     Se trata de tres párrafos, en el primero de los cuales el navegador decide el espaciado utilizado. En cambio, en el segundo y el tercero se ﬁja una separación de 10 píxeles entre caracteres y entre palabras, respectivamente. 
+     <br>
+     <br>
+     Observe el resultado producido en cada caso.
+     <br>
+     <img src="./Imagenes/result27.png">
+     <br>
+     <br>
+     La última de las propiedades de espaciado que falta por describir determina el alto de la línea y, en consecuencia, la separación entre líneas. Se trata de line-height y sus valores son: 
+     <br>
+     •	normal. Valor por defecto.
+     <br>
+     •	Un número seguido de cualquiera de las unidades de medida que ya conoce. 
+     <br>
+     •	Un porcentaje del tamaño de la fuente actual. 
+     <br>
+     •	Un número que no va seguido de una unidad de medida. En ese caso, la altura se calcula multiplicando dicho número por el tamaño de la fuente actual. 
+     <br>
+     <br>
+     Para probar esta nueva propiedad, sustituya una vez más el código del cuerpo del documento HTML anterior por este otro:
+     <br>
+     <img src="./Imagenes/code30.png">
+     <br>
+     <br>
+     Ahora solo se muestran dos párrafos. El primero se escribe con un alto de línea por defecto, mientras que el segundo lo hace a doble espacio (el valor de line-height es 2), tal como se puede apreciar a continuación.
+     <br>
+     <img src="./Imagenes/result28.png">
+    </p>
+    <h2>
+        3.4.5 Formato
+    </h2>
+    <p>
+        Las propiedades que dan formato al texto son aquellas que permiten que este se escriba en negrita, cursiva, subrayado, tachado, como un subíndice o un superíndice, entre otros. Si recuerda, esto mismo también se podía hacer con las etiquetas b, i, u, del, sub y sup. Aunque el resultado es el mismo, el uso de estas propiedades supone obtener las ventanas asociadas a las reglas de estilo.
+    </p>
+    <br>
+    <section>
+        De las etiquetas de formato de texto estudiadas en el capítulo anterior, las únicas para las que no se ha indicado ninguna propiedad equivalente son mark y small. El efecto producido por la primera se podría conseguir con un color de fondo amarillo y el de la segunda con un tamaño de fuente más pequeña.
+    </section>
+    <br>
+    <p>
+        Aunque HTML ofrece muchas propiedades relacionadas con el formato del texto, en esta sección solo se estudiarán las siguientes: 
+        <br>
+     •	font-style. Permite escribir un texto en cursiva. 
+     <br>
+     •	font-weight. Determina el grosor de los caracteres. 
+     <br>
+     •	vertical-align. En general, establece la alineación vertical de un elemento; en este contexto particular, la de un texto. 
+     <br>
+     •	text-decoration. Dibuja una línea por encima, por debajo (subrayado) o en medio (tachado) de un texto.
+     <br>
+     <br>
+      Veamos los valores que se pueden asignar a cada una de estas propiedades (además de initial e inherit). 
+      <br>
+      <br>
+     La propiedad font-style toma los siguientes valores:
+     <br>
+     •	normal. Forma en la que se escribe el texto por defecto. 
+     <br>
+     •	italic y oblique. Muestra un estilo de fuente en cursiva. 
+     <br>
+     <br>
+     Por su parte, los valores de la propiedad font-weight son: 
+     <br>
+     •	normal. El texto se escribe de la forma habitual (valor por defecto). 
+     <br>
+     •	bold y bolder. Los caracteres aparecen en negrita o más gruesos. 
+     <br>
+     •	lighter. Los caracteres tienen un grosor inferior al normal. 
+     <br>
+     •	Un número entre 100 y 900 a intervalos de 100. Cuanto mayor es el número, más gruesos serán los caracteres. Para que tenga una referencia, el valor 400 equivale a normal, y 700 a bold.
+     <br>
+     <br>
+      La propiedad vertical-align puede tomar numerosos valores, entre los que destacan aquellos que permiten el uso de superíndices o subíndices: 
+      <br> 
+     •	sub. Escribe un texto como subíndice. 
+     <br>
+     •	super. Lo hace como un superíndice.
+    </p>
+    <br>
+    <section>
+        Todos los valores de esta propiedad los encontrará en https://developer.mozilla.org/en-US/docs/Web/CSS/vertical-align.
+    </section>
+    <br>
+    <p>
+        La última de las propiedades (text-decoration) en realidad es un atajo de: 
+        <br>
+     •	text-decoration-line. El valor de esta propiedad determina si el texto está subrayado (underline) o tachado (line-through). Aunque es menos usado, el valor overline sitúa la línea encima del texto. Su valor por defecto es none, que no dibuja ningún tipo de línea. 
+     <br>
+     •	text-decoration-color. Establece el color de la línea (por defecto, el negro).
+     <br>
+     •	text-decoration-style. Sus valores determinan el estilo de la línea. Por defecto, dibuja una línea continua (solid), aunque también podría ser doble (double), discontinua (dashed), de puntos (dotted) u ondulada (wavy). 
+     <br>
+     •	text-decoration-thickness. Determina el grosor de la línea. Su valor se especiﬁca mediante cualquiera de las unidades de medida que conoce o como un porcentaje. Generalmente se deja el valor por defecto (auto).
+     <br> 
+     <br>
+        Todas estas propiedades se pueden sustituir por text-decoration, por lo que su valor es una combinación de los que tomarían cada uno de ellos:
+        <br>
+        <img src="./Imagenes/code31.png">
+        <br>
+        <br>
+        De todos ellos, el único obligatorio es el primero (línea).
+        <br>
+        <br>
+        A ﬁn de practicar con estas nuevas propiedades, desarrollará un documento HTML que muestre exactamente con el mismo formato, el texto del ejercicio realizado en la sección donde se describieron las etiquetas i, b, del, sub, sup, mark y small. ¿Se anima a hacerlo por su cuenta? Si no lo consigue, esta es una posible solución:
+        <br>
+        <img src="./Imagenes/code32.png">
+        <img src="./Imagenes/code33.png">
+        <br>
+        Como puede observar, el cuerpo del documento está formado por los mismos párrafos que el utilizado de referencia. La diferencia es que, mientras en el original los cambios de formato se conseguían con etiquetas especíﬁcas, ahora se utiliza únicamente la etiqueta span, a la que se asocia el identiﬁcador (atributo id) utilizado como selector en la regla de estilo encargada de dar el formato correspondiente.
+        <br>
+        <br>
+        Por su sencillez, las reglas responsables de escribir el texto en cursiva, negrita, subrayado, tachado y marcado no requieren de ninguna explicación. 
+        <br>
+        <br>
+        Las que se utilizan para subíndices y superíndices, además de la propiedad vertical-align, emplean font-size para reducir el tamaño del texto, ya que así es como lo hacen por defecto las etiquetas sup y sub. 
+        <br>
+        <br>
+        Algo más elaborada es la regla responsable de crear las notas al margen ya que, para que el texto coincida con el mostrado por la etiqueta small, no es suﬁciente con reducir el tamaño de la fuente con font-size, sino que también hay que aumentar el alto de la línea un 150% (propiedad line-height) y el espaciado entre caracteres (propiedad letter-spacing).
+        <br>
+        <br>
+        Una vez cargado este archivo en Chrome, la imagen mostrada a continuación le resultará familiar.
+        <br>
+        <img src="./Imagenes/result29.png">
+    </p>
+    <h2>
+        3.5 HIPERVÍNCULOS
+    </h2>
+    <p>
+     Por defecto, el texto de un hipervínculo aparece en color azul cuando todavía no se ha pulsado, morado si se ha hecho en alguna ocasión o rojo en el momento de hacerlo. En esta sección no solo aprenderá a modiﬁcar dicho color, sino todo aquello que permita cambiar su apariencia para adaptarlo al diseño de la página, como el borde o los márgenes que lo rodean.
+        <br>
+        <br>
+     Además, dicho aspecto podrá ser diferente dependiendo del estado en el que se encuentre, representado mediante una pseudoclase. Su importancia radica en la posibilidad de formar parte del selector de una regla. En ese caso, esta solo aplicaría a los elementos que se encontrasen en dicho estado. Su sintaxis es la siguiente:
+        <br>
+        <br>
+      selector : pseudoclase
+        <br>
+        <br>
+      Existe una gran variedad de pseudoclases, pero las más empleadas con los hipervínculos son:
+      <br>
+       •	link. El hipervínculo no ha sido visitado. 
+       <br>
+       •	visited. Ha sido visitado alguna vez. 
+       <br>
+       •	hover. El ratón pasa por encima.
+       <br>
+       •	active. Se pulsa con el ratón.
+    </p>
+    <br>
+    <section>
+        Si quiere conocer todas pseudoclases existentes visite https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-classes.
+    </section>
+    <br>
+    <section>
+        Las pseudoclases se pueden utilizar con cualquier elemento HTML, no solo hipervínculos.
+    </section>
+    <br>
+    <p>
+        Con el ﬁn de probar la ﬂexibilidad que proporciona HTML a la hora de mostrar un hipervínculo en función de su estado, desarrollará un documento HTML que contenga uno cuyo aspecto sea el de un botón, tal como se aprecia a continuación:
+    </p> 
+</body>
+<footer>
+    <a href="./Capitulo3.1.html">Anterior página</a>
+    <a href="index.html"><button>Regresar al inicio</button></a>
+ </footer>
+</html>

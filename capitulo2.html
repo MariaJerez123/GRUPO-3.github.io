@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitulo2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center>
+    <h1> Unida 2 <br>
+        Estructura de una página web <br>
+    </h1>
+    </center>
+    <p>
+        Una página web es un archivo de texto que, en vez de en español, está escrito en HTML. A diferencia de otros lenguajes, este no se utiliza para programar algoritmos (desarrollo de código tradicional) sino con el ﬁn de estructurar el contenido de una página web. Por lo tanto, HTML no es un lenguaje de programación, sino de marcas, motivo por lo que, en vez de variables, funciones, clases o estructuras de control, utiliza etiquetas (marcas) que establecen el papel que juega cada uno de los elementos que conforman la página.
+        <br>
+        <h2>2.1 ELEMENTOS HTML Los elementos HTML </h2>
+        Son las piezas con las que se construyen las páginas web. Aunque a lo largo de esta obra se emplearán los términos elemento y etiqueta de forma indistinta, en realidad el primero abarca al segundo, ya que un elemento se compone de:
+        <br>
+        <br>
+        •	Una etiqueta de apertura con cero o más atributos. <br>
+        •	El contenido afectado, que puede ser un texto u otras etiquetas. <br>
+        •	Una etiqueta de cierre. <br>
+        <br>
+        Por lo tanto, y con carácter general, un elemento HTML tiene el siguiente formato:
+        <br>
+        etiqueta atributo=”valor” atributo=”valor”…>contenido afectado /etiqueta
+        <br>
+        Aunque este es el caso general, hay elementos que no tienen atributos, otros que solo requieren una etiqueta (la de inicio) e, incluso, algunos no tienen contenido.
+        <br>
+        <br>
+        <section>
+            Los nombres de las etiquetas pueden escribirse tanto en mayúscula como en minúscula. Sin embargo, el W3C (consorcio internacional dedicado a la definición de normas y directrices web) recomienda el uso de minúsculas. 
+
+        </section>
+        <br>
+        Cuando una etiqueta lleva atributos, estos son los encargados de suministrar la información precisa para realizar su función. Por ejemplo, una etiqueta que muestre una imagen requiere un atributo que contenga la ruta de acceso donde está almacenada, la etiqueta de un hipervínculo necesita la dirección de la página a la que se accede, etc.
+        <br>
+        <br>
+        <section>
+            Observe que los atributos se separan mediante espacios (no con comas) y que sus valores van siempre entre comillas.
+
+        </section>
+        <br>
+        Si recuerda, en el capítulo de introducción se utilizó un código HTML de ejemplo en el que se empleaba la etiqueta <a> para crear un hipervínculo mediante el que se podía acceder a la página de búsqueda de Google, cuyo URL se añadió mediante el atributo href:
+        <br>
+        <img src="./Imagenescap2/Imagen1.png">
+        <br>
+        <br>
+        <section>
+            Si quiere conocer la lista completa de los atributos globales (aquellos que se pueden usar en cualquier etiqueta) visite la página https://developer.mozilla.org/es/docs/Web/HTML/Global_attribu tes
+
+        </section>
+        <br>
+        Las etiquetas imprescindibles en cualquier página web son las siguientes:
+        <br>
+        <img src="./Imagenescap2/Imagen2.png" alt="">
+        Aunque la primera línea tenga el aspecto de una etiqueta, en realidad es una directiva que indica al navegador que este documento está escrito en HTML5 (última versión de este lenguaje). Por ese motivo, esta línea siempre deberá situarse al principio del archivo:
+        <br>
+        <img src="./Imagenescap2/Imagen3.png" alt="">
+        <br>
+        <br>
+        <section>
+            A lo largo de esta obra, para referirse al código HTML de una página web también se utilizará el término documento.
+
+        </section>
+        <br>
+        El siguiente par de etiquetas son las que realmente contienen el código HTML de la página y conforman el elemento raíz del documento, ya que agrupa a todos los demás:
+        <br>
+        <img src="./Imagenescap2/Imagen4.png" alt="">
+        <br>
+        Como se ha comentado al inicio de esta sección, la función principal de HTML es estructurar el contenido de la página. Para ello, los elementos se anidan unos dentro de otros formando una jerarquía cuya raíz es la etiqueta <html> (representa la página web), debajo de la que se encuentra el cuerpo y la cabecera (etiquetas <head> y <body>):
+        <br>
+        Aunque más adelante se describirán las estructuras jerárquicas, la que forman el cuerpo y la cabecera de una página se puede representar gráﬁcamente así:
+        <br>
+        <img src="./Imagenescap2/Imagen5.png" alt="">
+        <br>
+        En la cabecera está la información general de la página, como los metadatos y las referencias a los archivos externos donde se almacenan las hojas de estilo CSS, el código JavaScript, etc.
+        <br>
+        <img src="./Imagenescap2/Imagen6.png" alt="">
+        <br>
+        <br>
+        <section>
+            Los metadatos reciben este nombre porque son datos que describen otros datos. Aunque no sea información visible, es muy importante porque la utilizan los buscadores para localizar las páginas que mejor se adapten al contenido solicitado por un usuario.
+
+        </section>
+        <br>
+        Por último, el cuerpo del documento contiene los elementos visibles de la página web:
+        <br>
+        <img src="./Imagenescap2/Imagen7.png" alt="">
+        <br>
+        Ahora que ya conoce las etiquetas que no pueden faltar en ninguna página web, en la siguiente sección desarrollará la primera y más sencilla de todas.
+        <br>
+        <br>
+        <section>
+            La lista de todos los elementos HTML los puede encontrar en https://developer.mozilla.org/es/docs/Web/HTML/Element y en https://www.w3schools.com/tags.
+
+        </section>
+        <br>
+        <h2>2.2 SU PRIMERA PÁGINA WEB </h2>
+        Una vez conocida la estructura básica de una página web y las etiquetas que intervienen, ya está en condiciones de crear la primera. Por lo tanto, ha llegado la hora de ponerse manos a la obra y empezar a practicar lo aprendido. Pero ¿es necesario algún tipo de entorno de desarrollo para ello? No, ya que una página web es un documento de texto, por lo que podrá editarse con cualquier procesador de texto, por muy sencillo que este sea (por ejemplo, el bloc de notas de Windows o TextEdit si utiliza Mac).
+        <br>
+         En Windows, para abrir el bloc de notas solo tiene que escribir su nombre en el campo de búsqueda situado en la parte inferior izquierda del escritorio y, luego, pulsar sobre él.
+         <br>
+         <img src="./Imagenescap2/Imagen8.png" alt="">
+         <br>
+         <br>
+         <section>
+            Si va a trabajar de forma habitual con archivos HTML, le recomiendo usar Visual Estudio Code. Aunque no es un editor especifico de HTML, una vez que detecta ese lenguaje le ofrece infinidad de facilidades que le facilitarán la escritura del código, como la función de autocompletar, el cierre automático de etiquetas, menús contextuales de ayuda sobre la sintaxis o enlaces a la web https://developer.mozilla.org/ en la que se ofrece toda la información que necesite de un elemento determinado. Puede descargarlo desde https://code.visualstudio.com/download.
+
+         </section>
+         <br>
+         <img src="./Imagenescap2/Imagen9.png" alt="">
+         <br>
+         Una vez abierto el editor, escriba el siguiente código:
+         <br>
+         <img src="./Imagenescap2/Imagen10.png" alt="">
+         <br>
+         En dicho código, la única línea cuya sintaxis no se ha explicado es:
+        !—esta es mi primera página web
+        <br>
+         Se trata de un comentario. Como en cualquier otro lenguaje de programación, en HTML también se pueden añadir comentarios que ayuden a entender el código. Se trata de líneas de texto que ignora el navegador, ya que van destinadas al desarrollador de la página web. Se utilizan en labores de mantenimiento, sobre todo cuando se trata de páginas complejas. Los comentarios también son útiles durante la fase de depuración de errores, ya que permiten ocultar líneas de código que pueden ser sospechosas de provocarlos. 
+         <br>
+         Una vez ﬁnalizado el documento HTML, guárdelo con el nombre “hola-mundo.html”. Si quiere seguir la estructura de carpetas del material descargable del libro, el código de este y los sucesivos ejercicios se encuentra dentro de la carpeta “Practicas”, agrupados en subcarpetas por capítulos (“Capitulo1”, “Capitulo2”, ...). Por lo tanto, el correspondiente a esta primera página web estaría en: 
+         <br>
+         <br>
+         /Practicas <br>
+        /Capitulo2 <br>
+	            Hola-mundo.html <br>
+        <br>
+        Es importante que su extensión sea “.html”, ya que es la correspondiente a los archivos que contienen páginas web. De esta forma, podrá abrirlos desde un navegador. También es importante que, al guardar el archivo, en el campo “Codiﬁcación” elija “UTF-8”. Se trata de un formato de codiﬁcación estándar de caracteres que permite el almacenamiento, la transmisión y, muy especialmente, la correcta visualización de aquellos especíﬁcos de cada idioma, en el caso del español, los acentos y la letra ‘ñ’.
+        <br>
+        <img src="./Imagenescap2/Imagen12.png" alt="">
+        <br>
+        <br>
+        <section>
+            Como puede observar en la imagen anterior, he situado la carpeta “Practicas” (obtenida el material descargable) debajo de otra llamada “HTML”, en la que tengo todo lo relacionado con este lenguaje. Naturalmente, usted puede ponerla donde quiera.
+
+        </section>
+        <br>
+        Ahora, acceda a la carpeta donde guardó el archivo y pulse sobre él con el botón derecho del ratón. En el menú contextual que aparece, seleccione la opción “Abrir con” y, ﬁnalmente, “Google Chrome”.
+        <br>
+        <img src="./Imagenescap2/Imagen13.png" alt="">
+        <br>
+        <br>
+        <section>
+            Aunque en todas las prácticas se haga referencia a Google Chrome, puede utilizar cualquier otro navegador. Si fuera el conﬁgurado por defecto en su ordenador, solo tendría que pulsar dos veces seguidas con el botón izquierdo del ratón sobre el documento HTML (igual que se hace con los archivos de cualquier otra aplicación).
+
+        </section>
+        <br>
+        El resultado es el que puede ver a continuación, en el que el navegador muestra el texto “Hola Mundo”. Observe que en la solapa aparece el nombre del archivo que contiene la página web (“hola-mundo.html”) y en la barra de direcciones su ruta de acceso absoluta (“C:/Users/Tomas/Documents/HTML/Practicas/Capitulo2/hola- mundo.html”)
+        <br>
+        <img src="./Imagenescap2/Imagen14.png" alt="">
+        <br>
+        <br>
+        <section>
+            Una ruta absoluta es aquella que especifica la ubicación de un archivo desde el directorio raíz, en este caso, el disco duro (“C:/”).
+
+        </section>
+        <br>
+        Si quisiera ver cualquier otra página web solo tendría que escribirla en dicha barra de direcciones.
+        <br>
+        <h2>2.3 ETIQUETAS BÁSICAS DE LA CABECERA</h2>
+        Como sabe, un documento HTML se estructura en una cabecera y un cuerpo. En esta sección estudiará las etiquetas más comunes de la cabecera (las del cuerpo forman parte de una sección posterior). Son las que permiten mostrar el título y el icono de la página en la pestaña del navegador, deﬁnir las reglas de estilo con las que se determina su apariencia, añadir metainformación útil que facilite su localización por parte de los buscadores o importar todo tipo de recursos externos.
+        <br>
+        Las etiquetas que usará con más frecuencia en la cabecera de un documento HTML son las siguientes:
+        <br>
+        <br>
+        •title. Establece el título del documento.
+        •link. Importa recursos externos, es decir, aquellos que no están incluidos en el propio documento HTML. Se usa para cargar código JavaScript, hojas de estilo y, como pronto descubrirá, imágenes como la del pequeño icono que aparece al lado del título en la pestaña del navegador.
+        <br>
+        •meta Si en la cabecera es donde se colocan los metadatos de una página web, esta etiqueta es la que mejor representa dicha deﬁnición, ya que normalmente se emplea para identiﬁcar al autor, dar un breve resumen de lo que trata la página, añadir las palabras clave que mejor representen la información contenida (aquellas que introducirían en un buscador las personas interesadas en ella), identiﬁcar el juego de caracteres manejado, etc.
+        <br>
+        •style. Agrupa las reglas de estilo con las que se determina el aspecto de los elementos mostrados en pantalla, por ejemplo, el color o el tamaño del texto de un párrafo. Estas reglas, que se escriben en lenguaje CSS, también son las responsables de la distribución de estos elementos en la página según un diseño o una composición gráﬁca determinada.
+        <br>
+        <br>
+        <section>
+            Un juego de caracteres especiﬁca la forma en la que un ordenador los representa internamente. Aunque existen distintos estándares, el W3C recomienda el formato de codiﬁcación de caracteres Unicode UTF-8.
+
+        </section>
+        <br>
+        A continuación, se describirá cada una de estas etiquetas, a excepción de style, cuyo estudio se llevará a cabo en el próximo capítulo.
+        <br>
+        <h2>2.3.1 Metadatos </h2>
+        Un metadato es un dato que describe a otro dato. En el contexto de las páginas web, los metadatos son información sobre esta, como el autor o el tema del que trata, las palabras clave que mejor representan su contenido o el juego de caracteres empleado.
+        <br>
+        Los metadatos de un documento HTML se expresan en su cabecera mediante la etiqueta <meta>. Al igual que la etiqueta <link>, esta requiere de atributos que proporcionen información adicional. Uno de ellos es charset, con el que se establece el juego de caracteres empleado, imprescindible para que el navegador muestre correctamente la letra ‘ñ’ o los acentos. El que utilizará será UTF-8, por lo que la línea de código que deberá añadir a la cabecera de todos sus documentos será:
+        <br>
+        meta charset=”UTF-8”
+        <br>
+        <br>
+        <section>
+            Observe que esta etiqueta no requiere la correspondiente de cierre.
+
+        </section>
+        <br>
+        Para que alguien encuentre su página debe proporcionar la máxima información posible a los buscadores. A tal ﬁn, la etiqueta <meta> se usa con la combinación de atributos name y content. El primero indica de qué trata la información que se va a dar en el segundo. 
+        <br>
+        Los valores de la propiedad name más utilizados son:
+        <br>
+        <br>
+        •“autor”. Autor de la página. <br>
+        •“description”. Breve resumen de su contenido. <br>
+        •“keywords”. Palabras clave que alguien escribiría en un buscador para encontrarla. <br>
+        <br>
+        El valor de la propiedad content puede ser cualquier texto.
+        <br>
+        <br>
+        <section>
+            El valor de la propiedad name también podría ser cualquier texto, por ejemplo, “autor” (escrito en castellano) u otro inventado, como “bibliografía”. Sin embargo, se recomienda encarecidamente valerse de términos muy conocidos y en inglés (como los de la lista anterior).
+
+        </section>
+        <br>
+        A modo de ejemplo, si introdujera las siguientes etiquetas en la cabecera de una página web, informaría a los buscadores de que yo soy el autor (así, sería posible encontrar esta página a partir de mi nombre), junto con las palabras clave que podría escribir alguien interesado en un libro sobre HTML:
+        <br>
+        <img src="./Imagenescap2/Imagen15.png" alt="">
+        <br>
+        Aunque la página web no sufrirá ningún cambio de aspecto, los buscadores dispondrán de información muy valiosa que ayudará a localizarla a todos aquellos interesados en algún libro que yo hubiera escrito sobre HTML.
+        <br>
+        <h2>2.3.2 Título del documento</h2>
+        El título del documento sirve para identiﬁcar una página web, ya que se muestra en la pestaña del navegador. Se establece con la etiqueta title, tal como se ha hecho en la siguiente línea de código:
+        <br>
+        <img src="./Imagenescap2/Imagen16.png" alt="">
+        <br>
+        Al igual que sucede con los metadatos (aprenderá a añadirlos a una página con la etiqueta meta un poco más adelante), los motores de búsqueda utilizan el título para decidir el grado de coincidencia entre su contenido y lo que busca un usuario. Además, es el texto con el que se guarda la página cuando se agrega a la lista de favoritos del navegador. Al igual que sucede con los metadatos (aprenderá a añadirlos a una página con la etiqueta <meta> un poco más adelante), los motores de búsqueda utilizan el título para decidir el grado de coincidencia entre su contenido y lo que busca un usuario. Además, es el texto con el que se guarda la página cuando se agrega a la lista de favoritos del navegador. 
+        <br>
+        Incorpore la etiqueta anterior a la cabecera del código de su primera página, que quedaría así:
+        <br>
+        <img src="./Imagenescap2/Imagen17.png" alt="">
+        <br>
+        Refresque la página o cárguela de nuevo en el navegador. Como puede observar, ahora en la pestaña no aparece el nombre del archivo donde está almacenada sino el título que le acaba de dar.
+        <br>
+        <img src="./Imagenescap2/Imagen18.png" alt="">
+        <br>
+        <br>
+        <section>
+            Hay tres formas distintas de refrescar el contenido de una página web: <br>
+            • Pulsar con el ratón en la barra de direcciones y luego la tecla de retorno de carro. <br>
+            • Presionar la tecla F5. <br>
+            • Pulsar sobre el botón. <br>
+
+        </section>
+        <br>
+        <h2>2.3.3 Recursos externos</h2>
+        Los recursos externos son archivos de diversa naturaleza (generalmente, imágenes, hojas de estilo o código JavaScript) necesarios para el correcto funcionamiento de una página web. Para incorporarlos a esta, HTML proporciona la etiqueta <link>, que deberá usarse junto con una serie de atributos que determinen su ruta de acceso, la naturaleza de su contenido y el formato en el que está almacenado.
+        <br>
+        Con el ﬁn de mostrar la forma de utilizar esta etiqueta, la empleará para mostrar un icono (favicon) al lado del título en la pestaña del navegador.
+        <br>
+        La manera de importar el archivo que contiene la imagen de un favicon en una página web es asignar su ruta de acceso al atributo href de la etiqueta <link>. Pero ¿cómo se especiﬁca una ruta? De forma absoluta, tal como aparecía en la barra de direcciones del navegador al abrir el documento HTML de su primera página web, o de forma relativa, a partir de la carpeta (directorio) en la que se encuentra la página web.
+        <br>
+        Para explicar cómo se escribe una ruta de acceso relativa (forma recomendada), se analizarán tres escenarios: 
+        <br>
+        <br>
+        • El archivo se encuentra en la misma carpeta que la página web. <br>
+        • El archivo se encuentra en una carpeta creada a partir de la que contiene la página web. <br>
+        • El archivo se encuentra en una carpeta creada a partir de otra anterior a la que contiene la página web. <br> 
+        <br>
+        En el primer escenario, imagine que la página web “hola-mundo.html” se encuentra en la carpeta “Capitulo2” dentro de otra llamada “Practicas”. Si el archivo que contiene el icono fuera “mi_favicon.ico” y estuviera situado en la misma carpeta que la página web, la estructura de directorios resultante se podría representar de la siguiente manera:
+        <br>
+        <br>
+        /Practicas <br>
+	    /Capitulo2 <br>
+		hola-mundo.html <br>
+		mi-favicon.ico <br>
+        <br>
+        En este caso, como la página y el recurso externo están en la misma carpeta, la ruta relativa de acceso a dicho archivo sería:
+        <br>
+        “./mi_favicon.ico”
+        <br>
+        El punto (‘.’) de la ruta representa la carpeta donde se encuentra la página web.
+        <br>
+        <br>
+        <section>
+            Aunque los caracteres ‘./’ son opcionales, se recomienda utilizarlos.
+
+        </section>
+        <br>
+        Ahora, imagine un segundo escenario en el que el favicon no está en la misma carpeta que la página web, sino en otra llamada “Imagenes” creada como subcarpeta dentro de “Capitulo2”, tal como se muestra a continuación:
+        <br>
+        <br>
+    /Practicas <br>
+	/Capitulo2 <br>
+	hola-mundo.html <br>
+	/Imágenes <br>
+	mi_favicon.ico <br>
+    En ese caso, la ruta de acceso a dicho archivo sería: <br>
+	“./Imagenes/mi_favicon.ico” <br>
+    <br>
+    Por último, imagine un tercer escenario en el que la carpeta “Imagenes”, donde se encuentra el favicon, no se ha creado como una subcarpeta de “Capitulo2”, sino dentro de “Practicas”:
+    <br>
+    <br>
+    /Practicas <br>
+	/Capitulo2 <br>
+	hola-mundo.html <br>
+	/Imágenes <br>
+	mi_favicon.ico <br>
+    En este caso, la ruta de acceso al favicon sería: <br>
+	“../Imagenes/mi_favicon.ico” <br>
+    <br>
+    Los dos puntos de la ruta (‘..’) representan el directorio padre (“Practicas”), aquel dentro del que se ha creado “Imagenes” como subcarpeta.
+    <br>
+    <br>
+    <section>
+        Puesto que esta es la estructura de directorios del contenido descargable del libro, será la ruta utilizada en el ejercicio desarrollado en esta sección.
+
+    </section>
+    <br>
+    Siguiendo este razonamiento de forma recursiva, se podría especiﬁcar la ruta de acceso relativa de cualquier archivo situado en cualquier carpeta creada en la estructura de directorios del ordenador. 
+    <br>
+    Se preguntará si el hecho de que la carpeta “Imagenes” no lleve acento es un error. No se ha puesto porque los directorios que forman parte de una ruta no pueden llevarlos. Por otra parte, en las rutas de acceso no se distingue entre mayúsculas y minúsculas. Por lo tanto, el nombre de la carpeta “imagenes” sería el mismo que “Imagenes”.
+    <br>
+    <br>
+    <section>
+        Los nombres de archivos o directorios no pueden llevar caracteres especiales como acentos o la letra ‘ñ’.
+
+    </section>
+    <br>
+    Solo con asignar la ruta de acceso del favicon al atributo href de la etiqueta <link> no es suﬁciente para incorporar esta pequeña imagen a la página. Tal como se indicó al principio de la sección, esta etiqueta sirve para integrar recursos externos en el propio documento HTML, que no tiene por qué ser necesariamente un favicon, sino una hoja de estilos, código JavaScript, etc. Por ese motivo, es necesario expresar de forma explícita el tipo de 
+    <br>
+    <br>
+    <section>
+        recurso del que se trata, en este caso un icono. Para ello, deberá utilizar el atributo rel, al que tendrá que asignar el valor icon.
+
+    </section>
+    <br>
+    Como estudiará en una sección posterior, cuando el recurso importado sea una hoja de estilo, el valor de esta propiedad será stylesheet.
+    <br>
+    Por último, para cargar un recurso externo en la página también es necesario especiﬁcar el formato del archivo (la extensión del archivo no es indicativo) con la propiedad type. En este caso concreto, su valor es “image/x-icon”.
+    <br>
+    <br>
+    <section>
+        El valor del atributo type debe ser uno de los establecidos en el estándar MIME (Multipurpose Internet Mail Extensions, extensiones multipropósito de correo de Internet), que clasiﬁca la naturaleza y el formato de los documentos que se intercambian por Internet. Esta información la utilizará el navegador para visualizar o reproducir los archivos correctamente. Aunque no se pretende describir este estándar, observe que su formato es:
+        <br>
+         “tipo/subtipo” 
+         <br>
+         Por eso, si el formato de una imagen fuera jpg, su tipo MIME sería image/jpg. Y si en vez de una imagen fuera un texto normal o HTML, este sería text/plain y text/html, respectivamente. Algo similar sucedería con los archivos de sonido o vídeo.
+    </section>
+    </p>
+</body>
+<footer>
+    <a href=""><button>Siguiente página</button></a>
+    <a href="index.html"><button>Regresar al inicio</button></a>
+</footer>
+</html>

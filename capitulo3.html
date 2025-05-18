@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitulo3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <center>
+        <h1> Unidad 3 <br>
+            APARIENCIA DE UNA PÁGINA WEB <br>
+        </h1>
+    </center>
+    <p>
+        Hasta ahora, el contenido de las etiquetas utilizadas en los documentos HTML de ejemplo se ha mostrado de forma predeﬁnida. Por ejemplo, el texto de los encabezados aparecía en negrita y con tamaños de fuente menores en orden descendente desde h1 hasta h6, los enlaces eran de color azul y estaban subrayados, etc. A partir de ahora, aprenderá a utilizar CSS para establecer el aspecto que quiera que tenga cada uno de ellos. 
+        <br>
+        Si con HTML se estructuraba el contenido de una página web, con CSS podrá decidir cómo se muestra en pantalla. Para ello, este lenguaje identiﬁca las propiedades visuales de los elementos HTML y deﬁne los valores que pueden llegar a tener. También deﬁne las distintas formas de aplicar los estilos, que van desde hacerlo dentro de la propia etiqueta hasta en un archivo CSS diferente del que tiene el código HTML. Este será el objeto de estudio de la primera sección del presente capítulo.
+        <br>
+        En las siguientes secciones se describirán las diferentes formas de especiﬁcar el color, característica visual imprescindible en prácticamente todos los elementos HTML.
+        <br>
+        Luego, conocerá el modelo de caja con el que se determina el tamaño de cualquier elemento teniendo en cuenta los bordes y márgenes existentes.
+        <br>
+        A continuación, se analizarán las propiedades especíﬁcas de los textos, las imágenes y las listas.
+        <br>
+        En la exposición de los hipervínculos se introducirá el concepto de pseudoclase, necesario para cambiar su apariencia en función del estado en el que se encuentren (visitados, pulsados, etc.).
+        <br>
+        También se enseñará cómo crear un efecto de sombra en cualquier elemento y, por último, se describirán dos de los valores más comunes en todas las propiedades vistas a lo largo del capítulo: initial e inherit. Se utilizarán para recuperar el valor por defecto o el heredado del contenedor en el que se encuentra el elemento.
+        <br>
+        <br>
+        <section>
+            La lista de todas las propiedades CSS y sus posibles valores la puede encontrar en https://developer.mozilla.org/es/docs/Web/CSS/Reference o en https://www.w3schools.com/cssref/index.php.
+
+        </section>
+        <br>
+        <h2>3.1 FORMAS DE APLICAR UN ESTILO</h2>
+        Como se acaba de comentar en la introducción de este capítulo, los elementos mostrados en una página web tienen una serie de características visuales que pueden ser modiﬁcadas asignando ciertos valores a las propiedades adecuadas. Para ello, CSS proporciona tres formas de hacerlo:
+        <br>
+        En la propia etiqueta, como un valor del atributo style.
+        <br>
+        Dentro de la etiqueta style, en la cabecera del documento HTML como reglas de estilo.
+        <br>
+        Mediante hojas de estilo, almacenadas en uno o varios archivos externos que se vinculan a la página HTML.
+        <br>
+        En el primer caso, el estilo afecta únicamente al elemento HTML dentro de cuya etiqueta se deﬁnió. Su principal inconveniente es que no separa el contenido de la forma de mostrarlo, por lo que, salvo páginas muy sencillas (como muchos de los ejemplos de este libro), se recomienda utilizar reglas de estilo, bien sea dentro de la cabecera del propio documento HTML, o en hojas de estilo si la página fuera muy compleja.
+        <br>
+        En los siguientes apartados se describe en detalle todas estas formas de aplicar un estilo a los elementos HTML de una página web.
+        <br>
+        <h2>3.1.1 Estilos en línea </h2>
+        Cuando el ámbito de aplicación de un estilo es el de una etiqueta concreta, la opción más sencilla es utilizar el atributo style de dicha etiqueta, cuyo valor deberá seguir la siguiente sintaxis:
+        <br>
+        Style=”propiedad: valor;…;propiedad : valor;”
+        <br>
+        Observe que el valor del atributo style va entre comillas y que este se compone de múltiples declaraciones (pares propiedad:valor) separadas por un punto y coma (‘;’).
+        <br>
+        <br>
+        <section>
+            Si alguno de los valores de una declaración tuviera que ir entre comillas, utilice comillas simples (no dobles).
+            <br>
+            El punto y como ﬁnal no es imprescindibles, pero se recomienda añadirlo siempre.
+
+        </section>
+        <br>
+        En el siguiente código puede ver un ejemplo de uso del atributo style, mediante el que se especiﬁca que el subtítulo de una página (etiqueta h2) se escriba en azul sobre un fondo amarillo:
+        <br>
+        <img src="./imagenescap3/imagen1.png" alt="">
+        <br>
+        Para ello, se emplean las propiedades color y background-color que tendrá ocasión de estudiar más adelante.
+        <br>
+        Al cargar esta página en su navegador, obtendrá el resultado mostrado a continuación:
+        <br>
+        <img src="./imagenescap3/Imagen20.png" alt="">
+        <br>
+        Más adelante entenderá por qué el fondo amarillo se extiende todo el ancho de la ventana del navegador y aprenderá a limitarlo únicamente al texto (o hasta donde quiera).
+        <br>
+        Como puede observar, el estilo establecido en una etiqueta con el atributo style solo afecta a dicha etiqueta. Por ese motivo, el siguiente subtítulo h2 se muestra con su aspecto original.
+        <br>
+        El atributo style aplica el estilo a todo el contenido de una etiqueta. Sin embargo, hay ocasiones en las que solo se requiere hacerlo en un fragmento. Para resolver este problema, deberá añadir la etiqueta span como parte de dicho contenido, incluir dentro únicamente el fragmento afectado y deﬁnir para este su propio estilo.
+        <br>
+        Por ejemplo, suponga que quiere que solo una de las palabras de un párrafo se escriba sobre un fondo de color amarillo, no todo él. El siguiente código de ejemplo muestra cómo hacerlo:
+        <br>
+        <img src="./imagenescap3/Imagen21.png" alt="">
+        <br>
+        En esta ocasión, además del texto, el párrafo incluye la etiqueta span, dentro de la que se encuentra la palabra que se quiere mostrar sobre un fondo amarillo. Para ello, se utiliza el atributo style de esta última con el ﬁn de asignar el valor yellow a la propiedad background-color.
+        <br>
+        El resultado lo puede ver a continuación:
+        <br>
+        <img src="./imagenescap3/Imagen22.png" alt="">
+        <br>
+        Como puede comprobar, el texto del párrafo se muestra de la forma habitual, excepto la palabra que se ha incluido dentro de la etiqueta span.
+        <br>
+        <h2>3.1.2 Reglas de estilo </h2>
+        En general, las páginas web están formadas por multitud de etiquetas, por lo que asignarles un estilo de forma individual sería una labor tediosa y propensa a fallos. Además, cuando se quisiera renovar el aspecto de una página, habría que modiﬁcar el estilo de todas las etiquetas, lo que supondría un enorme esfuerzo. No menos importante es el hecho de que, cuando se utilizan estilos en línea, se está mezclando el contenido con la forma de presentarlo. Eso tiene muchas desventajas, ya que en los sitios webs profesionales la persona que edita dicho contenido no tiene por qué ser la responsable de darle formato, algo que formaría parte de la labor de un diseñador gráﬁco.
+        <br>
+        Para evitar estos inconvenientes, CSS permite la creación de reglas de estilo que sacan del cuerpo del documento HTML todo lo que tiene que ver con el aspecto de los elementos que componen la página y lo llevan a la cabecera, dentro de la etiqueta style, tal como puede ver a continuación:
+        <br>
+        <img src="./imagenescap3/Imagen23.png" alt="">
+        <br>
+        Una regla de estilo está formada por un selector y un bloque de declaraciones (pares propiedad:valor). El selector será el que determine el conjunto de elementos sobre los que se aplica la regla y las declaraciones especiﬁcan su aspecto visual. Su sintaxis es la siguiente:
+        <br>
+        <img src="./imagenescap3/Imagen24.png" alt="">
+        <br>
+        <br>
+        <section>
+            Olvidarse de escribir el punto y coma (‘;’) al ﬁnal de cada declaración puede provocar errores difíciles de detectar.
+
+        </section>
+        <br>
+        Existen múltiples clases de selectores, pero los principales son: 
+        <br>
+        •Etiqueta. El bloque de declaraciones afecta a todas las etiquetas de un tipo. <br>
+        • Identiﬁcador. La regla solo se aplica a la etiqueta que tenga dicho identiﬁcador. <br>
+        • Clase. Su efecto se extiende únicamente a las etiquetas vinculadas a esa clase. <br>
+        <br>
+        <br>
+        <section>
+            Un selector muy especial es el universal, representado por un asterisco (‘*’), que aplica la regla a todos los elementos de la página.
+
+        </section>
+        <br>
+        En los siguientes apartados aprenderá a crear reglas de estilo utilizando estos tres tipos de selectores. 
+        <br>
+        <h2>3.1.2.1 Selector de etiqueta</h2>
+        Un selector de etiqueta asocia una regla de estilo a una etiqueta, pero no a una en concreto (como sucedía cuando se utilizaba el atributo style) sino a todas ellas.
+        <br>
+        El siguiente código de ejemplo contiene una regla de estilo, cuyo selector de etiqueta establece la forma en la que se tienen que mostrar los encabezados de segundo nivel:
+        <br>
+        <img src="./imagenescap3/Imagen25.png" alt="">
+        <br>
+        Como puede observar, en la cabecera del documento HTML (dentro de la etiqueta style) se ha deﬁnido una regla de estilo cuyo selector es h2, por lo que afecta a todos los encabezados de segundo nivel (texto de las etiquetas h2). El valor asignado a las propiedades color y background-color determinan que estos se escriban en color azul sobre un fondo amarillo.
+        <br>
+        Le habrá llamado la atención el texto situado sobre la regla de estilo:
+        <br>
+        /* formato de los subtítulos */
+        <br>
+        Se trata de un comentario CSS. Este no es interpretado por el navegador, ya que su ﬁnalidad es proporcionar información que permita entender las reglas de estilo y facilitar su posterior mantenimiento. Tiene una sintaxis diferente de la de los comentarios HTML, motivo por el que debe ir siempre dentro de la etiqueta style.
+        <br>
+        El cuerpo del documento está compuesto por un encabezado principal (h1) y dos de segundo nivel (h2). Como puede comprobar en la siguiente imagen, estos últimos se escriben en color azul sobre un fondo amarillo.
+        <br>
+        <img src="./imagenescap3/Imagen26.png" alt="">
+        <br>
+        Si hubiera más encabezados h2, todos se mostrarían de la misma forma.
+        <br>
+        <h2>3.1.2.2 Selector de identiﬁcador </h2>
+        <br>
+        Cuando se utiliza un selector de etiqueta, la regla de estilo se aplica al contenido de todas las etiquetas de ese tipo. Sin embargo, a veces se quiere que el estilo afecte solo a una etiqueta en concreto (no a todas ellas). Una forma de hacerlo sería mediante el atributo style de la etiqueta afectada. Pero si preﬁere usar una regla de estilo por las ventajas que ello supone, deberá asignarle un identiﬁcador (entre comillas) con el atributo id:
+        <br>
+        <img src="./imagenescap3/Imagen27.png" alt="">
+        <br>
+        Posteriormente, dicho identiﬁcador (sin las comillas) se utilizaría como selector en la regla de estilo, precedida del carácter ‘#’:
+        <br>
+        #identiﬁcador
+        <br>
+        <br>
+        <section>
+            El valor de un id no se puede repetir. Debe ser único para cada elemento HTML.
+
+        </section>
+        <br>
+        Con el ﬁn de entender la forma de sustituir el atributo style de una etiqueta por una regla de estilo cuyo selector sea un identiﬁcador, este primer código de ejemplo muestra un párrafo compuesto de una línea escrita en color blanco sobre un fondo negro:
+        <br>
+        <img src="./imagenescap3/Imagen28.png" alt="">
+        <br>
+        Como puede observar, el aspecto del párrafo se determina en línea mediante el atributo style en la propia etiqueta (p), para lo que se emplean las propiedades color y background-color. 
+        <br>
+        Una vez cargado el código en el navegador, vería lo siguiente:
+        <br>
+        <img src="./imagenescap3/Imagen29.png" alt="">
+        <br>
+        Ahora sustituya el documento HTML anterior por este otro:
+        <br>
+        <img src="./imagenescap3/Imagen30.png" alt="">
+        <br>
+        Aunque este código es diferente del anterior, el navegador mostrará el mismo resultado. El motivo es porque las declaraciones de estilo del párrafo siguen siendo las mismas. Lo único que se ha hecho es trasladarlas de la propia etiqueta a una regla de estilo, cuyo selector es el identiﬁcador “blanco-y-negro” que previamente se le ha asignado mediante el atributo id.
+        <br>
+        <h2>3.1.2.3 Selector de clase </h2>
+        Tal como se expuso en el capítulo anterior, cuando se quiere aplicar un mismo un estilo a un grupo de elementos HTML, solo tiene que incluirlos dentro de un contenedor (por ejemplo, div) en el que se deﬁna dicho estilo. La única condición (limitación) es que deben ir juntos en el documento HTML (unos debajo de otros).
+        <br>
+        Eso es lo que se ha hecho en el siguiente código de ejemplo:
+        <br>
+        <img src="./imagenescap3/Imagen31.png" alt="">
+        <br>
+        Como puede apreciar, el cuerpo del documento se compone de un primer y último párrafo sin estilo, entre los cuales se sitúa un contenedor en el que se ha utilizado su atributo style para especiﬁcar un color de tinta azul y otro de fondo amarillo (propiedades color y background-color). Dicho estilo será el heredado por los párrafos que contiene, tal como puede ver a continuación:
+        <br>
+        <img src="./imagenescap3/Imagen32.png" alt="">
+        <br>
+        <br>
+        <section>
+            No todas las propiedades se heredan.
+        </section>
+        <br>
+        Sin embargo, en muchas ocasiones los elementos que comparten un mismo estilo no pueden agruparse (están repartidos por toda la página). En ese caso, deberá vincularlos a una clase.
+        <br>
+        Para asociar una etiqueta a una clase deberá asignar su nombre (entre comillas) al atributo class.
+        <br>
+        <img src="./imagenescap3/Imagen33.png" alt="">
+        <br>
+        Posteriormente, dicho nombre (sin las comillas) se utilizará como selector en una regla de estilo, precedida de un punto (‘.’): 
+        <br>
+        .clase
+        <br>
+        Una etiqueta se puede asociar a varias clases. Para ello, solo tiene que separarlas por un espacio:
+        <br>
+        <img src="./imagenescap3/Imagen34.png" alt="">
+        <br>
+        Para saber cómo se utiliza este nuevo atributo, en el siguiente ejercicio se crean dos reglas de estilo cuyos selectores son clases, en cada una de la cuales se especiﬁca un color de tinta y de fondo diferente. Así, los párrafos de la página se mostrarán de una u otra forma según la clase a la que se hayan vinculado, tal como puede ver a continuación, donde se han intercalado párrafos de ambos estilos:
+        <br>
+        <img src="./imagenescap3/Imagen35.png" alt="">
+        <br>
+        El código con el que se ha conseguido el resultado anterior es el siguiente:
+        <br>
+        <img src="./imagenescap3/Imagen36.png" alt="">
+        <br>
+        En esta ocasión no tiene sentido utilizar un contenedor div, por lo que a cada párrafo se le asocia la clase que determina el estilo con el que se quiere mostrar (se asigna el valor “blanco-y-negro” o “azul-y- amarillo” al atributo class). Los nombres de estas clases se utilizan como selectores de dos reglas de estilo, en cuyo bloque de declaraciones se asigna el color correspondiente a las propiedades color y background-color.
+        <br>
+        <br>
+        <section>
+            Además de una clase, un selector puede estar compuesto por pseudoclases que permitan restringir la aplicación de una regla solo a los elementos que estén en un determinado estado (por ejemplo, cuando el ratón se sitúe por encima o se pulsen). En esta obra solo se emplearán en el contexto de los hipervínculos, por lo que su estudio se aplaza a la sección dedicada a estos elementos.
+
+        </section>
+        <br>
+        <h2>3.1.2.4 Selectores compuestos </h2>
+        En todos los ejercicios realizados hasta el momento, las reglas de estilo utilizaban selectores simples. Sin embargo, estos se pueden combinar mediante operadores que amplían o restringen los elementos a los que tiene que aplicarse. Aunque CSS dispone de diversos operadores, los selectores compuestos más comunes son:
+        <br>
+        <br>
+        •	Selector de combinación. El bloque de declaraciones actúa sobre los elementos HTML afectados por cada uno de los selectores simples. Utiliza el operador coma (‘ ,’). 
+        <br>
+        selector_simple, selector_simple, ... 
+        <br>
+        •	Selector anidado. El bloque de declaraciones aplica solo a los elementos HTML del selector de la derecha que están incluidos en los de la izquierda (necesariamente tendrán que ser contenedores). En este caso, el operador empleado es el espacio (‘ ’). 
+        <br>
+        selector_simple selector_simple ...
+        <br>
+        <br>
+        <section>
+            Si alguno de los selectores simples no tuviera la sintaxis correcta, la regla no se aplicaría a ningún elemento HTML.
+
+        </section>
+        <br>
+        Si olvidara el espacio o la coma entre los selectores simples, y estos fueran clases (no tiene sentido con identiﬁcadores y etiquetas), la regla aplicaría a los elementos HTML que estuvieran vinculados a dichas clases (a todas, no solo a alguna):
+        <br>
+        .clase1.clase2...
+        <br>
+        <br>
+        <section>
+            Si alguno de los selectores simples no tuviera la sintaxis correcta, la regla no se aplicaría a ningún elemento HTML.
+
+        </section>
+        <br>
+        Seguramente tenga dudas sobre la aplicación práctica de este tipo de selectores, así que, como la mejor forma de aprender es practicando, en el siguiente código de ejemplo se empieza haciendo uso del primer selector (el de combinación):
+        <br>
+        <img src="./imagenescap3/Imagen37.png" alt="">
+        <br>
+        El cuerpo del documento HTML está formado únicamente por dos encabezados, uno de cada tipo (h1 y h2). En la cabecera, la única regla de estilo tiene un bloque de declaraciones en el que se establece un color de tinta azul (la propiedad color tiene el valor blue). Como el selector es de combinación, dicho color se aplica a ambas etiquetas, tal como puede ver a continuación.
+        <br>
+        <img src="./imagenescap3/Imagen38.png" alt="">
+        <br>
+        La principal ventaja de este tipo de selectores es la de evitar tener que repetir reglas con el mismo bloque de declaraciones (en este caso, se evita tener una regla para las etiquetas h1 y otra para h2).
+        <br>
+        Ahora, modiﬁque el código HTML anterior para obtener este otro:
+        <br>
+        <img src="./imagenescap3/Imagen39.png" alt="">
+        <br>
+         Lo primero que se ha hecho es añadir la siguiente regla de estilo a continuación de la existente en el documento HTML original:
+         <br>
+         <img src="./imagenescap3/Imagen40.png" alt="">
+         <br>
+         En ella se establece un color de fondo amarillo (se asigna el valor yellow a la propiedad background-color). El selector está formado por una clase (“fondo-amarillo”) y el nombre de una etiqueta (h1) separados por un espacio. Por lo tanto, al tratarse de un selector anidado, esta regla solo aplicará a las etiquetas h1 que estén dentro de algún contenedor que pertenezca a dicha clase.
+        <br>
+        El cuerpo de este nuevo documento HTML mantiene el encabezado h1 inicial y h2 ﬁnal del documento original. Sin embargo, en medio se ha incorporado un contenedor div dentro del que hay otra pareja de encabezados h1 y h2. Además, dicho contenedor se ha vinculado a la clase “fondo-amarillo” mediante el atributo class. Como la nueva regla de estilo afecta a cualquier elemento h1 que esté dentro de otro perteneciente a dicha clase, el que hay dentro del contenedor se mostrará con un color de fondo amarillo, mientras que el de fuera lo hará como antes (solo con un color de tinta azul, al igual que el resto de encabezados h2).
+        <br>
+        <img src="./imagenescap3/Imagen41.png" alt="">
+        <br>
+        <br>
+        <section>
+            Observe que el color del texto del encabezado h1 que hay dentro del contenedor sigue siendo azul. Eso es debido a que se le han aplicado las dos reglas de estilo, a diferencia del resto de encabezados, en los que solo tiene efecto la primera.
+
+        </section>
+        <br>
+        En este caso, como el documento HTML solo tiene un contenedor div, la siguiente regla de estilo tendría el mismo efecto:
+        <br>
+        <img src="./imagenescap3/Imagen42.png" alt="">
+        <br>
+        Si lo hiciera así y añadiera más contenedores div, todos los encabezados h1 que estuvieran dentro de cualquier de ellos tendrían un color de fondo amarillo (naturalmente, ya no haría falta asociar dichos contenedores a ninguna clase). Pero si la regla solo tuviera que aplicarse a un determinado grupo de contenedores (no a todos), no le quedaría más remedio que utilizar de nuevo selectores de clase.
+        <br>
+        <h2>3.1.3 Hojas de estilo </h2>
+        En páginas profesionales, donde el número de reglas de estilo es muy variado, lo habitual es llevarlas a un archivo independiente. De esa forma, el código HTML quedaría completamente separado del CSS. En ese caso, lo que se hace es añadir una etiqueta <link> en la cabecera del documento HTML cuyo atributo href especiﬁque la ruta de acceso a dicho archivo (o archivos).
+        <br>
+        Con el ﬁn de demostrar la forma de usar una hoja de estilo, cree una carpeta debajo de “Practicas” llamada “CSS” y guarde en ella el siguiente código con el nombre “estilos.css”:
+        <br>
+        <img src="./imagenescap3/Imagen43.png" alt="">
+        <br>
+        Como puede comprobar, contiene las reglas de estilo deﬁnidas dentro de la etiqueta  style en el código de ejemplo del ejercicio anterior.
+        <br>
+        <br>
+        <section>
+            La primera línea es una directiva que se recomienda utilizar por seguridad para evitar problemas con nombres que pudieran tener acentos.
+
+        </section>
+        <br>
+        Ahora modifique el código del documento HTML del ejercicio anterior de forma que ahora quede así:
+        <br>
+        <img src="./imagenescap3/Imagen44.png" alt="">
+        <br>
+        En esta ocasión, en la cabecera del documento HTML se ha sustituido la etiqueta style por link. El valor de href es la ruta de acceso a la hoja de estilos (“../css/estilos.css”) y el de rel indica al navegador que se trata de una hoja de estilos (“stylesheet”).
+        <br>
+        <br>
+        <section>
+            La estructura de carpetas utilizada en este ejercicio es: <br>
+            /Prácticas <br>
+            /CSS <br>
+	        Estilos.css <br>
+            /Capitulo3 <br>
+
+        </section>
+        <br>
+        El documento HTML <br>
+        Cargue este documento en el navegador y compruebe que el resultado es el mismo del mencionado ejercicio. <br>
+        <br>
+        <h2>3.2 COLORES </h2>
+        El empleo del color es imprescindible en el desarrollo de cualquier actividad cuyo objetivo sea la transmisión visual de información. Aunque la pintura es el arte en el que alcanza su mayor expresión, la creación de páginas web no deja de ser también un trabajo artístico. Por eso, aquellas que utilizan una combinación de colores inapropiada pueden provocar rechazo. En consecuencia, además de un diseño gráﬁco correcto, un buen sitio web siempre deberá disponer de una paleta de colores adecuada.
+        <br>
+        En HTML cualquier elemento es susceptible de tener color, desde el utilizado para la tinta de un texto, pasando por el del borde de una imagen hasta el de fondo de un contenedor, por poner algún ejemplo. En todos estos casos, se tendrá que hacer uso de propiedades que irá conociendo poco a poco durante la lectura de este libro, aunque hay dos que destacan sobre las demás:
+        <br>
+        <br>
+        •	color. Establecen el color de tinta. <br>
+        •	background-color. Determinan el color de fondo. <br>
+        <br>
+        Ambas propiedades toman como valor un color, al que se identiﬁca por su nombre. La mayoría de los navegadores reconoce alrededor de 140 nombres de colores, entre los se encuentran el blanco (white), el negro (black), el rojo (red), el verde (green) o el azul (blue).
+        <br>
+        <br>
+        <section>
+            En https://developer.mozilla.org/es/docs/Web/CSS/color_value puede encontrar una lista completa con los nombres de todos los colores. A modo de ejemplo, a continuación puede ver los correspondientes a los distintos tonos de rosa:
+
+        </section>
+        <br>
+        <img src="./imagenescap3/Imagen45.png" alt="">
+        <br>
+        Como ha practicado con ambas propiedades en secciones anteriores, ya sabe cómo utilizarlos. Sin embargo, aunque en un principio 140 colores le puedan parecer muchos, los ordenadores actuales pueden reproducir millones. Si quisiera utilizar cualquier de ellos, deberá conocer los espacios de color manejados por HTML.
+        <br>
+        <h2>3.2.1 Espacios de color</h2>
+        Aunque HTML identiﬁca muchos colores por su nombre, tarde o temprano querrá utilizar otros diferentes. Por ese motivo, debe saber que un color se puede especiﬁcar conforme a los siguientes espacios de color:
+        <br>
+        <br>
+        •	RGB (red, green y blue). Tal como indica este acrónimo, el color se descompone en los colores rojo, verde y azul. <br>
+        •	HSL (hue, saturation y lightness). En este caso, el color se describe como una combinación de matiz, saturación y luminosidad. <br>
+        <br>
+        Empecemos estudiando el primero.
+        <br>
+        Si es observador, en la imagen donde se mostraba el nombre de las diferentes tonalidades de rosa, a su lado también aparecía un código decimal y otro hexadecimal. En ambos casos, se trata de un valor RGB, es decir, una terna formada por tres números que representan la intensidad de los componentes rojo, verde y azul con los que se obtiene el color.
+        <br>
+        <img src="./imagenescap3/Imagen46.png" alt="">
+        <br>
+        En CSS, la forma de especiﬁcar un color en formato RGB es:
+        <br>
+        rgb(rojo, verde, azul)
+        <br>
+        Cada uno de los valores de esta terna podrá variar entre 0 y 255.
+        <br>
+        Cuando los tres colores tienen el máximo nivel de intensidad, se obtiene el color blanco, mientras que el nivel mínimo daría como resultado el negro. Si uno de los colores tuviera una intensidad máxima y el resto cero, se obtendría el color primario correspondiente (en estado puro). En resumen, los valores de estos colores serían los siguientes:
+        <br>
+        <br>
+        • Blanco: rgb(255, 255, 255) <br>
+        • Negro: rgb(0, 0, 0) <br>
+        • Rojo: rgb(255, 0, 0) <br>
+        • Verde: rgb(0, 255, 0) <br>
+        • Azul: rgb(0, 0, 255) <br>
+        <br>
+        <br>
+        <section>
+            Los tonos de gris se obtienen cuando el nivel de los tres colores es el mismo. Cuanto más alto sea dicho valor, más claro será este. Por ejemplo, rgb(200, 200, 200) sería un gris claro mientras que rgb(50, 50, 50) sería oscuro.
+
+        </section>
+        <br>
+        La intensidad de cada color primario también se puede representar en formato hexadecimal. En ese caso, su valor no sería un número del 0 al 255, sino 2 caracteres cuyo valor puede ser 0, 1, 2, 3..., 8, 9, A, B, ..., E, F. Aunque no se describirá este sistema de numeración, a modo de ejemplo, el valor 0 decimal corresponde a 00 en hexadecimal y el 255 a FF.
+        <br>
+        Cuando se utiliza la notación hexadecimal, la sintaxis con la que se especiﬁca un color es distinta a la decimal, ya que los valores de la intensidad de todos los colores van juntos y se preceden del carácter ‘#’. De ese modo, los colores de la lista anterior se escribirían así en hexadecimal:
+        <br>
+        <br>
+        • Blanco: #FFFFFF <br>
+        • Negro: #000000 <br>
+        • Rojo: #FF0000 <br>
+        • Verde: #00FF00 <br>
+        • Azul: #0000FF <br>
+        <br>
+        Si en vez del espacio de color RGB utilizara el HSL, la forma de especiﬁcar un color sería descomponiéndolo en su matiz, saturación y luminosidad. La siguiente imagen (tomada de https://es.wikipedia.org/wiki/Modelo_de_color_HSL) lo representa gráﬁcamente.
+        <br>
+        <img src="./imagenescap3/Imagen47.png" alt="">
+        <br>
+        El matiz se simboliza como un ángulo cuyos valores posibles van de 0 a 360°. Dentro de este rango, cada color primario (rojo, verde o azul) ocupa 360/3= 120°. Así, a partir del valor 0 se encontrarían los matices de rojo, en el 120 empezarían los de verde y en el 240 los de azul.
+        <br>
+        La saturación representa la pureza del color, y sus valores posibles van del 0% al 100%. Cuanto menor sea la saturación de un color, mayor tonalidad grisácea tendrá y más decolorado estará. La siguiente imagen muestra gráﬁcamente este concepto aplicado al color azul, cuya saturación varía entre el 100% y 0% a intervalos del 20%.
+        <br>
+        <img src="./imagenescap3/Imagen48.png" alt="">
+        <br>
+        La luminosidad determina el brillo de la imagen, que puede variar del 0 al 100%. Cuanto más alto sea este valor, más clara será la imagen, tal como se muestra a continuación, en la que esta varía en dicho rango a intervalos del 20%.
+        <br>
+        <img src="./imagenescap3/Imagen49.png" alt="">
+        <br>
+        Observe que con un brillo del 0% la imagen es negra mientras que al 100% es blanca. Un color puro se obtiene con una luminosidad del 50%.
+        <br>
+        La forma de especiﬁcar un color en formato HSL es:
+        <br>
+                    hsl(tono, saturación, luminosidad)
+        <br>
+        De este modo, tomando de nuevo como ejemplo la lista de colores anterior, su valor en formato HSL sería:
+        <br>
+        <br>
+        • Blanco: hsl(0, 0%, 100%) <br>
+        • Negro: hsl(0, 0%, 0%) <br>
+        • Rojo: hsl(0, 100%, 50%) <br>
+        • Verde: hsl(120, 100%, 50%) <br>
+        • Azul: hsl(240, 100%, 50%) <br>
+        <br>
+        <br>
+        <section>
+            En este caso, los tonos de gris se obtienen modiﬁcando la luminosidad, mientras el matiz y la saturación toman un valor del 0%. Cuanto más alto sea dicho valor, más claro será el gris resultante.
+
+        </section>
+        <br>
+        Para conocer los valores RGB o HSL que debe tener un color determinado, deberá utilizar una herramienta que le permita seleccionarlo y genere como salida estos valores en ambos espacios de color. En Internet existen muchas de carácter gratuito, como la mostrada en la siguiente imagen (https://htmlcolorcodes.com/color- picker/):
+        <br>
+        <img src="./imagenescap3/Imagen50.png" alt="">
+        <br>
+        <br>
+        <section>
+            Si utiliza el editor Visual Studio Code, al escribir el nombre de la propiedad color se despliega un menú contextual cuyas opciones son los nombres de los distintos colores que le puede asignar. Una vez elegido uno de ellos, al situar el ratón encima aparece un selector de color que le permitiría personalizarlo como quiera.
+
+        </section>
+        <br>
+        Una vez seleccionado el punto donde está el color señalado por la ﬂecha, en la parte superior se muestra, de izquierda a derecha, el color elegido, el valor hexadecimal y decimal de los componentes RGB, así como el de los componentes HSL.
+        <br>
+        Una vez seleccionado el punto donde está el color señalado por la ﬂecha, en la parte superior se muestra, de izquierda a derecha, el color elegido, el valor hexadecimal y decimal de los componentes RGB, así como el de los componentes HSL.
+        <br>
+        <img src="./imagenescap3/Imagen51.png" alt="">
+        <br>
+        El resultado obtenido demuestra que las tres formas de especiﬁcar un color son equivalentes.
+        <br>
+        <img src="./imagenescap3/Imagen52.png" alt="">
+        <br>
+        <h2>3.2.2 Transparencias </h2>
+        HTML permite deﬁnir el nivel de transparencia de un color. Para ello, solo debe incorporar el parámetro alpha en su especiﬁcación. Este valor es decimal y está comprendido entre 0 (transparente) y 1 (sólido). El parámetro alpha se puede añadir tanto en el modelo de color RGB como HSL. En ese caso, la sintaxis que deberá emplear será la siguiente:
+        <br>
+        rgba(rojo, verde, azul, alpha) 
+        <br>
+        hsl(tono, saturación, luminosidad, alpha)
+        <br>
+        En el siguiente código de ejemplo se utiliza este parámetro para mostrar cinco encabezados h1 que se van haciendo transparentes de forma progresiva:
+        <br>
+        <img src="./imagenescap3/Imagen53.png" alt="">
+        <br>
+        Como puede observar, el color de los encabezados h1 se especiﬁca con una notación RGBA. El valor de los componentes rojo y verde es 0 mientras que el del azul tiene el valor máximo (255), motivo por el que estos tendrán dicho color. El valor del parámetro alpha decrece a intervalos de 0.25, por lo que el texto de los encabezados se va difuminando de forma gradual hasta dejar de verse (el último es completamente transparente). Ese es el motivo de que en la siguiente imagen solo aparezcan cuatro de los cinco encabezados que componen el cuerpo del documento HTML.
+        <br>
+        <img src="./imagenescap3/Imagen54.png" alt="">
+        <br>
+        <h2>3.3 EL MODELO DE CAJA </h2>
+        Con el ﬁn de mejorar la visualización de los elementos que conforman una página web, HTML proporciona un variado conjunto de propiedades que determinan su aspecto, y entre ellos su tamaño. Precisamente, las que hacen referencia a esta última característica forman parte de un grupo que constituye el modelo de caja, cuyo conocimiento es imprescindible para el correcto diseño gráﬁco de la página.
+        <br>
+        Según este modelo, cualquier elemento HTML se encuentra dentro de una caja rectangular formada por su propio contenido (un texto, una imagen, una lista, etc.), un margen interno y el borde.
+        <br>
+        <img src="./imagenescap3/Imagen55.png" alt="">
+        <br>
+        Si el margen interno es el que hay entre el contenido y el borde, el externo es el que va más allá de este y sirve para separarlo del resto de elementos de la página. Dicha separación es la suma de los márgenes externos de ambos elementos en sentido horizontal, pero solo la del mayor en sentido vertical.
+        <br>
+        La siguiente imagen lo representa gráﬁcamente, ya que muestra tres elementos HTML con sus respectivos márgenes externos, donde se aprecia la separación que habría entre ellos:
+        <br>
+        <img src="./imagenescap3/Imagen56.png" alt="">
+        <br>
+        Para establecer el tamaño del contenido, los márgenes o los bordes de un elemento, CSS proporciona las siguientes propiedades:
+        <br>
+        <br>
+        • width y height. Determina el ancho y el alto del contenido. <br>
+        • margin. Establece los márgenes externos. <br>
+        • padding. Fija los márgenes internos. <br>
+        • border. Especiﬁca aquello que tiene que ver con el borde, como el tipo de línea, el color, el grosor, etc.<br>
+        <br>
+        En las siguientes secciones se describirán en detalle cada una de estas propiedades. Sin embargo, antes deberá conocer las unidades de medida utilizadas para especiﬁcar el valor de todas ellas.
+        <br>
+        <br>
+        <section>
+            Estas unidades las usará con frecuencia, ya que los elementos HTML que se muestran en pantalla lo hacen siempre con un tamaño determinado.
+
+        </section>
+        <br>
+        Una longitud se puede expresar de dos formas distintas, que determinan el tipo de unidad de medida utilizado: 
+        <br>
+        <br>
+        • Absoluta. <br>
+        • Relativa. <br>
+        <br>
+        Las unidades de medida absolutas establecen un tamaño ﬁjo (siempre el mismo), independientemente del tipo de dispositivo. Son las siguientes: 
+        <br>
+        <br>
+        • in. Pulgadas. El nombre de la unidad procede del inglés “inches” (1 pulgada son 2.54 centímetros). <br>
+        • cm. Centímetros. <br>
+        • mm. Milímetros. <br>
+        • pt. Puntos. No lo confunda con píxeles (1 punto equivale a 1/72 pulgada, aproximadamente 0.35 milímetros). <br>
+        • pc. Picas (1 pica equivale a 12 puntos, es decir, unos 4.23 milímetros) <br>
+        <br>
+        Por lo tanto, el tamaño de un elemento HTML puede ser, por ejemplo, de 2 pulgadas (2in), 3 centímetros (3cm) o 10 puntos (10pt).
+        <br>
+        <br>
+        <section>
+            Observe que entre el valor y la unidad de medida no hay ningún espacio.
+
+        </section>
+        <br>
+        Por el contrario, las unidades de medida relativas requieren de una referencia para obtener el valor deﬁnitivo. En concreto, con HTML se pueden usar las siguientes: 
+        <br>
+        • px. Corresponde al tamaño de un píxel de la pantalla, cuyo tamaño depende de la resolución del dispositivo (aunque, sería más adecuado hablar de la densidad de píxeles por pulgada). <br>
+        • %. Es un porcentaje del tamaño del elemento contenedor en el que se incluya el elemento. Si no estuviera dentro de ninguno, correspondería al de la ventana del navegador. <br>
+        • vw y vh. Equivalen al 1% del ancho y el alto de la ventana del navegador, respectivamente. <br>
+        <br>
+        De forma particular, cuando se trabaja con textos se suelen utilizar la unidad em, que coincide con el ancho de la letra ‘M’ en la fuente utilizada, o rem, que es el de la fuente por defecto del navegador.
+        <br>
+        <br>
+        <section>
+            Estas no son las únicas unidades permitidas por HTML. Si quiere conocerlas todas, visite la página
+            https://developer.mozilla.org/es/docs/Web/CSS/length.
+
+        </section>
+        <br>
+        primera vista, seguro que piensa que las unidades absolutas son las más intuitivas y, por lo tanto, se decante por ellas. A ﬁn de cuentas, todos estamos acostumbrados a usarlas en la vida diaria. Sin embargo, se recomienda encarecidamente el uso de las relativas porque, a diferencia de las anteriores, adaptan el tamaño de los elementos HTML a la pantalla del dispositivo en el que se muestran. En consecuencia, si quiere que una página web se vea de forma correcta tanto en una tableta, como en un móvil o un ordenador personal, utilice siempre unidades de relativas.
+        <br>
+        <h2>3.3.1 Ancho y alto del contenido </h2>
+        Todos los elementos visibles de una página web lo hacen con un tamaño susceptible de modiﬁcarse. Según el modelo de caja, sus dimensiones vienen determinadas por el ancho y el alto del contenido del elemento, al que se suma el grosor del margen interno y el borde. En esta sección se describirán las propiedades que determinan únicamente el tamaño del contenido (sin borde ni márgenes), en concreto, width y height.
+        <br>
+        Los valores que pueden llegar a tomar ambas propiedades son: 
+        <br>
+        <br>
+        • auto. El navegador se encarga de calcular el ancho y el alto del elemento. <br>
+        • Un número seguido de la unidad de medida utilizada. <br>
+        • Un porcentaje del tamaño del contenedor en el que se encuentra. <br>
+            Además de los valores anteriores, tanto width como height pueden tomar el valor: <br>
+        • inherit. Heredan el valor que se hubiera asignado al contenedor donde estén incluidos. <br>
+        • initial. La propiedad vuelve a tomar el valor por defecto (se supone que ha sido modiﬁcada previamente). <br>
+        <br>
+        <br>
+        <section>
+            En la última sección de este capítulo se explican en detalle estos valores tan especiales.
+
+        </section>
+        <br>
+        Por último, y en el caso de que el elemento sea un contenedor, ambas propiedades también podrán tomar este otro valor: 
+        <br>
+        <br>
+        fit-content. Ajusta el tamaño del contenedor al del contenido. 
+        <br>
+        Con el ﬁn de practicar con estas importantes propiedades, se utilizará un código de ejemplo compuesto por un contenedor (div) dentro del que se han incluido cuatro párrafos (p):
+        <br>
+        <img src="./imagenescap3/Imagen57.png" alt="">
+        <br>
+        Para ver el espacio ocupado por el contenedor y, de esta forma, apreciar con claridad los cambios de tamaño que experimenta al modiﬁcar los valores de las propiedades width y height, se le ha asignado un color de fondo amarillo (el valor de la propiedad background-color es yellow).
+        <br>
+        El documento HTML anterior no hace uso de las propiedades width y height, por lo que el alto y el ancho del contenedor lo deﬁne el navegador (su efecto es el mismo que si les hubiera asignado el valor auto). Como puede ver a continuación, su ancho coincide con el de la pantalla. En cambio, el alto se ajusta al contenido para englobar los cuatro párrafos que agrupa.
+        <br>
+        <img src="./imagenescap3/Imagen58.png" alt="">
+        <br>
+        Ahora, añada la propiedad width al estilo de la etiqueta <div> con el ﬁn de reducir su ancho a la mitad del que tiene la ventana del navegador:
+        <br>
+        <img src="./imagenescap3/Imagen59.png" alt="">
+        <br>
+        En esta otra imagen se puede comprobar cómo el fondo amarillo pasa a ocupar solo la mitad del ancho de la pantalla.
+        <br>
+        <img src="./imagenescap3/Imagen60.png" alt="">
+        <br>
+        Podría pensar que, si asignara un valor del 50% a la propiedad height, el alto del contenedor sería la mitad de la ventana del navegador:
+        <br>
+        <img src="./imagenescap3/Imagen2.png" alt="">
+        <br>
+        Sin embargo, al refrescar la página comprobaría que no es así. El motivo es porque no se ha ﬁjado de forma explícita el tamaño de los contenedores dentro de los que se encuentra, en este caso, el de las etiquetas <body> y <html>. Por lo tanto, para que el contenedor <div> ocupe la mitad del alto de la ventana del navegador, deberá hacer los siguientes cambios:
+        <br>
+        <img src="./imagenescap3/Imagen3.png" alt="">
+        <br>
+        Estas modiﬁcaciones no serían necesarias si en vez de un %, utilizara vh como unidad de medida (recuerde que representa el 1% del tamaño de la pantalla). En ese caso, el único ajuste que habría que hacer sobre el código original, sería:
+        <br>
+        <img src="./imagenescap3/Imagen4.png" alt="">
+        <br>
+        En ambos casos, el resultado sería el siguiente:
+        <br>
+        <img src="./imagenescap3/Imagen5.png" alt="">
+        <br>
+        Si lo que quiere es ajustar el ancho del div al de su contenido, solo tiene que asignar el valor fit-content a la propiedad width (el alto, como ha comprobado, ya se ajusta automáticamente):
+        <br>
+        <img src="./imagenescap3/Imagen6.png" alt="">
+        <br>
+        Esta nueva imagen demuestra que ahora el espacio ocupado por el contenedor coincide con el de su contenido, es decir, el de los cuatro párrafos: 
+        <br>
+        <img src="./imagenescap3/Imagen7.png" alt="">
+        <br>
+        <h2>3.3.1.1 Desbordamiento</h2>
+        En todos los ejercicios realizados hasta el momento, los contenedores incluían elementos HTML cuyo tamaño era inferior. Pero ¿qué sucedería si eso no fuera así? Para comprobarlo, se utilizará un código HTML muy parecido al utilizado en los ejercicios de la sección anterior: 
+        <br>
+        <img src="./imagenescap3/Imagen8.png" alt="">
+        <br>
+        Como pueden observar, el tamaño del contenedor dentro del que están los cuatro párrafos se limita a 200 x 100 píxeles. Al especificar unas dimensiones concretas, se asumen estas y se ignoran las de su contenido, que termina saliendo fuera de sus límites, como se aprecia a continuación:
+        <br>
+        <img src="./imagenescap3/Imagen9.png" alt="">
+        <br>
+        Observe que el navegador ha dividido el texto del párrafo en varias líneas para acomodarlo al ancho del contenedor. Sin embargo, eso no se puede hacer a lo alto, por lo que este se desborda por abajo.
+        <br>
+        Con el fin de controlar estas situaciones, HTML ofrece la propiedad overflow, a la que se puede asignar los siguientes valores:
+        <br>
+        <br>
+        •	Visible. Aunque el contenido sale fuera del contenedor, se sigue viendo. Es el valor por defecto, mostrado en la imagen anterior. <br>
+        •	Hidden. Todo lo que no entra en el contendor deja de verse. <br>
+        •	Scroll. Muestra siempre una barra de desplazamiento, independientemente de si el contenido sale fuera del contenedor, o no. <br>
+        •	Auto. La barra de desplazamiento solo aparece cuando el contenido desborda el contenedor. <br>
+        <br>
+        <br>
+        <section>
+            Esta propiedad solo tiene efecto en aquellos elementos que se muestran en modo bloque (en el capítulo de distribución de elementos se estudia cuáles son).
+
+        </section>
+        <br>
+        Para demostrar los efectos de esta propiedad, añádala al estilo de la etiqueta div:
+        <br>
+        <img src="./imagenescap3/Imagen10.png" alt="">
+        <br>
+        A continuación, se pueden advertir el efecto producido al asignar el valor hidden a la propiedad overflow. Como puede comprobar, el texto que no cabe en el contenedor (recuadro amarillo) deja de verse.
+        <br>
+        <img src="./imagenescap3/Imagen11.png" alt="">
+        <br>
+        En cambio, esta otra imagen muestra el resultado obtenido si se hubiera asignado el valor scroll, donde se aprecian las barras de desplazamiento que permitirían leerlo por completo.
+        <br>
+        <img src="./imagenescap3/Imagen12.png" alt="">
+        <br>
+        <h2>3.3.1.2 Valores máximos y mínimos</h2>
+        Cuando se especifica el tamaño de un elemento HTML, no solo es posible asignarle un valor concreto mediante las propiedades width y height, sino también un margen entre los que estaría limitado. En ese caso, las propiedades que habría que utilizar son:
+        <br>
+        <br>
+        •	Max-height y max-width. <br>
+        •	Min-height y min-width. <br>
+        <br>
+        Las dos primeras determinan la altura o anchura máxima del elemento. Si su contenido fuera más pequeño, no tendría ningún efecto. En caso contrario, este se mostraría según la estrategia establecida en la propiedad overflow.
+        <br>
+        Las dos últimas propiedades fijan la altura o anchura mínima del elemento. Si su contenido fuera más pequeño, se aplicaría sete tamaño. En caso contrario, no tendría ningún efecto.
+        <br>
+        Los valores que pueden llegar a tener estas propiedades son:
+        <br>
+        •	Un número seguido de una unidad de medida. <br>
+        •	Un porcentaje del tamaño del contenedor en el que se encuentra el elemento. <br>
+        <br>
+        Además de los valores anteriores, max-height, max-width también pueden tomar el valor none, que no establece ningún valor máximo. Es su valor por defecto. El de las propiedades min-height y min-width es 0.
+        <br>
+        Como sucede con otras muchas propiedades, estas también pueden tomar los valores initial e inherit.
+        <br>
+        El siguiente código demuestra el comportamiento de los elementos que utilizan estas propiedades.
+        <br>
+        <img src="./imagenescap3/Imagen13.png" alt="">
+        <br>
+        El cuerpo del documento le resultará familiar porque es el mismo manejando en ejercicios anteriores. La diferencia está en el estilo asociado al contenedor que agrupa los cuatro párrafos. Ahora, además de tener un color de fondo amarillo (propiedad background), se fija un ancho máximo de 300 píxeles y un alto mínimo de 200 píxeles (propiedades max-width y min-height).
+        <br>
+        A continuación, se muestra el resultado obtenido:
+        <br>
+        <img src="./imagenescap3/Imagen14.png" alt="">
+        <br>
+        Como el alto de los cuatro párrafos es menor que el valor mínimo, prevalece este último. Además, el ancho del contenedor se ajusta al valor máximo (no ocupa todo el ancho de la pantalla del navegador, que es su comportamiento por defecto).
+        <br>
+        Esta otra imagen muestra el resultado de añadir dos párrafos más al contenedor, el último de los cuales supera el ancho máximo. Como ahora la altura de todos los párrafos es mayor que la mínima del contenedor, la propiedad min-height deja tener efecto y el alto del navegador vuelve a ajustarse al de su contenido (comportamiento habitual). Además, el último párrafo se divide en dos líneas para ajustarse al ancho máximo del contenedor.
+        <br>
+        <img src="./imagenescap3/Imagen15.png" alt="">
+        <br>
+        Para finalizar esta sección, me gustaría recordarle que el diseño de una página web no es más que un conjunto de áreas creadas mediante contenedores que tienen un determinado tamaño y ocupan una posición concreta en la pantalla. Si el contenido de dichos contenedores no se ajustara a su tamaño o no se adoptará la estrategia de desbordamiento adecuada, el resultado no coincidirá con el diseño previsto. Téngalo siempre presente, porque con frecuencia es motivo de resultados aparentemente incomprensibles que no se parecen al esperado. 
+        <br>
+    </p>
+</body>
+<footer>
+    <a href="./Capitulo3.1.html"><button>Siguiente página</button></a>
+    <a href="index.html"><button>Regresar al inicio</button></a>
+</footer>
+</html>

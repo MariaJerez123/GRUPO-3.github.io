@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Capitulo2.1</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <p>Navegador para visualizar o reproducir los archivos correctamente. Aunque no se pretende describir este estándar,
+    observe que su formato es:
+  </p>
+  &nbsp;&nbsp;&nbsp;&nbsp; “tipo/subtipo”
+  <p>
+    Por eso, si el formato de una imagen fuera jpg, su tipo MIME sería image/jpg. Y si en vez de una imagen fuera un
+    texto normal o HTML, este sería text/plain y text/html, respectivamente. Algo similar sucedería con los archivos de
+    sonido o vídeo.
+  </p>
+  <p>
+    En consecuencia, la etiqueta
+    <link> que deberá utilizar para cargar y mostrar la imagen contenida en el archivo “favicon.ico” (almacenado en la
+    carpeta “Imágenes”) al lado del título, es la siguiente:
+  </p>
+  <p id="codigos">
+    &#60;link rel=”icon” type=”image/x-icon” href=”../Imagenes/mi_favicon.ico”&#62;
+  </p>
+  <p>
+    Añada dicha etiqueta al código de cabecera de su primera página web, que quedaría así:
+  </p>
+  <p id="codigos">
+    &#60;!DOCTYPE html&#62;
+    <br>
+    &#60;!-- esta es mi primera página web --&#62;
+    <br>
+    &#60;html&#62;
+    <br>
+    &#60;head&#62;
+    <br>
+    &#60;meta charset=”UTF-8”&#62;
+    <br>
+    &#60;title&#62;Mi primera pagina web&#60;title&#62;
+    <br>
+    &#60;link rel=”icon” type=”image/x-icon” href=”../Imagenes/mi_favicon.ico”&#62;
+    <br>
+    &#60;/head&#62;
+    <br>
+    &#60;body&#62;
+    <br>
+    Hola Mundo
+    <br>
+    &#60;/body&#62;
+    <br>
+    &#60;/html&#62;
+  </p>
+  <p>
+    Refresque la página o cárguela de nuevo en el navegador. Ahora, en la pestaña verá la imagen del favicon al lado del
+    título.
+  </p>
+  <img src="./Imagenes/1.png">
+  <p>
+    Un favicon es una imagen muy pequeña, generalmente de 16 × 16 o 32 × 32 píxeles. Puede estar almacenada en un
+    archivo con extensión “.png”, “.gif” o, como en el ejemplo anterior, “.ico”. Si quiere utilizar alguno, puede buscar
+    uno que encaje con sus necesidades en Internet o, aún mejor, crearlos usted mismo con un generador de favicones
+    online. Aunque existen muchos disponibles, uno de los fáciles de usar es https://www.favicon.cc/. Fue el empleado
+    para dibujar la inicial de mi nombre (la letra “T”).
+  </p>
+  <p>
+    Si experimentara problemas de visualización en Chrome, acceda a esta herramienta desde otro navegador como Edge.
+  </p>
+  <p>
+    Es muy intuitivo de manejar, por lo que empezará a crear sus propios iconos nada más abrirlo. Puede hacerlo de cero
+    (botón “Create New Favicon”) o cargar una imagen que, con mayor o menor fortuna, la reducirá a un tamaño de 16 × 16
+    píxeles (botón “Import Image”). Además, en la propia pestaña de la herramienta se muestra cómo quedaría en su página
+    web.
+  </p>
+  <p>
+    Una vez completada la imagen, solo tiene que descargarla en su ordenador pulsando el botón “Download Favicon”.
+  </p>
+  <h2>2.4 ETIQUETAS BÁSICAS DEL CUERPO</h2>
+  <p>
+    Las etiquetas que forman parte del cuerpo de un documento HTML son las relacionadas con los elementos visibles de la
+    página (textos, imágenes, listas, hipervínculos, etc.). Estos podrán agruparse en contenedores mediante los que se
+    sea posible aplicar un mismo estilo o situarlos de la forma deseada en una determinada zona de la pantalla.
+  </p>
+  <p>
+    Con el ﬁn de describirlas de una manera ordenada, las etiquetas se estudiarán por categorías:
+  </p>
+  <p>
+    o Texto. Hacen posible la creación de los párrafos y los encabezados con los que se estructura el contenido. En este
+    grupo también se incluyen aquellas que le dan cierto formato (subrayándolo, poniéndolo en cursiva, etc.). Cuando el
+    texto tiene una semántica especial como sucede, por ejemplo, con las citas literales de otras fuentes, los títulos
+    de libros, las películas, etc., existen etiquetas especíﬁcas que permite mostrarlo de forma diferenciada.
+    <br>
+    o Imágenes. Junto con el texto, componen el contenido principal de la página.
+    <br>
+    o Multimedia. Incorporan archivos de audio y vídeo que complementan el contenido principal.
+    <br>
+    o Hipervínculos. Si una de las principales características de la web es su carácter hipertexto, los hipervínculos
+    son los que la hacen posible.
+    <br>
+    o Listas. Imprescindibles cuando hay que organizar o clasiﬁcar información.
+    <br>
+    o Contenedores. Agrupan los elementos de la página por su temática (aquello de lo que tratan) o con el ﬁn de aplicar
+    las mismas reglas de estilo.
+  </p>
+  <p>
+    Empecemos por las etiquetas que tienen que ver con el texto.
+  </p>
+  <h2>2.4.1 Texto</h2>
+  <p>
+    Aunque las páginas web actuales son cada vez más visuales y los elementos multimedia tienen un papel predominante,
+    el texto sigue siendo, sin lugar a dudas, el protagonista. Por ese motivo, en esta sección empezará estudiando las
+    etiquetas que permiten estructurarlo en capítulos y secciones.
+  </p>
+  <p>
+    A continuación, se presentarán aquellas otras con las que se da formato a dicho texto, hacen posible añadir
+    subíndices o superíndices e, incluso, realizar anotaciones al margen.
+  </p>
+  <p>
+    En la siguiente sección conocerá un grupo de etiquetas especializado en la inserción de citas procedentes de fuentes
+    externas o el nombre de las propias fuentes. En este grupo también se incluye aquellas que asocian descripciones
+    emergentes a términos que requieran una aclaración adicional, como, por ejemplo, los acrónimos.
+  </p>
+  <p>
+    Un apartado especíﬁco dedicado a las entidades HTML le permitirá utilizar caracteres especiales que no encontrará en
+    su teclado, con los que podrá escribir fórmulas matemáticas, añadir símbolos de uso común como los del copyright o
+    marca registrada, etc.
+  </p>
+  <p>
+    Empecemos por las etiquetas más comunes: las de los encabezados y los párrafos.
+  </p>
+  <h2>2.4.1.1 Encabezados y párrafos</h2>
+  <p>
+    En esta sección se describen las etiquetas con las que se crean los párrafos que componen la información que se
+    pretende transmitir, además de las que permiten organizarla en capítulos y apartados, tal como está acostumbrado a
+    ver en libros y prensa. Se trata de las siguientes:
+  </p>
+  <p>
+    o &#60;h1> a &#60;h6&#62;. Representan los distintos tipos de encabezados. Estructuran el contenido en secciones a
+    distintos niveles siguiendo el índice del documento.
+    <br>
+    o &#60;p&#62;. Dividen el texto en párrafos.
+  </p>
+  <p>
+    El siguiente código de ejemplo muestra el aspecto de cada uno de estos encabezados:
+  </p>
+  <p id="codigos">
+    &#60;!DOCTYPE html&#62;
+    <br>
+    &#60;html&#62;
+    <br>
+    &#60;head&#62;
+    <br>
+    &#60;meta charset="UTF-8"&#62;
+    <br>
+    &#60;/head&#62;
+    <br>
+    &#60;body&#62;
+    <br>
+    &#60;h1&#62;Titulo principal&#60;/h1&#62;
+    <br>
+    &#60;h2&#62;Subtitulo&#60;/h2&#62;
+    <br>
+    &#60;h3&#62;Encabezado de tercer nivel&#60;/h3&#62;
+    <br>
+    &#60;h4&#62;Encabezado de cuarto nivel&#60;/h4&#62;
+    <br>
+    &#60;h5&#62;Encabezado de quinto nivel&#60;/h5&#62;
+    <br>
+    &#60;h6&#62;Encabezado de sexto nivel&#60;/h6&#62;
+    <br>
+    &#60;/body&#62;
+    <br>
+    &#60;/html&#62;
+  </p>
+  <p>
+    A continuación, puede ver este documento HTML en Chrome:
+  </p>
+  <img src="./Imagenes/2.png">
+  <p>
+    Después de establecer las secciones en las que se divide el contenido de una página, estas deberán rellenarse con el
+    texto correspondiente. La forma de hacerlo, al igual que en cualquier otro medio escrito, es mediante párrafos,
+    fragmentos de texto con unidad temática que se separan del resto por un punto y aparte. Una vez que haya decidido
+    qué partes de un texto conforman los párrafos, utilice la etiqueta &#60;p&#62; para que se vean como tales.
+  </p>
+  <p>
+    Con el ﬁn de poner en práctica esta nueva etiqueta, sustituya el contenido del cuerpo del documento HTML anterior
+    por el siguiente, en el que hay un encabezado principal y dos párrafos:
+  </p>
+  <p id="codigos">
+    &#60;h1&#62;Titulo principal&#60;/h1&#62;
+    <br>
+    &#60;p&#62;
+    <br>
+    Este es el primer parrafo del documento. Observe que, aunque en el codigo HTML añado retornos de carro, el navegador
+    solo muestra el del final de parrafo.
+    <br>
+    &#60;/p&#62;
+    <br>
+    &#60;p&#62;
+    <br>
+    Algo que se puede comprobar al añadir este segundo parrafo.
+    <br>
+    &#60;/p&#62;
+  </p>
+  <p>
+    Ahora, Chrome mostrará el siguiente resultado:
+  </p>
+  <img src="./Imagenes/3.png">
+  <p>
+    Observe que los párrafos siempre empiezan en una línea nueva y que se incluye un margen al principio y al ﬁnal para
+    separarlo del resto de párrafos o elementos HTML de la página.
+  </p>
+  <p>
+    Las etiquetas anteriores ignoraron los retornos de carro añadidos al texto en el documento HTML. Aunque no es lo
+    habitual, si quisiera que se tuvieran en cuenta, deberá emplear la etiqueta &#60;pre&#62;, ya que muestra en el
+    navegador el texto tal como se ha escrito en el documento HTML.
+  </p>
+  <p>
+    Además de las etiquetas anteriores, merecen una mención especial estas otras dos:
+  </p>
+  <p>
+    o &#60;hr>. Dibuja una línea horizontal que enfatiza la separación entre textos (o cualquier otro elemento de la
+    página).
+    <br>
+    o &#60;br>. Añade un retorno de carro.
+  </p>
+  <p>
+    Añada la primera etiqueta de la lista anterior entre los dos párrafos del documento HTML anterior. Al refrescar la
+    página verá la línea de separación mencionada anteriormente.
+  </p>
+  <img src="./Imagenes/4.png">
+  <p>
+    Como indica el texto del propio párrafo, da igual el número de retornos de carro que añada al escribirlos en el
+    documento HTML porque el navegador los ignora. Si realmente quisiera añadirlos, deberá utilizar la etiqueta
+    &#60;br>, que inserta un salto de línea. Así, el siguiente código de ejemplo sí mostraría correctamente las dos
+    primeras estrofas del poema «Volverán las oscuras golondrinas», de Gustavo Adolfo Bécquer.
+  </p>
+  <p id="codigos">
+    &#60;p&#62;
+    <br>
+    Volveran las oscuras golondrinas&#60;br&#62;
+    <br>
+    en tu balcon sus nidos a colgar,&#60;br&#62;
+    <br>
+    y otra vez con el ala a sus cristales&#60;br&#62;
+    <br>
+    jugando llamaran.
+    <br>
+    &#60;/p&#62;
+    <br>
+    &#60;p&#62;
+    <br>
+    Pero aquellas que el vuelo refrenaban&#60;br&#62;
+    <br>
+    tu hermosura y mi dicha a contemplar,&#60;br&#62;
+    <br>
+    aquellas que aprendieron nuestros nombres...&#60;br&#62;
+    <br>
+    ¡esas... no volveran!
+    <br>
+    &#60;/p&#62;
+  </p>
+  <p>
+    Como puede comprobar, la etiqueta &#60;br&#62; se usa sin la de cierre.
+  </p>
+  <p>
+    A continuación, se muestra el resultado de la ejecución de este código en Chrome:
+  </p>
+  <img src="./Imagenes/5.png">
+  <p>
+    La diferencia entre la etiqueta &#60;br> y &#60;p> es que la primera solo añade un salto de línea, mientras que la
+    segunda agrega también un espacio de separación con el resto del texto (o cualquier otro elemento de la página).
+  </p>
+  <p>
+    Otra forma de escribir este poema sin usar la etiqueta &#60;br> es haciendo que el navegador muestre el contenido
+    del elemento tal como se escriba en el propio código HTML. Para ello, deberá utilizar la etiqueta &#60;pre>, que sí
+    tendría en cuenta los retornos de carro que se incluyeran. El código completo del documento HTML anterior, una vez
+    sustituida la etiqueta &#60;p> por &#60;pre>, quedaría así:
+  </p>
+  <p id="codigos">
+    &#60;!DOCTYPE html&#62;
+    <br>
+    &#60;html&#62;
+    <br>
+    &#60;head&#62;
+    <br>
+    &#60;meta charset="UTF-8"&#62;
+    <br>
+    &#60;/head&#62;
+    <br>
+    &#60;body&#62;
+    <br>
+    &#60;pre&#62;
+    <br>
+    Volveran las oscuras golondrinas
+    en tu balcon sus nidos a colgar,
+    y otra vez con el ala a sus cristales
+    jugando llamaran.
+    <br>
+    &#60;/pre&#62;
+    <br>
+    &#60;pre&#62;
+    <br>
+    Pero aquellas que el vuelo refrenaban
+    tu hermosura y mi dicha a contemplar,
+    aquellas que aprendieron nuestros nombres...
+    ¡esas... no volveran!
+    <br>
+    &#60;/pre&#62;
+    <br>
+    &#60;/body&#62;
+    <br>
+    &#60;/html&#62;
+  </p>
+  <p>
+    Podría llegar a pensar que el código anterior presenta un problema de maquetación, ya que el texto aparece
+    desplazado a la izquierda, en vez de indentado a la derecha debajo de la etiqueta &#60;pre> donde está incluido. No
+    es así, ya que, si dicho texto se hubiera desplazado a la derecha en el código, también se vería desplazado en el
+    navegador. Recuerde que esta etiqueta muestra el texto tal como se escribe en el documento HTML (incluidos los
+    espacios o tabuladores que añada al principio de cada línea).
+  </p>
+  <p>Cargue de nuevo este código en Chrome o refresque la página si todavía no ha salido de ella. El resultado será el
+    mismo del código de ejemplo anterior.</p>
+  <p>En realidad, ambos textos no tienen la misma apariencia, ya que la fuente de esta etiqueta no es la misma de los
+    párrafos sino otra de ancho ﬁjo. En el siguiente capítulo aprenderá a utilizar las fuentes.</p>
+  <h4>2.4.1.2 Formato</h4>
+  <p>Cuando se incluye un encabezado o un párrafo en un documento HTML, el aspecto con el que se muestra es el
+    establecido por defecto para cado uno de estos elementos. Si quisiera modiﬁcar el formato de dicho texto, dispone de
+    las siguientes etiquetas:</p>
+  <p>
+    o &#60;b> o &#60;strong>. Muestran el texto en negrita. Aunque visualmente su resultado es el mismo, la primera solo
+    busca llamar la atención, mientras que la segunda indica que el texto contiene información importante.
+    <br>
+    o &#60;i> o &#60;em>. Ambas presentan el texto en cursiva, pero la segunda se reserva para términos técnicos,
+    palabras en otro idioma, etc.
+    &#60;br>
+    o &#60;u>. Subraya el texto.
+    &#60;br>
+    o &#60;mark>. Resalta el texto como si se hubiera marcado con un rotulador ﬂuorescente.
+    &#60;br>
+    o &#60;ins>. Resalta y subraya la parte de un texto que se ha añadido al
+    documento.
+    &#60;br>
+    o &#60;del>. Tacha el texto.
+    &#60;br>
+    o &#60;small>. Disminuye el tamaño del texto, algo de gran utilidad cuando se quieren hacer anotaciones como, por
+    ejemplo, la letra pequeña de los contratos.
+    &#60;br>
+    o &#60;sub> y &#60;sup>. Permite trabajar con subíndices y superíndices.
+  </p>
+  <p>
+    El siguiente documento HTML muestra un ejemplo de uso de dichas etiquetas y el efecto que producen en el texto de
+    una serie de párrafos:
+  </p>
+  <p id="codigos">
+    &#60;!DOCTYPE html&#62;
+    <br>
+    &#60;html&#62;
+    <br>
+    &#60;head&#62;
+    <br>
+    &#60;meta charset="UTF-8"&#62;
+    <br>
+    &#60;/head&#62;
+    <br>
+    &#60;body&#62;
+    <br>
+    &#60;p&#62;
+    <br>
+    En este primer parrafo se encontrara un &#60;i&#62;texto en cursiva&#60;/i&#62;.
+    <br>
+    &#60;/p&#62;
+    <br>
+    &#60;p&#62;
+    <br>
+    Este otro tiene un &#60;b&#62;texto en negrita&#60;/b&#62; una palabra &#60;u&#62;subrayada&#60;/u&#62; y otra
+    &#60;del&#62;tachada&#60;/del&#62;.
+    <br>
+    &#60;/p&#62;
+    <br>
+    &#60;p&#62;
+    <br>
+    El superindice es util para expresar potencias, como: 2&#60;sup&#62;2&#60;/sup&#62; = 4.
+    <br>
+    &#60;/p&#62;
+    <br>
+    &#60;p&#62;
+    <br>
+    Y el subindice para escribir la formula quimica del agua:
+    <br>
+    H&#60;sub&#62;2&#60;/sub&#62;0.
+    <br>
+    &#60;/p&#62;
+    <br>
+    &#60;p&#62;
+    <br>
+    La ultima palabra de este parrafo esta &#60;mark&#62;marcada&#60;/mark&#62;.
+    <br>
+    &#60;/p&#62;
+    <br>
+    &#60;p&#62;
+    <br>
+    &#60;small&#62;&copy2022 Tomas Dominguez Minguez&#60;/small&#62;
+    <br>
+    &#60;/p&#62;
+    <br>
+    &#60;/body&#62;
+    <br>
+    &#60;/html&#62;
+  </p>
+  <p>
+    En la imagen mostrada a continuación puede ver el resultado obtenido.
+  </p>
+  <img src="./Imagenes/7.png">
+  <p>
+    Habrá observado que el texto del último párrafo no coincide con lo que muestra el navegador, ya que “&copy” se ha
+    convertido en el símbolo copyrigth (©). En realidad, se trata de un carácter especial del que no dispone su teclado.
+    Al igual que este, hay otros muchos símbolos de tipo técnico, matemático, letras griegas, monedas, etc., que
+    seguramente necesite utilizar en sus propias páginas web. Para incorporarlos, deberá hacerlo como entidades HTML,
+    objeto de estudio de la siguiente sección.
+  </p>
+  <h2>2.4.1.3 Entidades HTML</h2>
+  <p>
+    Tal como se acaba de comentar, las entidades HTML permiten la visualización de caracteres espaciales, como:
+  </p>
+  <p>
+    o Símbolos o cualquier otro carácter que no aparece en el teclado.
+    <br>
+    o Caracteres reservados del propio lenguaje HTML que el navegador podría interpretar como código, no como parte del
+    contenido de la página.
+    <br>
+    o Espacios con un tratamiento especial.
+  </p>
+  <p>
+    En todos estos casos, la sintaxis de una entidad HTML puede hacer referencia al nombre o el código de la entidad,
+    según la siguiente sintaxis:
+  </p>
+  <p id="codigos">
+    &#38;nombre;
+    <br>
+    &#código;
+  </p>
+  <p>
+    A modo de ejemplo, la tabla mostrada a continuación incluye el nombre y el código de algunos símbolos y caracteres
+    especiales.
+  </p>
+  <p>
+    A diferencia de los códigos, puede que algunos nombres no estén soportados por todos los navegadores.
+  </p>
+  <p>
+    El siguiente párrafo contiene tres de las entidades HTML de la tabla anterior:
+  </p>
+  <p id="codigos">
+    &#60;p&#62;&#38;alpha; &#38;ne; &#38;beta;&#60;/p&#62;
+  </p>
+  <p>
+    Si lo incluyera en el cuerpo de una página web, obtendría una expresión matemática con la siguiente desigualdad:
+  </p>
+  <img src="./Imagenes/8.png">
+  <p>
+    Además de mostrar símbolos o caracteres especiales, las entidades se emplean para escribir caracteres del propio
+    lenguaje HTML dentro de un texto, como, por ejemplo, ‘&#60;’ o ‘>’. Cuando el navegador encuentra este tipo de
+    caracteres, los interpreta como la apertura o cierre de una etiqueta (aunque forme parte del texto de un párrafo o
+    un encabezado), lo que podría provocar errores de ejecución. Para evitarlo, en vez de dichos caracteres, deberá
+    utilizar la entidad correspondiente.
+  </p>
+  <p>
+    En la siguiente tabla se encuentran los caracteres reservados del lenguaje HTML vistos hasta ahora (incluye el ‘&’ o
+    el ‘#’ utilizados para identiﬁcar una entidad):
+  </p>
+  <p>
+    Por ejemplo, el siguiente párrafo mostraría otra expresión matemática donde la variable ‘x’ es mayor que ‘y’.
+  </p>
+  <p id="codigos">
+    &#60;p&#62;x &#32;gt; y&#60;/p&#62;
+  </p>
+  <img src="./Imagenes/9.png">
+  <p>
+    Aunque en páginas sencillas el navegador muestre correctamente un texto sin necesidad de usar entidades, según vaya
+    aumentando su complejidad se pueden llegar a provocar errores difíciles de resolver.
+  </p>
+  <p>
+    Por último, las entidades se emplean para dar un tratamiento especial a ciertos espacios. Un caso típico es aquel en
+    el que se evita que el navegador parta una línea en dos en uno de dichos espacios. Por ejemplo, si se quiere evitar
+    que la frase:
+  </p>
+  <p>
+    &nbsp;&nbsp;&nbsp;&nbsp; Yo suelo conducir a 40 km / h en ciudad.
+  </p>
+  Se pueda llegar a romper en alguno de estos puntos, por coincidir con el ﬁnal de una línea:
+  <p>
+    Yo suelo conducir a 40
+    km&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    Yo suelo conducir a 40 km /
+  </p>
+  <p>
+    / h en ciudad.
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    h en ciudad
+  </p>
+  <p>
+    Deberá sustituir los espacios que hay antes y después de la barra (‘/’) por la entidad que representa un espacio
+    especial (non-breaking space), cuyo nombre y código es:
+  </p>
+  <p id="codigos">
+    &#38;nbsp;
+    <br>
+    &#38;160;
+  </p>
+  <p>
+    Por lo tanto, si este texto estuviera dentro de un párrafo, en vez de escribirlo así:
+  </p>
+  <p id="codigos">
+    &#60;p&#62;Yo suelo conducir a 40 km / h en ciudad.&#60;/p&#62;
+  </p>
+  <p>
+    Debería hacerlo de esta otra forma:
+  </p>
+  <p id="codigos">
+    &#60;p&#62;Yo suelo conducir a 40 km&#38;nbsp;/&#38;nbsp;h en ciudad.&#60;/p&#62;
+  </p>
+  <p>
+    Por otra parte, cuando un texto contenga varios espacios juntos, el navegador dejará solo uno (ignora los demás).
+    Para evitarlo, en vez del carácter espacio use esta misma entidad.
+  </p>
+  <p>
+    Por ejemplo, si quisiera mostrar en el navegador el texto:
+  </p>
+  <p>
+    &nbsp;&nbsp;&nbsp;&nbsp;Añado cinco espacios&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y ﬁnalizo.
+  </p>
+  <p>
+    Ya que en el navegador aparecería lo siguiente:
+  </p>
+  <img src="./Imagenes/11.png">
+</body>
+<footer>
+    <a href="./capitulo2.2.html"><button>Siguiente página</button></a>
+    <a href="./capitulo2.html">Anterior página</a>
+    <a href="index.html"><button>Regresar al inicio</button></a>  
+</footer>
+</html>

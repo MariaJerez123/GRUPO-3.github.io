@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitulo2.2</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <p>
+        Como puede observar, los cinco espacios se han convertido en uno. Para que se muestren todos, el código que tendría que escribir es:
+            <br>
+        <img src="./Imagenes/codigo1.png">
+            <br>
+            <br>
+        Es decir, empleo un espacio y cuatro entidades non-breaking space &nbsp;. Así, se consigue el resultado esperado, tal como se aprecia a continuación:
+          <br>
+        <img src="./Imagenes/resultado1.png">
+        <br>
+        <section>
+              Las entidades descritas en esta sección son solo alguna de las muchas que se pueden utilizar en HTML. Si quiere conocerlas todas visite la página https://unicode-table.com/es/html-entities/.
+       </section>
+       <br>
+       <h2>
+              2.4.1.4 Citas
+       </h2>
+        El grupo de etiquetas que se va a estudiar en esta sección está formado por aquellas dedicadas a citar párrafos o textos breves de otras fuentes, indicar el nombre o el título de la obra de la que procede, dar información de contacto del autor o describir el signiﬁcado de un acrónimo. Se trata de las siguientes: 
+          <br>
+          •blockquote. Contiene un párrafo tomado de otra fuente.
+            Aparece desplazado a la derecha.
+          <br>
+           •q. Similar al anterior, solo que, en vez de un párrafo, incluye una cita breve. Se muestra entre comillas. 
+          <br>
+          •address. Da información de contacto de una persona o entidad, ya sea una dirección de correo electrónico o postal, un teléfono, etc. Se escribe en cursiva. 
+           <br>
+           •cite. Declara el nombre de una fuente o el título de cualquier obra creativa (película, novela, etc.). También se escribe en cursiva.
+            <br>
+          •abbr. Incluye la descripción de una abreviación o un acrónimo, que surge de forma emergente al situar el ratón encima.
+           <br>
+           <br>
+        Como la mejor forma de ver el efecto que producen estas etiquetas es con un ejemplo, el siguiente código utiliza algunas para citar el párrafo de un artículo publicado en una conocida revista cientíﬁca:
+         <br>
+       <img src="./Imagenes/codigo2.png">
+         <br>
+         <br>
+       El resultado obtenido se muestra a continuación, donde se aprecia la diferencia entre cómo se escribe un texto en HTML y cómo aparece en pantalla.
+          <br>
+       <img src="./Imagenes/resultado2.png">
+          <br>
+          <br>
+        La etiqueta abbr tiene una naturaleza diferente a las anteriores, ya que no modiﬁca el estilo de un texto, sino que describe el signiﬁcado de un acrónimo, una abreviación o, simplemente, aporta algún tipo de información sobre una o varias palabras de una frase. Para utilizarla, solo tiene que incluirlas dentro de la etiqueta y asignar la explicación como valor del atributo title, tal como se hace en el siguiente código de ejemplo:
+          <br>
+        <img src="./Imagenes/codigo3.png">
+          <br>
+          <br>
+        Se trata de un encabezado h1 cuyo texto contiene la palabra “HTML”, que se ha incluido dentro de la etiqueta abbr con el ﬁn de añadir su descripción en el atributo title.
+        <br>
+        A continuación, se puede ver el resultado de situar el ratón sobre el acrónimo HTML:
+          <br>
+       <img src="./Imagenes/resultado3.png">
+        <br>
+        <br>
+       <section>
+              La etiqueta dfn guarda cierta relación con esta última, aunque la definición del término se realiza en el propio texto (no está oculta). Únicamente muestra la palabra o expresión en cursiva para señalar que se va a definir a continuación.
+                 <br>
+       </section>
+       <br>
+       <h2>
+          2.4.2 Imágenes
+       </h2>
+       Si en los orígenes de la web el texto era la única forma de transmitir información, en la actualidad las imágenes le igualan o superan en importancia. Su uso, no solo complementa la información textual, sino que también es imprescindible para atraer y hacer más agradable la experiencia de usuario. La forma de incorporar una imagen a una página web es mediante la etiqueta img. Se trata de una etiqueta vacía que no tiene contenido ni requiere la correspondiente de cierre. Lo que sí tiene son diversos atributos, uno de los cuales es imprescindible (src), ya que especiﬁca la ruta de acceso o el URL a la imagen, dependiendo de si esta se encuentra en el propio servidor web o en otro diferente. En ambos casos, siempre estará almacenada en un archivo en formato JPG, GIF (permite el uso de animaciones) y PNG (pueden tener fondos transparentes).
+       <br>
+       <br>
+       <section>
+           A diferencia del texto, las imágenes no forman parte de la página web, por lo que se añaden a esta en el momento de abrirse.
+      </section>
+       <br>
+       El siguiente documento HTML es un ejemplo de uso de esta etiqueta:
+          <br>
+       <img src="./Imagenes/codigo4.png">
+          <br>
+       El cuerpo solo incluye la etiqueta img que muestra la imagen del Coliseo en el navegador. Para entender el valor de su atributo src, recuerde que en todos los ejercicios desarrollados en esta obra se utiliza la estructura de carpetas del contenido descargable, por lo que se supone que el documento HTML está ubicado en la carpeta “Capitulo2” y la imagen en la carpeta “Imagenes” (ambas al mismo nivel):
+          <br>
+           /Imágenes
+                  <br>
+                      coliseo.jpg
+                         <br>
+                             /Capitulo2
+                                 <br>
+                                      img.html
+       <br> 
+       <br>      
+      <section>
+      A diferencia del código de los documentos HTML, que están en carpetas con el número del capítulo correspondiente, los recursos externos se agrupan en su propia carpeta (todas debajo de “Prácticas”). Así, las hojas de estilo, las imágenes o los archivos de audio y vídeo (multimedia) se encuentran en:
+      <br>
+                /Practicas
+                      <br>
+                            /CSS
+                             <br>
+                                 /Imagenes
+                                     <br>
+                                          /Multimedia
+            <br>
+      </section>
+            <br>
+       A continuación, se muestra el resultado obtenido: 
+         <br>
+      <img src="./Imagenes/resultado4.png">
+         <br>
+       Las barras de desplazamiento horizontal y vertical delatan que solo aparece parte de la imagen. Eso es debido a que su resolución (2592 × 1944) es superior al tamaño de la ventana.
+        <br>
+       <section>
+          Si quiere saber la resolución de una imagen en Windows, solo tiene que poner el ratón sobre el archivo que la contiene. Aparecerá una ventana emergente con el formato, la fecha de creación, la resolución (dimensiones) y el tamaño que ocupa en disco.
+              <br>
+          <img src="./Imagenes/resultado4.1.png">
+       </section>
+        <br>
+        <br>
+        Para resolver este problema, la etiqueta img dispone de los atributos:
+         <br>
+         •	width. Ancho de la imagen. 
+             <br>
+         •	height. Alto de la imagen.
+        <br>
+        <br>
+       <section>
+          La etiqueta img dispone de más atributos. Si tiene interés en conocerlos todos, visite la página https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img.
+       </section>
+            <br>
+       El valor de ambas propiedades puede tomar cualquiera de las unidades de medida que estudiará en el siguiente capítulo, entre las que se encuentra el número de píxeles (px). 
+       <br>
+       <br>
+       Al ﬁjar el ancho y el alto de una imagen, esta adquiere dichas dimensiones. Si la proporción entre ambas no coincidiera con la original, la imagen se deformaría. Para evitarlo, especiﬁque solo una de ellas y deje que el navegador calcule la otra. 
+            <br>
+            <br>
+      A ﬁn de demostrarlo, sustituya la etiqueta img del documento anterior por esta otra:
+           <br>
+       <img src="./Imagenes/codigo5.png">
+        <br>
+        <br>
+       A continuación, puede comprobar que la imagen se ha escalado sin deformarse hasta los 200 píxeles de ancho establecidos:
+      <img src="./Imagenes/resultado5.png">
+         <br>
+        Como se ha comentado al principio de esta sección, si la imagen estuviera situada en otro servidor web, el atributo src deberá tomar como valor un URL (en vez de una ruta de acceso). En esta situación, se aconseja utilizar también el atributo alt de la etiqueta img, cuya función es mostrar un texto descriptivo cuando, por alguna circunstancia, esta no se pudiera llegar a obtener. 
+       <br>
+       <br>
+        Sustituya la etiqueta img del código anterior por esta otra:
+        <br>
+        <img src="./Imagenes/codigo6.png">
+        <br>
+        <br>
+      <section>
+          Siempre que vea puntos suspensivos en el código (“...”) es que se ha omitido parte de él.
+      </section>
+        <br>
+       En este caso, el atributo src toma el URL del logo de Marcombo, cuya dirección completa es:
+       “https://www.marcombo.com/wp-content/themes/THEME%20_PDP/
+        images/logo-marcombo.png”
+        <br>
+        El resultado es el siguiente:
+       <img src="./Imagenes/resultado6.png">
+          <br>
+          <br>
+      Si no se pudiera acceder a dicha dirección porque la imagen hubiera cambiado de nombre, de directorio o, simplemente, no existiera, en el navegador aparecería el texto “Logo de Marcombo” asignado al atributo alt. Para comprobarlo, sustituya el nombre del archivo al que se hace referencia en el atributo src por cualquier otro y refresque la página del navegador. Ahora, el resultado sería este otro:
+         <br>
+      <img src="./Imagenes/resultado6.1.png">
+        <br>
+       <h2>
+         2.4.3 Audio y vídeo 
+      </h2>
+        <br>
+      Tal como se ha comentado en la sección anterior, en los primeros tiempos de Internet los navegadores web solo podían mostrar texto. Afortunadamente, el aumento progresivo de la velocidad de las líneas de comunicaciones, la capacidad de procesamiento de los ordenadores y la creación de estándares, han hecho posible la incorporación de todo tipo de contenido audiovisual. Tanto es así, que incluso muchos sitios web no tendrían sentido si los navegadores no fueran capaces de reproducir audio y vídeo (YouTube es un ejemplo signiﬁcativo).
+          <br>
+          <br>
+     Las etiquetas que permiten incorporar audio y vídeo a una página web son: 
+         <br>
+         •	audio 
+              <br>
+         •	video
+              <br>
+              <br>
+       Ambas etiquetas disponen de una serie de atributos que ofrecen cierto control sobre la reproducción del audio y del vídeo. Descubramos cuáles son y para qué sirven. 
+            <br>
+            <br>
+        La etiqueta audio dispone de los siguientes atributos:
+             <br>
+          •	src. Es el único obligatorio, ya que contiene la ruta de acceso o el URL donde se encuentra el archivo de audio. HTML admite los formatos MP3, WAV y OGG.
+              <br>
+         •	controls. Muestra los controles mediante los que se puede manejar la reproducción de audio.
+               <br>
+         •	loop. El archivo de audio se reproduce de forma indeﬁnida.
+        <br>
+        <br>
+      <section>
+          Además de los atributos anteriores, la etiqueta audio tiene otras que le pueden resultar interesante (algunas de las cuales no funcionan en Chrome, como autoplay). Para conocerlas todas, consulte la página https://developer.mozilla.org/es/docs/Web/HTML/Element/audio.
+      </section>
+        <br>
+      Aunque esta etiqueta se puede usar sin la correspondiente de cierre, se recomienda añadirla ya que, de lo contrario, no se mostraría el resto del contenido del documento HTML. Habitualmente no se incluya nada entre ambas, pero cuando se utilizan formatos que no son compatibles con todos los navegadores, se aconseja añadir un conjunto de etiquetas source que especiﬁquen distintas fuentes de audio alternativas. De esta manera, se reproduciría el primero que tuviera soportado.
+          <br>
+          <br>
+      Cuando se emplean etiquetas source, la ruta o URL de acceso a los archivos de audio deberá estar en su atributo src (no en el de la etiqueta audio). Aunque no es imprescindible, conviene añadir también el atributo type con el tipo MIME del archivo (“audio/mp3”, “audio/wav” o “audio/ogg”, según el formato). De esta forma, el navegador dispondrá de más información a la hora de decidir cuál es el archivo que puede reproducir.
+         <br>
+         <br>
+         En conclusión, el código HTML de la etiqueta audio en el que se las fuentes de sonido se establecen mediante etiquetas source, quedaría así:
+         <br>
+      <img src="./Imagenes/codigo7.png">
+         <br>
+         <br>
+      Para demostrar lo sencillo que resulta incorporar audio en una página web, el siguiente código de ejemplo reproduce un archivo musical tomado de https://www.ﬁysounds.com/es/musica-libre-de-derechos/, una de las múltiples webs que permiten la descarga de música libre de derechos de autor. Su código es el siguiente:
+      <img src="./Imagenes/codigo8.png">
+          <br>
+      El cuerpo del documento está formado por un encabezado h1 con el título de la obra, la etiqueta audio que incorpora el archivo con la música de fondo y una línea de separación hr con la información de reconocimiento exigida por la web de la que se ha obtenido este archivo, incluida en la etiqueta cite.
+        <br>
+        <br>
+      La etiqueta audio tiene tres atributos: con src se especiﬁca la ruta de acceso al archivo musical, controls muestra los controles de la reproducción y loop hace que la música suene continuamente. 
+          <br>
+          <br>
+      Una vez creada la página, cárguela en Chrome y disfrute de este fondo musical.
+        <br>
+        <img src="./Imagenes/resultado7.png">
+         <br>
+      Si lo que se pretende es incorporar vídeo a una página, deberá utilizar la etiqueta video, que también dispone de una serie de atributos muy útiles. Los primeros tienen la misma función que los de audio:
+             <br>
+          •	src. Los formatos de vídeo soportados son MP4, WebM y OGG.
+              <br>
+          •	controls.
+              <br>
+          •	loop. 
+              <br>
+              <br>
+       El resto de atributos son especíﬁcos de la etiqueta video:
+              <br>
+          •	width y height. Determinan el ancho y el alto de la imagen de vídeo. 
+              <br>
+          •	poster. Contiene la ruta o URL de la imagen que se mostraría mientras se descarga el vídeo o antes de pulsar el botón de reproducción.
+              <br>
+          •  muted. Hace que el vídeo se ejecute en silencio. En cualquier momento podrá subirse el volumen con el control correspondiente.
+        <br>
+        <br>
+      <section>
+            Al igual que sucedía con la etiqueta de audio, la de vídeo también puede incluir diversas etiquetas source que añadan diferentes fuentes de vídeo alternativas. Así, el navegador reproduciría la primera cuyo formato tuviera soportado.
+            En ese caso, el código HTML resultante sería:
+            <img src="./Imagenes/codigo10.png">
+      </section>
+         <br>
+       Para demostrar lo sencillo que resulta incorporar vídeo a una página web mediante la etiqueta video, desarrollará una donde se pueda reproducir un vídeo casero realizado en la Plaza de España de Madrid. 
+       <br>
+       Su código es el siguiente:
+          <br>
+     <img src="./Imagenes/codigo9.png">
+        <br>
+        <br>
+       Como puede observar, el cuerpo del documento se compone de un encabezado h1 indicando el lugar de la grabación y la etiqueta video que reproduce el archivo MP4 donde está almacenada. El valor del atributo src contiene la ruta del acceso al archivo, con width se establece el ancho del área de visualización (se deja que el alto lo calcule automáticamente el navegador) y mediante controls se muestran los controles de reproducción, tal como se aprecia en la siguiente imagen:
+       <img src="./Imagenes/resultado8.png">
+          <br>
+       <h2>
+           2.4.4 Hipervínculos 
+      </h2>
+      Una de las características más importantes de HTML es la de ser hipertextual. La capacidad de conectar entre sí páginas web situadas en servidores dispersos por todo el mundo puede parecer algo intrascendente, pero ha sido el detonante de la creación de una red de conocimiento, clave en la rápida expansión de Internet. Algo tan sencillo, pero, a la vez, tan potente, ha sido el medio y la causa de que actualmente todo el saber esté al alcance de unos pocos clics, lo que ha supuesto una auténtica revolución a todos los niveles.
+           <br>
+           <br>
+       Por lo tanto, la función principal de un hipervínculo es enlazar dos páginas web, que pueden residir en el mismo o en otro servidor web. También se emplean para acceder a secciones de una misma página en la que exista mucha información. De esa forma, en vez de tener que desplazarse por ella, se añade un índice cuyas entradas sean enlaces a los diferentes capítulos y apartados en los que se organiza el contenido. 
+          <br>
+          <br>
+      El concepto de vínculo o enlace se puede generalizar, lo que aumenta su valor al permitir el uso de servicios (como el de descarga de ﬁcheros) o la ejecución de aplicaciones (como la de envío de correos electrónicos).
+          <br>
+          <br>
+      En resumen, los hipervínculos permiten acceder a:
+              <br>
+         • Una página en el propio servidor web.
+              <br>
+         • Una página en otro servidor web.
+              <br>
+         • Una sección en la misma página web.
+              <br>
+         • Hacer uso de servicios o ejecutar aplicaciones.
+               <br>
+      La etiqueta con la que se crea un hipervínculo es a. Dispone de diversos atributos, aunque el más importante es href, ya que apunta al recurso al que se quiere acceder (generalmente, una página web). Su valor dependerá de la naturaleza de dicho recurso, que podrá ser:
+          <br>
+          <br>
+      Una dirección web (URL). Muestra la página web de otro servidor.
+              <br>
+         • La ruta de acceso a un archivo. Accede a un recurso dentro del propio servidor (generalmente, una página web local). 
+              <br>
+         • Un identiﬁcador de etiqueta. Le lleva a otra sección de la misma página. 
+              <br>
+         • Una dirección de correo electrónico. Arranca la aplicación de correo electrónico conﬁgurada por defecto en el dispositivo.
+   </p>
+ </body>
+ <footer>
+    <a href="./capitulo2.3.html"><button>Siguiente página</button></a>
+    <a href="./capitulo2.1.html">Anterior página</a>
+    <a href="index.html"><button>Regresar al inicio</button></a>
+ </footer>
+ </html>
